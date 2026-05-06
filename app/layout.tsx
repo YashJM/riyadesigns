@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Akatab, Akshar } from "next/font/google";
 import "./globals.css";
 
@@ -46,7 +47,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${akatab.variable} ${akshar.variable} h-full antialiased`}>
-      <body className="min-h-full bg-background text-foreground">{children}</body>
+      <body className="min-h-full bg-background text-foreground">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YG8DJWMFPP"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YG8DJWMFPP');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
