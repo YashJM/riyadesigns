@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Akatab, Akshar } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const akatab = Akatab({
+  variable: "--font-akatab",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const akshar = Akshar({
+  variable: "--font-akshar",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -39,12 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
-      <body className="min-h-full bg-background text-foreground">
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
-      </body>
+    <html lang="en" className={`${akatab.variable} ${akshar.variable} h-full antialiased`}>
+      <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>
   );
 }

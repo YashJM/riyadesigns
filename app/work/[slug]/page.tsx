@@ -3,6 +3,10 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { GeorgesCaseStudy } from "@/components/georges-case-study";
+import { FigmaAksharFrame } from "@/components/figma-akshar-frame";
+import { FigmaZappFrame } from "@/components/figma-zapp-frame";
+import { FigmaTriponFrame } from "@/components/figma-tripon-frame";
+import { FigmaEasygoFrame } from "@/components/figma-easygo-frame";
 import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 
 type Props = {
@@ -35,6 +39,18 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
   if (slug === "georges-pizza") {
     return <GeorgesCaseStudy />;
+  }
+  if (slug === "akshar-packs") {
+    return <FigmaAksharFrame />;
+  }
+  if (slug === "zapp-wallet") {
+    return <FigmaZappFrame />;
+  }
+  if (slug === "tripon") {
+    return <FigmaTriponFrame />;
+  }
+  if (slug === "easygo") {
+    return <FigmaEasygoFrame />;
   }
 
   return (

@@ -16,14 +16,14 @@
   --color-line: var(--line);
   --color-muted: var(--muted);
   --color-brand: var(--brand);
-  --font-sans: var(--font-plus-jakarta-sans);
-  --font-mono: var(--font-plus-jakarta-sans);
+  --font-sans: var(--font-akatab);
+  --font-mono: var(--font-akshar);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-family: var(--font-akatab), sans-serif;
 }
 
 a {

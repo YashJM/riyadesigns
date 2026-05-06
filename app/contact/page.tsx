@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -7,36 +8,33 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-12 pt-10 md:px-10 md:pt-16">
-      <h1 className="text-4xl font-bold md:text-6xl">Contact</h1>
-      <p className="mt-4 text-lg leading-8 text-muted">
-        Have a project in mind? Let&apos;s create something impactful together.
-      </p>
-      <div className="mt-10 rounded-3xl border border-line bg-surface p-8">
-        <p className="text-lg font-semibold">Preferred channels</p>
-        <div className="mt-4 space-y-3 text-base">
-          <p>
-            Email:{" "}
-            <a
-              className="underline"
-              href="mailto:hello@riyadesigns.studio"
-            >
-              hello@riyadesigns.studio
-            </a>
-          </p>
-          <p>
-            Linkedin:{" "}
-            <a
-              className="underline"
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/riya-patel
-            </a>
+    <div className="bg-[#fffdfb]">
+      <FigmaHeader />
+      <section className="bg-linear-to-r from-[#ffe8ee] via-[#f6e8f3] to-[#e5e2ef]">
+        <div className="mx-auto max-w-[1148px] px-5 pb-14 pt-[110px]">
+          <h1 className="text-[56px] font-extrabold">Contact</h1>
+          <p className="mt-4 max-w-[920px] text-[24px] leading-[1.4]">
+            Have a project in mind? Let&apos;s create something impactful together.
           </p>
         </div>
-      </div>
+      </section>
+      <section className="mx-auto max-w-[1148px] px-5 pb-20 pt-10">
+        <div className="rounded-[30px] border border-[#f1cad7] bg-[rgba(243,135,171,0.2)] p-10">
+          <p className="text-[28px] font-bold">Preferred channels</p>
+          <div className="mt-6 space-y-4 text-[22px]">
+            <p>
+              Email: <a className="underline" href="mailto:hello@riyadesigns.studio">hello@riyadesigns.studio</a>
+            </p>
+            <p>
+              Linkedin:{" "}
+              <a className="underline" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/riya-patel
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <FigmaFooter />
     </div>
   );
 }
