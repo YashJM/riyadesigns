@@ -28,7 +28,7 @@ export default function ContactPage() {
             <p>
               Linkedin:{" "}
               <a className="underline" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                linkedin.com/in/riya-patel
+                linkedin.com/in/designerriya
               </a>
             </p>
           </div>
