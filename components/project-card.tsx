@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -5,16 +6,28 @@ type ProjectCardProps = {
   title: string;
   summary: string;
   accent: string;
+  thumbnail: string;
 };
 
-export function ProjectCard({ slug, title, summary, accent }: ProjectCardProps) {
+export function ProjectCard({
+  slug,
+  title,
+  summary,
+  accent,
+  thumbnail,
+}: ProjectCardProps) {
   return (
     <article className="rounded-3xl border border-line bg-surface p-5 md:p-8">
-      <div
-        className="h-36 rounded-2xl md:h-52"
-        style={{ background: accent }}
-        aria-hidden
-      />
+      <div className="relative h-36 overflow-hidden rounded-2xl md:h-52">
+        <div className="absolute inset-0" style={{ background: accent }} aria-hidden />
+        <Image
+          src={thumbnail}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, 900px"
+          className="object-cover"
+        />
+      </div>
       <h3 className="mt-5 text-2xl font-bold">{title}</h3>
       <p className="mt-2 text-base leading-7 text-muted">{summary}</p>
       <Link

@@ -7,7 +7,7 @@ roles:
   - Product UX
   - Information Architecture
   - Visual Design
-thumbnail: "/placeholder/tripon.jpg"
+thumbnail: "/figma/tripon-hero.png"
 accent: "linear-gradient(135deg, #8fd4ff 0%, #43a8e5 100%)"
 ---
 

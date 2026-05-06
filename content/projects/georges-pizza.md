@@ -7,7 +7,7 @@ roles:
   - UX Audit
   - Web Design
   - Prototyping
-thumbnail: "/placeholder/georges.jpg"
+thumbnail: "/figma/georges-hero-main.png"
 accent: "linear-gradient(135deg, #f6e2d2 0%, #ccb29e 100%)"
 ---
 

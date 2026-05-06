@@ -31,6 +31,7 @@ export default function WorkPage() {
               title={project.title}
               summary={project.tagline}
               accent={project.accent}
+            thumbnail={project.thumbnail}
             />
           ))}
         </div>

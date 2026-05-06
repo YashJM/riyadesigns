@@ -20,6 +20,26 @@ npm run build
 
 The project uses `output: "export"` in `next.config.ts`, so static files are emitted to `out/` after build.
 
+## Netlify deployment
+
+This repo is configured for Netlify static hosting using `netlify.toml`.
+
+- Build command: `npm run build`
+- Publish directory: `out`
+- Node runtime: `22`
+
+### Netlify setup steps
+
+1. Push this repository to GitHub/GitLab/Bitbucket.
+2. In Netlify, create a new site from the repository.
+3. Netlify will detect `netlify.toml` and auto-apply build settings.
+4. Trigger deploy.
+
+If Netlify asks for manual settings, use:
+
+- **Build command:** `npm run build`
+- **Publish directory:** `out`
+
 ## Content model
 
 Case studies are stored in `content/projects/*.md` with frontmatter:
