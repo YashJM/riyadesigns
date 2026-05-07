@@ -73,17 +73,27 @@ export function GeorgesCaseStudy() {
               priority
             />
           </div>
-          <section className="mt-5 grid gap-2 text-[clamp(16px,1.7vw,24px)] md:mt-6 md:grid-cols-3">
-            <p>🧑‍💻 Role: UI/UX Design</p>
-            <p>⏳ Duration: 6 Weeks</p>
-            <p>📱 Platform: Web</p>
-          </section>
+          <div className="mt-5 flex flex-nowrap items-baseline gap-x-[clamp(14px,2.4vw,40px)] overflow-x-auto pb-1 text-[clamp(12px,1.35vw,24px)] [scrollbar-width:thin] md:mt-6">
+            <p className="m-0 shrink-0 whitespace-nowrap">
+              <span className="font-extrabold">🧑‍💻 Role:</span> UI/UX Design
+            </p>
+            <p className="m-0 shrink-0 whitespace-nowrap">
+              <span className="font-extrabold">⏳ Duration:</span> 6 Weeks
+            </p>
+            <p className="m-0 shrink-0 whitespace-nowrap">
+              <span className="font-extrabold">📱 Platform:</span> Web
+            </p>
+          </div>
         </div>
       </div>
 
       <div className="figma-shell pb-[clamp(56px,6vw,80px)] pt-[clamp(24px,3vw,32px)]">
-        {sections.map((section) => (
-          <section key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+        {sections.map((section, index) => (
+          <section
+            key={section.title}
+            className={`pb-[clamp(30px,4vw,40px)] ${index === 0 ? "pt-[clamp(16px,2vw,22px)]" : "pt-[clamp(30px,4vw,40px)]"}`}
+          >
+            <hr className="case-study-rule mb-[clamp(20px,2.8vw,28px)]" aria-hidden />
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">{section.title}</h2>
             <p className="mt-4 max-w-[1005px] text-[clamp(15px,1.1vw,16px)] leading-loose">{section.body}</p>
             {section.image ? (
@@ -111,7 +121,8 @@ export function GeorgesCaseStudy() {
           </section>
         ))}
 
-        <section className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+        <section className="pb-[clamp(30px,4vw,40px)] pt-[clamp(30px,4vw,40px)]">
+          <hr className="case-study-rule mb-[clamp(20px,2.8vw,28px)]" aria-hidden />
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">💡 Lessons learned:</h2>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-[clamp(15px,1.1vw,16px)] leading-loose">
             <li>Simpler structure improves scanability and completion speed.</li>

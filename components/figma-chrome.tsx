@@ -46,10 +46,14 @@ export function FigmaFooter() {
           Got an idea, a project, or just want to chat about design? I&apos;m all ears (and coffee ☕) 👇
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-2 text-[clamp(18px,1.7vw,24px)]">
-          <a href="mailto:hello@riyadesigns.studio">Email Me ↗</a>
+          <a href="mailto:hello@riyadesigns.studio" className="inline-flex items-center gap-1">
+            <span>Email Me</span>
+            <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[16px] w-[16px]" />
+          </a>
           <span>|</span>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            Linkedin ↗
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1">
+            <span>Linkedin</span>
+            <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[16px] w-[16px]" />
           </a>
         </div>
         <p className="mt-10 text-[13px] font-light">Designed &amp; crafted by Riya Patel ♥ © 2026</p>

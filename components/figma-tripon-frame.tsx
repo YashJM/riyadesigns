@@ -66,17 +66,27 @@ export function FigmaTriponFrame() {
               priority
             />
           </div>
-          <div className="mt-5 grid gap-2 text-[clamp(16px,1.7vw,24px)] md:mt-6 md:grid-cols-3">
-            <p>🧑‍💻 Role: Product UX</p>
-            <p>⏳ Duration: 6 Weeks</p>
-            <p>📱 Platform: Web</p>
+          <div className="mt-5 flex flex-nowrap items-baseline gap-x-[clamp(14px,2.4vw,40px)] overflow-x-auto pb-1 text-[clamp(12px,1.35vw,24px)] [scrollbar-width:thin] md:mt-6">
+            <p className="m-0 shrink-0 whitespace-nowrap">
+              <span className="font-extrabold">🧑‍💻 Role:</span> Product UX
+            </p>
+            <p className="m-0 shrink-0 whitespace-nowrap">
+              <span className="font-extrabold">⏳ Duration:</span> 6 Weeks
+            </p>
+            <p className="m-0 shrink-0 whitespace-nowrap">
+              <span className="font-extrabold">📱 Platform:</span> Web
+            </p>
           </div>
         </div>
       </section>
 
       <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-[clamp(24px,3vw,32px)]">
-        {sections.map((section) => (
-          <article key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+        {sections.map((section, index) => (
+          <article
+            key={section.title}
+            className={`pb-[clamp(30px,4vw,40px)] ${index === 0 ? "pt-[clamp(16px,2vw,22px)]" : "pt-[clamp(30px,4vw,40px)]"}`}
+          >
+            <hr className="case-study-rule mb-[clamp(20px,2.8vw,28px)]" aria-hidden />
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">{section.title}</h2>
             <p className="mt-4 max-w-[1005px] text-[clamp(15px,1.1vw,16px)] leading-loose">{section.body}</p>
             {section.image ? (

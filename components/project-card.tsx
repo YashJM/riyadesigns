@@ -32,9 +32,10 @@ export function ProjectCard({
       <p className="mt-2 text-[clamp(15px,1.2vw,16px)] leading-[1.7] text-muted">{summary}</p>
       <Link
         href={`/work/${slug}`}
-        className="mt-4 inline-flex rounded-full border border-black/20 bg-white px-5 py-2 text-[clamp(14px,1.1vw,16px)] font-semibold"
+        className="mt-4 inline-flex items-center gap-1 rounded-full border border-black/20 bg-white px-5 py-2 text-[clamp(14px,1.1vw,16px)] font-semibold"
       >
-        View Project ↗
+        <span>View Project</span>
+        <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[14px] w-[14px]" />
       </Link>
     </article>
   );
