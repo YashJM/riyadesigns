@@ -50,14 +50,14 @@ export function FigmaAboutFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="relative overflow-hidden bg-linear-to-r from-[#ffe8ee] via-[#f6e8f3] to-[#e5e2ef]">
-        <div className="absolute left-[42px] top-[239px] h-[290px] w-[354px] rounded-full bg-[#ffd7e6] opacity-60 blur-[44px]" />
-        <div className="absolute right-[42px] top-[727px] h-[290px] w-[354px] rounded-full bg-[#f6dce9] opacity-60 blur-[44px]" />
-        <div className="mx-auto max-w-[1148px] px-5 pb-14 pt-[110px]">
-          <h1 className="text-[40px] leading-[1.1] font-bold">✨ About Me</h1>
-          <div className="mt-6 grid grid-cols-[657px_365px] items-start justify-between gap-10">
-            <div className="text-[24px] leading-[1.4]">
-              <p className="mb-2 text-[32px] font-bold">Hello 👋</p>
+      <section className="figma-gradient relative overflow-hidden">
+        <div className="absolute left-[max(12px,2vw)] top-[239px] h-[clamp(180px,20vw,290px)] w-[clamp(220px,24vw,354px)] rounded-full bg-[#ffd7e6] opacity-60 blur-[44px]" />
+        <div className="absolute right-[max(12px,2vw)] top-[727px] h-[clamp(180px,20vw,290px)] w-[clamp(220px,24vw,354px)] rounded-full bg-[#f6dce9] opacity-60 blur-[44px]" />
+        <div className="figma-shell pb-[clamp(44px,5vw,56px)] pt-[clamp(88px,9vw,110px)]">
+          <h1 className="text-[clamp(34px,3.2vw,40px)] leading-[1.1] font-bold">✨ About Me</h1>
+          <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,657px)_minmax(280px,365px)] lg:justify-between lg:gap-10">
+            <div className="text-[clamp(18px,2vw,24px)] leading-[1.45]">
+              <p className="mb-2 text-[clamp(28px,2.6vw,32px)] font-bold">Hello 👋</p>
               <p>
                 I’m Riya Patel — a UI/UX designer with a product mindset, driven by
                 the idea that great design lives at the intersection of clarity,
@@ -75,27 +75,27 @@ export function FigmaAboutFrame() {
                 don’t just function well, but feel right.
               </p>
             </div>
-            <div className="relative h-[548px] w-[365px] overflow-hidden rounded-[28px]">
+            <div className="relative mx-auto h-[clamp(380px,60vw,548px)] w-full max-w-[365px] overflow-hidden rounded-[28px]">
               <Image
                 src="/figma/about-profile.png"
                 alt="Riya Patel"
                 fill
                 className="object-cover"
-                sizes="365px"
+                sizes="(max-width: 1024px) 80vw, 365px"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1148px] px-5 pb-20 pt-0">
+      <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-0">
         {sections.map((section, idx) => (
-          <div key={section.title} className="border-t border-[#efced9] py-12">
-            <h2 className="text-[32px] font-bold">
+          <div key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,48px)]">
+            <h2 className="text-[clamp(26px,2.7vw,32px)] font-bold">
               <span className="mr-2">{section.icon}</span>
               {section.title}
             </h2>
-            <div className="mt-4 space-y-3 text-[18px] leading-[1.9] text-[#2d2d2d]">
+            <div className="mt-4 space-y-3 text-[clamp(16px,1.4vw,18px)] leading-[1.9] text-[#2d2d2d]">
               {section.body.map((line) => (
                 <p key={line}>{line}</p>
               ))}

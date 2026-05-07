@@ -10,18 +10,18 @@ export default function ContactPage() {
   return (
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
-      <section className="bg-linear-to-r from-[#ffe8ee] via-[#f6e8f3] to-[#e5e2ef]">
-        <div className="mx-auto max-w-[1148px] px-5 pb-14 pt-[110px]">
-          <h1 className="text-[56px] font-extrabold">Contact</h1>
-          <p className="mt-4 max-w-[920px] text-[24px] leading-[1.4]">
+      <section className="figma-gradient">
+        <div className="figma-shell pb-[clamp(44px,5vw,56px)] pt-[clamp(88px,9vw,110px)]">
+          <h1 className="text-[clamp(40px,4.2vw,56px)] font-extrabold">Contact</h1>
+          <p className="mt-4 max-w-[920px] text-[clamp(18px,2vw,24px)] leading-[1.4]">
             Have a project in mind? Let&apos;s create something impactful together.
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-[1148px] px-5 pb-20 pt-10">
-        <div className="rounded-[30px] border border-[#f1cad7] bg-[rgba(243,135,171,0.2)] p-10">
-          <p className="text-[28px] font-bold">Preferred channels</p>
-          <div className="mt-6 space-y-4 text-[22px]">
+      <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-[clamp(28px,3vw,40px)]">
+        <div className="rounded-[clamp(24px,2.1vw,30px)] border border-[#f1cad7] bg-[rgba(243,135,171,0.2)] p-[clamp(20px,3vw,40px)]">
+          <p className="text-[clamp(22px,2.2vw,28px)] font-bold">Preferred channels</p>
+          <div className="mt-6 space-y-4 text-[clamp(18px,1.7vw,22px)]">
             <p>
               Email: <a className="underline" href="mailto:hello@riyadesigns.studio">hello@riyadesigns.studio</a>
             </p>

@@ -53,17 +53,17 @@ export function GeorgesCaseStudy() {
   return (
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
-      <div className="relative overflow-hidden bg-linear-to-r from-[#ffe8ee] via-[#f6e8f3] to-[#e5e2ef] pb-10 pt-[110px]">
-        <div className="mx-auto max-w-[1148px] px-4 md:px-5">
-          <Link href="/work" className="inline-flex items-center gap-2 text-[20px] font-bold md:text-[24px]">
+      <div className="figma-gradient relative overflow-hidden pb-[clamp(32px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+        <div className="figma-shell">
+          <Link href="/work" className="inline-flex items-center gap-2 text-[clamp(20px,1.9vw,24px)] font-bold">
             ← Back
           </Link>
-          <h1 className="mt-6 text-[34px] font-black md:mt-8 md:text-[40px]">🍕 George&apos;s Pizza &amp; Steakhouse</h1>
-          <p className="mt-3 max-w-[1011px] text-[16px] leading-loose md:text-[20px]">
+          <h1 className="mt-6 text-[clamp(34px,3.2vw,40px)] font-black md:mt-8">🍕 George&apos;s Pizza &amp; Steakhouse</h1>
+          <p className="mt-3 max-w-[1011px] text-[clamp(16px,1.7vw,20px)] leading-loose">
             Transformed a content-heavy restaurant website into a clear,
             conversion-focused ordering experience.
           </p>
-          <div className="mt-6 overflow-hidden rounded-[26px] border border-black md:mt-8 md:rounded-[30px]">
+          <div className="mt-6 overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black md:mt-8">
             <Image
               src="/figma/georges-hero-main.png"
               alt="George's case study hero from Figma"
@@ -73,7 +73,7 @@ export function GeorgesCaseStudy() {
               priority
             />
           </div>
-          <section className="mt-5 grid gap-2 text-[16px] md:mt-6 md:grid-cols-3 md:text-[24px]">
+          <section className="mt-5 grid gap-2 text-[clamp(16px,1.7vw,24px)] md:mt-6 md:grid-cols-3">
             <p>🧑‍💻 Role: UI/UX Design</p>
             <p>⏳ Duration: 6 Weeks</p>
             <p>📱 Platform: Web</p>
@@ -81,13 +81,13 @@ export function GeorgesCaseStudy() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1148px] px-4 pb-16 pt-6 md:px-5 md:pb-20 md:pt-8">
+      <div className="figma-shell pb-[clamp(56px,6vw,80px)] pt-[clamp(24px,3vw,32px)]">
         {sections.map((section) => (
-          <section key={section.title} className="border-t border-[#efced9] py-8 md:py-10">
-            <h2 className="text-[26px] font-extrabold md:text-[32px]">{section.title}</h2>
-            <p className="mt-4 max-w-[1005px] text-[15px] leading-loose md:text-[16px]">{section.body}</p>
+          <section key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+            <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">{section.title}</h2>
+            <p className="mt-4 max-w-[1005px] text-[clamp(15px,1.1vw,16px)] leading-loose">{section.body}</p>
             {section.image ? (
-              <div className="mt-5 overflow-hidden rounded-[18px] border border-black md:mt-6 md:rounded-[20px]">
+              <div className="mt-5 overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black md:mt-6">
                 <Image
                   src={section.image}
                   alt={section.title}
@@ -98,7 +98,7 @@ export function GeorgesCaseStudy() {
               </div>
             ) : null}
             {"image2" in section && section.image2 ? (
-              <div className="mt-4 overflow-hidden rounded-[18px] border border-black md:rounded-[20px]">
+              <div className="mt-4 overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black">
                 <Image
                   src={section.image2}
                   alt={`${section.title} secondary`}
@@ -111,9 +111,9 @@ export function GeorgesCaseStudy() {
           </section>
         ))}
 
-        <section className="border-t border-[#efced9] py-8 md:py-10">
-          <h2 className="text-[26px] font-extrabold md:text-[32px]">💡 Lessons learned:</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-[15px] leading-loose md:text-[16px]">
+        <section className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+          <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">💡 Lessons learned:</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-[clamp(15px,1.1vw,16px)] leading-loose">
             <li>Simpler structure improves scanability and completion speed.</li>
             <li>Visual hierarchy directly supports decision-making confidence.</li>
             <li>Mobile-first ordering patterns increase conversion quality.</li>

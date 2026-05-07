@@ -7,6 +7,13 @@
   --line: #f1cad7;
   --muted: #5f5f5f;
   --brand: #f387ab;
+  --frame-max: 1440px;
+  --content-max: 1148px;
+  --space-section-y: clamp(3rem, 6vw, 5.625rem);
+  --space-hero-top: clamp(7rem, 11vw, 9.5rem);
+  --text-display: clamp(2.25rem, 4vw, 3.5rem);
+  --text-heading: clamp(1.75rem, 2.5vw, 2.5rem);
+  --text-body-lg: clamp(1.125rem, 1.8vw, 1.75rem);
 }
 
 @theme inline {
@@ -24,6 +31,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-akatab), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -52,4 +63,31 @@ a {
 
 .prose-content a {
   text-decoration: underline;
+}
+
+.figma-frame {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--frame-max);
+}
+
+.figma-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--content-max);
+  padding-inline: 1.25rem;
+}
+
+.figma-gradient {
+  background-image: linear-gradient(
+    127.70728320679765deg,
+    rgb(233, 226, 245) 2.1837%,
+    rgba(255, 243, 234, 0.96) 19.113%,
+    rgb(255, 237, 232) 35.057%,
+    rgb(255, 229, 229) 48.27%,
+    rgb(255, 221, 225) 62.378%,
+    rgb(255, 222, 234) 73.809%,
+    rgb(242, 233, 245) 87.013%,
+    rgb(231, 225, 245) 100%
+  );
 }

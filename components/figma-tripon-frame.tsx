@@ -46,17 +46,17 @@ export function FigmaTriponFrame() {
   return (
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
-      <section className="relative overflow-hidden bg-linear-to-r from-[#ffe8ee] via-[#f6e8f3] to-[#e5e2ef] pb-8 pt-[110px]">
-        <div className="mx-auto max-w-[1148px] px-4 md:px-5">
-          <Link href="/work" className="inline-flex items-center gap-2 text-[20px] font-bold md:text-[24px]">
+      <section className="figma-gradient relative overflow-hidden pb-[clamp(32px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+        <div className="figma-shell">
+          <Link href="/work" className="inline-flex items-center gap-2 text-[clamp(20px,1.9vw,24px)] font-bold">
             ← Back
           </Link>
-          <h1 className="mt-6 text-[34px] font-black md:mt-8 md:text-[40px]">✈️ TripOn</h1>
-          <p className="mt-3 max-w-[1011px] text-[16px] leading-loose md:text-[20px]">
+          <h1 className="mt-6 text-[clamp(34px,3.2vw,40px)] font-black md:mt-8">✈️ TripOn</h1>
+          <p className="mt-3 max-w-[1011px] text-[clamp(16px,1.7vw,20px)] leading-loose">
             TripOn connects destination discovery, planning, and booking into one
             intuitive flow to reduce travel friction and improve confidence.
           </p>
-          <div className="mt-6 overflow-hidden rounded-[26px] border border-black md:mt-8 md:rounded-[30px]">
+          <div className="mt-6 overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black md:mt-8">
             <Image
               src="/figma/tripon-hero.png"
               alt="TripOn hero"
@@ -66,7 +66,7 @@ export function FigmaTriponFrame() {
               priority
             />
           </div>
-          <div className="mt-5 grid gap-2 text-[16px] md:mt-6 md:grid-cols-3 md:text-[24px]">
+          <div className="mt-5 grid gap-2 text-[clamp(16px,1.7vw,24px)] md:mt-6 md:grid-cols-3">
             <p>🧑‍💻 Role: Product UX</p>
             <p>⏳ Duration: 6 Weeks</p>
             <p>📱 Platform: Web</p>
@@ -74,13 +74,13 @@ export function FigmaTriponFrame() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1148px] px-4 pb-16 pt-6 md:px-5 md:pb-20 md:pt-8">
+      <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-[clamp(24px,3vw,32px)]">
         {sections.map((section) => (
-          <article key={section.title} className="border-t border-[#efced9] py-8 md:py-10">
-            <h2 className="text-[26px] font-extrabold md:text-[32px]">{section.title}</h2>
-            <p className="mt-4 max-w-[1005px] text-[15px] leading-loose md:text-[16px]">{section.body}</p>
+          <article key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+            <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">{section.title}</h2>
+            <p className="mt-4 max-w-[1005px] text-[clamp(15px,1.1vw,16px)] leading-loose">{section.body}</p>
             {section.image ? (
-              <div className="mt-5 overflow-hidden rounded-[18px] border border-black md:mt-6 md:rounded-[20px]">
+              <div className="mt-5 overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black md:mt-6">
                 <Image
                   src={section.image}
                   alt={section.title}

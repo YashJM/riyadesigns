@@ -51,18 +51,18 @@ export function FigmaAksharFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="relative overflow-hidden bg-linear-to-r from-[#ffe8ee] via-[#f6e8f3] to-[#e5e2ef] pb-10 pt-[110px]">
-        <div className="mx-auto max-w-[1148px] px-5">
-          <Link href="/work" className="inline-flex items-center gap-2 text-[24px] font-bold">
+      <section className="figma-gradient relative overflow-hidden pb-[clamp(36px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+        <div className="figma-shell">
+          <Link href="/work" className="inline-flex items-center gap-2 text-[clamp(20px,1.9vw,24px)] font-bold">
             ← Back
           </Link>
-          <h1 className="mt-8 text-[40px] font-black">📦 Akshar Packs</h1>
-          <p className="mt-3 max-w-[1011px] text-[20px] leading-loose">
+          <h1 className="mt-8 text-[clamp(34px,3.2vw,40px)] font-black">📦 Akshar Packs</h1>
+          <p className="mt-3 max-w-[1011px] text-[clamp(16px,1.7vw,20px)] leading-loose">
             Akshar Packs is a packaging solutions provider that delivers custom packaging
             for diverse industries. The redesign focused on clarity, product discovery,
             and inquiry conversion.
           </p>
-          <div className="mt-8 overflow-hidden rounded-[30px] border border-black">
+          <div className="mt-8 overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black">
             <Image
               src="/figma/akshar-hero.png"
               alt="Akshar Packs hero"
@@ -72,7 +72,7 @@ export function FigmaAksharFrame() {
               priority
             />
           </div>
-          <div className="mt-8 grid grid-cols-3 text-[24px]">
+          <div className="mt-8 grid gap-2 text-[clamp(16px,1.7vw,24px)] md:grid-cols-3">
             <p>🧑‍💻 Role: UI/UX Design</p>
             <p>⏳ Duration: 4 Weeks</p>
             <p>📱 Platform: Web</p>
@@ -80,15 +80,15 @@ export function FigmaAksharFrame() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1148px] px-5 pb-20 pt-8">
+      <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-8">
         {sections.map((section) => (
-          <article key={section.title} className="border-t border-[#efced9] py-10">
-            <h2 className="text-[32px] font-extrabold">
+          <article key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,40px)]">
+            <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">
               {section.icon} {section.title}:
             </h2>
-            <p className="mt-4 max-w-[1005px] text-[16px] leading-loose">{section.body}</p>
+            <p className="mt-4 max-w-[1005px] text-[clamp(15px,1.1vw,16px)] leading-loose">{section.body}</p>
             {section.image ? (
-              <div className="mt-6 overflow-hidden rounded-[20px] border border-black">
+              <div className="mt-6 overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black">
                 <Image
                   src={section.image}
                   alt={section.title}
@@ -99,7 +99,7 @@ export function FigmaAksharFrame() {
               </div>
             ) : null}
             {section.image2 ? (
-              <div className="mt-4 overflow-hidden rounded-[20px] border border-black">
+              <div className="mt-4 overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black">
                 <Image
                   src={section.image2}
                   alt={`${section.title} visual 2`}
