@@ -4,6 +4,8 @@
   --background: #fffdfb;
   --foreground: #171717;
   --surface: #fdeaf1;
+  /* Matches Figma section strokes (portfolio-section-line SVGs) */
+  --separator: #ffc8c8;
   --line: #f1cad7;
   --muted: #5f5f5f;
   --brand: #f387ab;
@@ -21,20 +23,24 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-line: var(--line);
+  --color-separator: var(--separator);
   --color-muted: var(--muted);
   --color-brand: var(--brand);
-  --font-sans: var(--font-akatab);
-  --font-mono: var(--font-akshar);
+  /* Portfolio / Figma: primary UI + body = Akatab; light supporting copy = Akshar (e.g. footer credit) */
+  --font-sans: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
+  --font-support: var(--font-akshar), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-akatab), sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
+  font-family: inherit;
 }
 
 a {
@@ -42,17 +48,22 @@ a {
   text-decoration: none;
 }
 
+.prose-content {
+  font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
+}
+
 .prose-content h2 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .prose-content p,
 .prose-content li {
   line-height: 1.8;
   color: var(--muted);
+  font-weight: 400;
 }
 
 .prose-content ul {
@@ -97,5 +108,5 @@ a {
   margin-inline: auto;
   width: min(1002px, 100%);
   border: 0;
-  border-top: 1px solid rgb(0 0 0 / 0.12);
+  border-top: 1px solid var(--separator);
 }

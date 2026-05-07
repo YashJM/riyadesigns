@@ -12,7 +12,7 @@ const akatab = Akatab({
 
 const akshar = Akshar({
   variable: "--font-akshar",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -46,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${akatab.variable} ${akshar.variable} h-full antialiased`}>
-      <body className="min-h-full bg-background text-foreground">
+    <html lang="en" className={`${akatab.variable} ${akshar.variable} h-full`}>
+      <body className="min-h-full bg-background font-sans text-foreground antialiased">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YG8DJWMFPP"
           strategy="afterInteractive"

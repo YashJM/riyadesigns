@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FigmaPinkDivider } from "@/components/figma-pink-divider";
 import { ProjectCard } from "@/components/project-card";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 import { getAllProjects } from "@/lib/projects";
@@ -23,16 +24,18 @@ export default function WorkPage() {
         </div>
       </section>
       <div className="figma-shell pb-[clamp(56px,6vw,72px)] pt-[clamp(28px,3vw,40px)]">
-        <div className="space-y-6">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              slug={project.slug}
-              title={project.title}
-              summary={project.tagline}
-              accent={project.accent}
-            thumbnail={project.thumbnail}
-            />
+        <div>
+          {projects.map((project, index) => (
+            <div key={project.slug}>
+              <ProjectCard
+                slug={project.slug}
+                title={project.title}
+                summary={project.tagline}
+                accent={project.accent}
+                thumbnail={project.thumbnail}
+              />
+              {index < projects.length - 1 ? <FigmaPinkDivider /> : null}
+            </div>
           ))}
         </div>
       </div>

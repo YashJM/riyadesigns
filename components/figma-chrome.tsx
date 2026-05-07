@@ -56,7 +56,9 @@ export function FigmaFooter() {
             <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[16px] w-[16px]" />
           </a>
         </div>
-        <p className="mt-10 text-[13px] font-light">Designed &amp; crafted by Riya Patel ♥ © 2026</p>
+        <p className="mt-10 font-support text-[13px] font-light leading-normal">
+          Designed &amp; crafted by Riya Patel ♥ © 2026
+        </p>
       </div>
     </footer>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { FigmaPinkDivider } from "@/components/figma-pink-divider";
 
 const featured = [
   {
@@ -145,12 +146,15 @@ export function FigmaHomeFrame() {
       <HomeHero />
 
       <section id="featured" className="figma-shell scroll-mt-[130px] pb-[clamp(60px,6vw,90px)] pt-[clamp(54px,6vw,90px)]">
-        <div className="mb-[clamp(28px,3.1vw,44px)] border-b border-black pb-4">
+        <div className="mb-[clamp(20px,2.6vw,32px)] border-b border-separator pb-4">
           <h2 className="text-[clamp(36px,4.2vw,50px)] font-semibold">🖼️ Featured Work</h2>
         </div>
-        <div className="space-y-[clamp(20px,2.2vw,32px)]">
-          {featured.map((item) => (
-            <FeaturedCard key={item.slug} {...item} />
+        <div>
+          {featured.map((item, index) => (
+            <div key={item.slug}>
+              <FeaturedCard {...item} />
+              {index < featured.length - 1 ? <FigmaPinkDivider /> : null}
+            </div>
           ))}
         </div>
       </section>

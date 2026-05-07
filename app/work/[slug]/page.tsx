@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-6 pb-12 pt-10 md:px-10 md:pt-16">
+    <div className="mx-auto w-full max-w-4xl px-6 pb-12 pt-10 font-sans md:px-10 md:pt-16">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
         {project.year}
       </p>
