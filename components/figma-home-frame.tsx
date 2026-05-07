@@ -17,7 +17,7 @@ const featured = [
     title: "Zapp Wallet",
     summary:
       "Wallet experience designed to keep payments seamless, secure, and confidence-building.",
-    image: "/figma/card-zapp.png",
+    image: "/figma/zapp-hero.png",
     fallback: "linear-gradient(135deg,#d9b2f3,#c794ec)",
   },
   {
