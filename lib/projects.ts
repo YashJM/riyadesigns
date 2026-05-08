@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
 
 export type Project = {
   slug: string;
@@ -26,14 +27,16 @@ export function getAllProjects(): Project[] {
     .map((file) => {
       const raw = fs.readFileSync(path.join(projectsDir, file), "utf-8");
       const { data, content } = matter(raw);
+      const slug = String(data.slug ?? normalizeSlug(file));
+      const listing = PROJECT_LISTING_VISUALS[slug];
       return {
-        slug: String(data.slug ?? normalizeSlug(file)),
+        slug,
         title: String(data.title ?? ""),
         tagline: String(data.tagline ?? ""),
         year: String(data.year ?? ""),
         roles: Array.isArray(data.roles) ? data.roles.map(String) : [],
-        thumbnail: String(data.thumbnail ?? ""),
-        accent: String(data.accent ?? "#f5d7e2"),
+        thumbnail: listing?.thumbnail ?? String(data.thumbnail ?? ""),
+        accent: listing?.accent ?? String(data.accent ?? "#f5d7e2"),
         externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
         content,
       } satisfies Project;

@@ -2,49 +2,52 @@ import Image from "next/image";
 import Link from "next/link";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 import { FigmaPinkDivider } from "@/components/figma-pink-divider";
+import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
 
-const featured = [
+const featuredMeta = [
   {
     slug: "akshar-packs",
     title: "Akshar Packaging",
     summary:
       "Packaging platform redesign focused on product clarity and faster business inquiries.",
-    image: "/figma/card-akshar-hero.png",
-    fallback: "linear-gradient(135deg,#f2d6c8,#eadfd7)",
   },
   {
     slug: "zapp-wallet",
     title: "Zapp Wallet",
     summary:
       "Wallet experience designed to keep payments seamless, secure, and confidence-building.",
-    image: "/figma/zapp-hero.png",
-    fallback: "linear-gradient(135deg,#d9b2f3,#c794ec)",
   },
   {
     slug: "georges-pizza",
     title: "George’s Pizza & Steakhouse",
     summary:
       "Restaurant UX redesign that improved menu exploration and direct ordering decisions.",
-    image: "/figma/card-georges-hero.png",
-    fallback: "linear-gradient(135deg,#e7d2bf,#d4b7a1)",
   },
   {
     slug: "tripon",
     title: "TripOn",
     summary:
       "Travel product flow created to connect planning and booking in one clear journey.",
-    image: "/figma/card-tripon-hero.png",
-    fallback: "linear-gradient(135deg,#8fd4ff,#47aee8)",
   },
   {
     slug: "easygo",
     title: "EasyGo",
     summary:
       "Mobility booking interface tuned for speed, reliability, and low-friction actions.",
-    image: "/figma/card-easygo-hero.png",
-    fallback: "linear-gradient(135deg,#96e6a2,#57ce73)",
   },
-];
+] as const;
+
+const featured = featuredMeta.map((item) => {
+  const visuals = PROJECT_LISTING_VISUALS[item.slug];
+  if (!visuals) {
+    throw new Error(`Missing PROJECT_LISTING_VISUALS for slug: ${item.slug}`);
+  }
+  return {
+    ...item,
+    image: visuals.thumbnail,
+    fallback: visuals.accent,
+  };
+});
 
 function FeaturedCard({
   title,

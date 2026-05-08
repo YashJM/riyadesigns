@@ -7,8 +7,8 @@ roles:
   - UX Strategy
   - UI Design
   - Prototyping
-thumbnail: "/figma/akshar-hero.png"
-accent: "linear-gradient(135deg, #f7d7d0 0%, #e6cabf 100%)"
+thumbnail: "/figma/card-akshar-hero.png"
+accent: "linear-gradient(135deg,#f2d6c8,#eadfd7)"
 externalUrl: "https://aksharpacks.com/"
 ---
 

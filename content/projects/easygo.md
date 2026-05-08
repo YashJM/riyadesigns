@@ -7,8 +7,8 @@ roles:
   - UX Design
   - Mobile-first Flows
   - Service Design
-thumbnail: "/figma/easygo-hero.png"
-accent: "linear-gradient(135deg, #99eba7 0%, #53ca73 100%)"
+thumbnail: "/figma/card-easygo-hero.png"
+accent: "linear-gradient(135deg,#96e6a2,#57ce73)"
 ---
 
 ## Project scope

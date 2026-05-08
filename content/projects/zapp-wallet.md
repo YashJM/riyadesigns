@@ -7,8 +7,8 @@ roles:
   - Product Design
   - UX Research
   - Interaction Design
-thumbnail: "/figma/zapp-hero-collage.png"
-accent: "linear-gradient(135deg, #f0c9f6 0%, #bf8fe9 100%)"
+thumbnail: "/figma/zapp-hero.png"
+accent: "linear-gradient(135deg,#d9b2f3,#c794ec)"
 ---
 
 ## Project scope
