@@ -4,7 +4,7 @@ import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
 function SectionDivider() {
   return (
-    <div className="flex w-full justify-center py-[clamp(20px,2.5vw,28px)]" aria-hidden>
+    <div className="flex w-full justify-center py-[clamp(1.25rem,5vw,2rem)]" aria-hidden>
       <img
         src="/figma/zapp-section-line.svg"
         alt=""
@@ -72,7 +72,7 @@ export function FigmaZappFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="figma-gradient relative isolate overflow-hidden pb-[clamp(28px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+      <section className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -107,7 +107,7 @@ export function FigmaZappFrame() {
 
           <h1 className="mt-[clamp(20px,3vw,32px)] text-[clamp(34px,3.2vw,40px)] font-black leading-tight">📲 Zapp Wallet</h1>
 
-          <p className="mt-[clamp(16px,2vw,24px)] max-w-[1011px] text-[clamp(15px,1.5vw,20px)] leading-[2] text-black">
+          <p className="mt-[clamp(16px,2vw,24px)] max-w-[1011px] text-[clamp(15px,3.8vw,20px)] leading-[2] text-black">
             Zapp Wallet is a mobile fintech application designed to simplify how users manage money — from sending payments
             to tracking expenses and handling everyday financial tasks. The goal of this project was to create a
             frictionless, intuitive, and trustworthy experience, where users can perform financial actions quickly while
@@ -126,26 +126,26 @@ export function FigmaZappFrame() {
             />
           </div>
 
-          <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-wrap items-baseline gap-x-[clamp(18px,3vw,40px)] gap-y-3 text-[clamp(14px,1.55vw,24px)]">
-            <p className="m-0 max-w-full">
+          <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-col gap-2 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(18px,3vw,40px)] sm:gap-y-3">
+            <p className="m-0 max-w-full min-w-0">
               <span className="font-extrabold">🧑‍💻 Role:</span> UI/UX Design (Interaction Design)
             </p>
-            <p className="m-0 whitespace-nowrap">
+            <p className="m-0">
               <span className="font-extrabold">⏳ Duration:</span> 13 Weeks
             </p>
-            <p className="m-0 whitespace-nowrap">
+            <p className="m-0">
               <span className="font-extrabold">📱 Platform:</span> Mobile
             </p>
           </div>
         </div>
       </section>
 
-      <div className="figma-shell pb-[clamp(56px,6vw,88px)] text-black">
+      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
-          <p className="mt-4 max-w-[1003px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1003px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Zapp Wallet is a digital financial application built to help users manage their money, make payments, and
             track expenses in one place. While digital wallets offer powerful functionality, the experience often feels
             complex and overwhelming for everyday users. Many existing solutions present financial information in a
@@ -168,7 +168,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Managing finances across multiple platforms often creates confusion and makes it difficult for users to track
             spending in real time or manage money efficiently. Users also struggle with slow, complex flows for sending
             money and understanding their overall financial habits. The challenge for Zapp Wallet was to simplify these
@@ -181,7 +181,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The goal of Zapp Wallet was to create a financial experience that is simple, fast, and trustworthy. Clarity
             was prioritized to make financial data easy to understand at a glance, while efficiency reduced the number
             of steps required for key actions like sending money. Strong visual feedback and a clean interface were used
@@ -194,7 +194,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🛠️ Design Process:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             🔄 Understanding User Flows The initial phase focused on mapping key user journeys in Zapp Wallet to ensure
             essential actions like onboarding, payments, and transactions are simple, clear, and easy to complete. This
             helped reduce confusion and create a more intuitive, low-effort user experience.
@@ -212,7 +212,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📐 Wireframing &amp; Structure</h2>
-          <p className="mt-4 max-w-[895px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[895px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Low-fidelity wireframes were used to organize information and define user priorities, ensuring important
             actions are easily accessible and the overall flow feels intuitive and efficient.
           </p>
@@ -229,7 +229,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎨 Visual Design &amp; System</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The color system uses a balanced fintech palette to highlight key actions, maintain clarity, and reinforce
             trust, helping users focus easily and interact with financial data confidently.
           </p>
@@ -246,7 +246,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔤 Typography</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Typography is structured to make financial information, especially numbers, instantly readable and easy to
             compare at a glance. By emphasizing large, high-contrast values for key amounts, the design improves clarity
             and helps users make faster, more confident decisions.
@@ -264,7 +264,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔁 Key User Flows:</h2>
-          <p className="mt-4 max-w-[997px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[997px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The onboarding and authentication flow is designed to help users get started quickly while maintaining strong
             security standards. By simplifying sign-up and identity verification into a few guided steps, it reduces
             drop-offs and improves completion rates. This balance of speed and security ensures users can access the app
@@ -283,7 +283,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🖥️ Dashboard Experience:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The dashboard is designed as a centralized hub that gives users instant visibility into their financial
             status, including balance and recent activity. Key actions are strategically placed for quick access,
             reducing the need to navigate through multiple screens. This ensures users can understand their finances at a
@@ -302,7 +302,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📤 Send Money Flow:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             This streamlined flow is designed to make money transfers as quick and effortless as possible by guiding users
             through only the essential steps. Users simply enter the amount, select a recipient, and confirm the
             transaction without unnecessary interruptions or complex navigation. By reducing cognitive load and removing
@@ -321,7 +321,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚡ Payments &amp; Features:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             This allows users to complete everyday financial tasks quickly without getting lost in menus, making the
             experience more efficient and intuitive. By grouping core actions like bill payments, QR scanning, and
             splitting expenses in one place, the app reduces effort and speeds up transactions.
@@ -338,7 +338,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📈 Insights &amp; Analytics:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The app helps users understand spending behavior through charts, category insights, and transaction trends.
             This transforms the wallet from a utility into a financial guidance tool.
           </p>
@@ -354,7 +354,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">💳 Cards &amp; Wallet Management:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Users can manage saved cards, view balances, and securely top up funds using a guided card form.
           </p>
           <StudyImage
@@ -370,7 +370,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">👤 Profile &amp; Settings:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Account controls, security preferences, language, password changes, and support are organized in one clean
             area for quick access.
           </p>
@@ -386,7 +386,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Feedback &amp; Success States:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Strong visual confirmation was used after every important financial action — transfers, scans, withdrawals, and
             payments — reducing anxiety and increasing trust.
           </p>
@@ -396,7 +396,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Impact:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The design focused on improving usability, reducing friction, and increasing engagement — resulting in a
             smoother and more intuitive experience for users. By simplifying key flows and enhancing clarity, users were able
             to complete tasks faster and interact more confidently with the app, leading to higher overall engagement.
@@ -419,7 +419,7 @@ export function FigmaZappFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🚀 Final Outcome:</h2>
-          <p className="mt-4 max-w-[1002px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1002px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Zapp Wallet delivers a clean and modern financial experience that simplifies how users manage their money on
             a daily basis. By reducing friction in key flows like sending money and making payments, the app enables faster
             and more intuitive interactions, improving overall usability and confidence. The introduction of clear visual

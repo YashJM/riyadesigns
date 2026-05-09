@@ -16,27 +16,31 @@ export default function WorkPage() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
       <section className="figma-gradient">
-        <div className="figma-shell pb-[clamp(44px,5vw,56px)] pt-[clamp(88px,9vw,110px)]">
-          <h1 className="text-[clamp(40px,4.2vw,56px)] font-extrabold">Work</h1>
-          <p className="mt-4 max-w-[980px] text-[clamp(18px,2vw,24px)] leading-[1.4]">
+        <div className="figma-shell pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
+          <h1 className="text-[clamp(32px,9vw,56px)] font-extrabold">Work</h1>
+          <p className="mt-4 max-w-[980px] text-[clamp(16px,4.2vw,24px)] leading-[1.4]">
             A collection of product strategy and UX design case studies with process, insights, and measurable outcomes.
           </p>
         </div>
       </section>
-      <div className="figma-shell pb-[clamp(56px,6vw,72px)] pt-[clamp(28px,3vw,40px)]">
-        <div>
-          {projects.map((project, index) => (
-            <div key={project.slug}>
+      <div className="figma-shell pb-[var(--space-content-pad-bottom)] pt-[var(--space-content-pad-top)]">
+        <div className="flex flex-col gap-[var(--space-stack-gap)]">
+          {projects.flatMap((project, index) => {
+            const nodes = [
               <ProjectCard
+                key={project.slug}
                 slug={project.slug}
                 title={project.title}
                 summary={project.tagline}
                 accent={project.accent}
                 thumbnail={project.thumbnail}
-              />
-              {index < projects.length - 1 ? <FigmaPinkDivider /> : null}
-            </div>
-          ))}
+              />,
+            ];
+            if (index < projects.length - 1) {
+              nodes.push(<FigmaPinkDivider key={`${project.slug}-div`} />);
+            }
+            return nodes;
+          })}
         </div>
       </div>
       <FigmaFooter />

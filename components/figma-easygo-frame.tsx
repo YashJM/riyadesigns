@@ -4,7 +4,7 @@ import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
 function SectionDivider() {
   return (
-    <div className="flex w-full justify-center py-[clamp(20px,2.5vw,28px)]" aria-hidden>
+    <div className="flex w-full justify-center py-[clamp(1.25rem,5vw,2rem)]" aria-hidden>
       <img
         src="/figma/easygo-section-line.svg"
         alt=""
@@ -60,7 +60,7 @@ export function FigmaEasygoFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="figma-gradient relative isolate overflow-hidden pb-[clamp(28px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+      <section className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -97,7 +97,7 @@ export function FigmaEasygoFrame() {
             {"🚗  EasyGo"}
           </h1>
 
-          <p className="mt-[clamp(16px,2vw,24px)] max-w-[1002px] text-[clamp(15px,1.5vw,20px)] leading-[2] text-black">
+          <p className="mt-[clamp(16px,2vw,24px)] max-w-[1002px] text-[clamp(15px,3.8vw,20px)] leading-[2] text-black">
             EasyGo is a mobile ride-booking application designed to simplify how users request rides, select vehicles, and
             manage their trips in a fast and seamless way. The goal of this project was to create an intuitive, real-time
             experience that reduces booking friction and helps users move from pickup to destination effortlessly.
@@ -111,26 +111,26 @@ export function FigmaEasygoFrame() {
             maxWidthClass="max-w-[min(100%,1003px)]"
           />
 
-          <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-wrap items-baseline gap-x-[clamp(18px,3vw,40px)] gap-y-3 text-[clamp(14px,1.55vw,24px)]">
-            <p className="m-0 max-w-[min(100%,380px)]">
+          <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-col gap-2 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(18px,3vw,40px)] sm:gap-y-3">
+            <p className="m-0 max-w-full min-w-0">
               <span className="font-extrabold">🧑‍💻 Role:</span> UI/UX Design (Interaction Design)
             </p>
-            <p className="m-0 whitespace-nowrap">
+            <p className="m-0">
               <span className="font-extrabold">⏳ Duration:</span> 10 Weeks
             </p>
-            <p className="m-0 whitespace-nowrap">
+            <p className="m-0">
               <span className="font-extrabold">📱 Platform:</span> Mobile
             </p>
           </div>
         </div>
       </section>
 
-      <div className="figma-shell pb-[clamp(56px,6vw,88px)] text-black">
+      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
-          <div className="mt-4 max-w-[1003px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1003px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
               Booking a ride often involves unnecessary friction—manually entering locations, comparing ride types, and
               dealing with unclear pricing or wait times. Many ride-booking apps feel complex, especially during urgent
@@ -154,7 +154,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem:</h2>
-          <p className="mt-4 max-w-[1000px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1000px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Users often encounter friction throughout the ride-booking experience due to unclear pricing, multi-step
             workflows, and limited real-time visibility of drivers. The lack of transparent fare estimates creates
             uncertainty, making users hesitant to proceed with bookings. Additionally, navigating through multiple screens to
@@ -168,7 +168,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The goal was to design a ride-booking experience that feels intuitive, efficient, and dependable at every step.
             The focus was on minimizing user effort by streamlining the booking flow—reducing unnecessary steps and enabling
             users to complete actions quickly with minimal input. Clear and transparent real-time updates, such as driver
@@ -182,7 +182,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🛠️ Design Process:</h2>
-          <div className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="font-extrabold text-[clamp(18px,1.45vw,20px)] leading-[2.7]">🔄 Understanding User Journey</p>
             <p className="mt-1">
               The experience was structured into four key flows: onboarding and authentication, location and destination
@@ -203,7 +203,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📐 Wireframing &amp; Structure</h2>
-          <div className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
               The app follows a map-first approach, where the user&apos;s location is automatically detected and displayed.
               Key actions such as entering a destination and selecting ride options are layered on top of the map, reducing
@@ -224,7 +224,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎨 Visual Design &amp; System</h2>
-          <div className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
               The visual design uses a clean interface with green accents to highlight actions like booking and confirmations.
               The use of maps, car visuals, and route lines creates a real-time, dynamic experience that feels interactive and
@@ -244,7 +244,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔤 Typography</h2>
-          <div className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
               Typography is optimized for quick decision-making, with clear emphasis on pricing, ride types, and timing.
               Important details such as fare, vehicle category, and ETA are highlighted to help users make fast and confident
@@ -268,7 +268,7 @@ export function FigmaEasygoFrame() {
           <h3 className="mt-[clamp(20px,2.5vw,28px)] text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">
             🔐 Onboarding &amp; Login
           </h3>
-          <p className="mt-2 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-2 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The onboarding flow is designed to minimize friction by offering simple sign-up, social login, and OTP
             verification. This ensures users can quickly access the app and start booking rides without unnecessary delays.
           </p>
@@ -283,7 +283,7 @@ export function FigmaEasygoFrame() {
           <SectionDivider />
 
           <h3 className="text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">📍 Location &amp; Destination Selection</h3>
-          <p className="mt-2 max-w-[1000px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-2 max-w-[1000px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Users can easily select pickup and destination locations through map interaction, search, or saved places.
             Features like &quot;Favorites&quot; and &quot;Pick on map&quot; improve speed and convenience for frequent users.
           </p>
@@ -297,7 +297,7 @@ export function FigmaEasygoFrame() {
           <SectionDivider />
 
           <h3 className="text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">🚗 Ride Booking Flow</h3>
-          <p className="mt-2 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-2 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The booking flow allows users to view route previews, compare ride types, and select options based on pricing and
             comfort. Users can also apply promo codes and choose payment methods before confirming the ride.
           </p>
@@ -314,7 +314,7 @@ export function FigmaEasygoFrame() {
           <h3 className="text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">
             ⏱️ Real-Time Tracking &amp; Trip Experience
           </h3>
-          <p className="mt-2 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-2 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Once booked, users can track their driver in real time, view arrival time, and communicate directly through call
             or message options. This enhances transparency and reduces uncertainty during the wait time.
           </p>
@@ -328,7 +328,7 @@ export function FigmaEasygoFrame() {
           <SectionDivider />
 
           <h3 className="text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">⭐ Feedback &amp; Completion</h3>
-          <p className="mt-2 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-2 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             After the trip ends, users can rate their experience and provide feedback. The app also allows tipping, making
             the experience more interactive and user-driven.
           </p>
@@ -345,7 +345,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Feedback &amp; UX Details:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The app includes important feedback mechanisms such as booking confirmation, loading states, and cancellation
             alerts. These elements ensure users always understand what&apos;s happening, especially during critical moments
             like booking or canceling a ride.
@@ -363,7 +363,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Impact:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The design improvements focused on reducing friction and improving real-time clarity resulted in a smoother and
             more efficient ride-booking experience. Users were able to complete ride bookings up to 35% faster, while
             overall engagement increased by around 20%. Additionally, simplifying the booking flow and improving visibility
@@ -387,7 +387,7 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🚀 Final Outcome:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             EasyGo delivers a fast, intuitive, and reliable ride-booking experience by combining location tracking, ride
             selection, and trip management into one seamless flow. By simplifying key interactions and prioritizing real-time
             feedback, users can book rides, track drivers, and complete trips with minimal effort. The clean interface,

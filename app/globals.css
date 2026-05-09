@@ -16,6 +16,15 @@
   --text-display: clamp(2.25rem, 4vw, 3.5rem);
   --text-heading: clamp(1.75rem, 2.5vw, 2.5rem);
   --text-body-lg: clamp(1.125rem, 1.8vw, 1.75rem);
+  /* Vertical rhythm: tuned for mobile-first spacing */
+  --space-hero-pad-top: clamp(4.25rem, 11vw, 6.875rem);
+  --space-hero-pad-bottom: clamp(3rem, 9vw, 5.5rem);
+  --space-page-hero-bottom: clamp(3rem, 8vw, 3.75rem);
+  --space-content-pad-top: clamp(2.5rem, 8vw, 3.25rem);
+  --space-content-pad-bottom: clamp(4rem, 14vw, 6.25rem);
+  --space-stack-gap: clamp(2.25rem, 8vw, 3.25rem);
+  --space-footer-margin-top: clamp(3rem, 11vw, 5.5rem);
+  --space-footer-pad-y: clamp(3.5rem, 12vw, 5.75rem);
 }
 
 @theme inline {
@@ -35,6 +44,7 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: clip;
 }
 
 body {
@@ -86,7 +96,8 @@ a {
   margin-inline: auto;
   width: 100%;
   max-width: var(--content-max);
-  padding-inline: 1.25rem;
+  padding-inline: max(1.25rem, env(safe-area-inset-left))
+    max(1.25rem, env(safe-area-inset-right));
 }
 
 .figma-gradient {

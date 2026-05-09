@@ -51,12 +51,18 @@ export function FigmaAboutFrame() {
       <FigmaHeader />
 
       <section className="figma-gradient relative overflow-hidden">
-        <div className="absolute left-[max(12px,2vw)] top-[239px] h-[clamp(180px,20vw,290px)] w-[clamp(220px,24vw,354px)] rounded-full bg-[#ffd7e6] opacity-60 blur-[44px]" />
-        <div className="absolute right-[max(12px,2vw)] top-[727px] h-[clamp(180px,20vw,290px)] w-[clamp(220px,24vw,354px)] rounded-full bg-[#f6dce9] opacity-60 blur-[44px]" />
-        <div className="figma-shell pb-[clamp(44px,5vw,56px)] pt-[clamp(88px,9vw,110px)]">
+        <div
+          className="pointer-events-none absolute left-[max(8px,env(safe-area-inset-left))] top-[clamp(72px,18vw,239px)] hidden h-[clamp(140px,32vw,290px)] w-[clamp(160px,42vw,354px)] rounded-full bg-[#ffd7e6] opacity-50 blur-[44px] sm:block sm:opacity-60"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute right-[max(8px,env(safe-area-inset-right))] top-[clamp(420px,85vw,727px)] hidden h-[clamp(140px,32vw,290px)] w-[clamp(160px,42vw,354px)] rounded-full bg-[#f6dce9] opacity-50 blur-[44px] sm:block sm:opacity-60"
+          aria-hidden
+        />
+        <div className="figma-shell pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
           <h1 className="text-[clamp(34px,3.2vw,40px)] leading-[1.1] font-bold">✨ About Me</h1>
           <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,657px)_minmax(280px,365px)] lg:justify-between lg:gap-10">
-            <div className="text-[clamp(18px,2vw,24px)] leading-[1.45]">
+            <div className="text-[clamp(17px,4vw,24px)] leading-[1.5] sm:leading-[1.45]">
               <p className="mb-2 text-[clamp(28px,2.6vw,32px)] font-bold">Hello 👋</p>
               <p>
                 I’m Riya Patel — a UI/UX designer with a product mindset, driven by
@@ -88,14 +94,17 @@ export function FigmaAboutFrame() {
         </div>
       </section>
 
-      <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-0">
+      <section className="figma-shell pb-[var(--space-content-pad-bottom)] pt-[var(--space-content-pad-top)]">
         {sections.map((section, idx) => (
-          <div key={section.title} className="border-t border-[#efced9] py-[clamp(30px,4vw,48px)]">
+          <div
+            key={section.title}
+            className="border-t border-[#efced9] py-[clamp(1.75rem,6vw,3rem)] first:border-t-0 first:pt-0"
+          >
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-bold">
               <span className="mr-2">{section.icon}</span>
               {section.title}
             </h2>
-            <div className="mt-4 space-y-3 text-[clamp(16px,1.4vw,18px)] leading-[1.9] text-[#2d2d2d]">
+            <div className="mt-4 space-y-3 text-[clamp(15px,3.6vw,18px)] leading-[1.85] text-[#2d2d2d] sm:leading-[1.9]">
               {section.body.map((line) => (
                 <p key={line}>{line}</p>
               ))}

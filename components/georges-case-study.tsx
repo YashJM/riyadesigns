@@ -6,7 +6,7 @@ const SITE_URL = "https://georgespizzasteakhouse.com/";
 
 function SectionDivider() {
   return (
-    <div className="flex w-full justify-center py-[clamp(20px,2.5vw,28px)]" aria-hidden>
+    <div className="flex w-full justify-center py-[clamp(1.25rem,5vw,2rem)]" aria-hidden>
       <img
         src="/figma/georges-section-line.svg"
         alt=""
@@ -47,7 +47,7 @@ export function GeorgesCaseStudy() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <div className="figma-gradient relative isolate overflow-hidden pb-[clamp(28px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+      <div className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -84,7 +84,7 @@ export function GeorgesCaseStudy() {
             🍕 George&apos;s Pizza &amp; Steakhouse
           </h1>
 
-          <p className="mt-[clamp(16px,2vw,24px)] max-w-[1011px] text-[clamp(15px,1.5vw,20px)] leading-[2] text-black">
+          <p className="mt-[clamp(16px,2vw,24px)] max-w-[1011px] text-[clamp(15px,3.8vw,20px)] leading-[2] text-black">
             Transformed a content-heavy restaurant website into a clear, conversion-focused experience. By simplifying
             navigation and optimizing the ordering journey, the platform now supports faster decision-making and improved
             customer engagement.{" "}
@@ -110,26 +110,26 @@ export function GeorgesCaseStudy() {
             />
           </div>
 
-          <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-wrap items-baseline gap-x-[clamp(18px,3vw,48px)] gap-y-3 text-[clamp(14px,1.55vw,24px)]">
-            <p className="m-0 whitespace-nowrap">
+          <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-col gap-2 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(18px,3vw,48px)] sm:gap-y-3">
+            <p className="m-0">
               <span className="font-extrabold">🧑‍💻 Role:</span> UI/UX Design{" "}
             </p>
-            <p className="m-0 whitespace-nowrap">
+            <p className="m-0">
               <span className="font-extrabold">⏳ Duration:</span> 6 Weeks{" "}
             </p>
-            <p className="m-0 whitespace-nowrap">
+            <p className="m-0">
               <span className="font-extrabold">📱 Platform:</span> Web
             </p>
           </div>
         </div>
       </div>
 
-      <div className="figma-shell pb-[clamp(56px,6vw,88px)] text-black">
+      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
-          <div className="mt-4 max-w-[1003px] space-y-0 text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1003px] space-y-0 text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="m-0">
               {`George’s Pizza & Steakhouse is a well-established restaurant known for its rich flavors, generous portions, and strong local following. While the in-person dining experience reflects warmth and quality, the digital experience didn’t carry the same feeling.`}
             </p>
@@ -156,7 +156,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The existing experience made browsing and ordering unnecessarily difficult for users. The menu felt
             overwhelming and unstructured, making it feel more like reading a long document than quickly choosing a meal.
             Poor visual hierarchy made it difficult to scan items efficiently, and the lack of clear call-to-action elements
@@ -170,7 +170,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
-          <div className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="m-0">
               The goal was to create a modern, intuitive platform that makes exploring the menu feel effortless and
               ordering feel quick and natural.
@@ -187,7 +187,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">👁️ Designing for clarity:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             With a content-heavy menu, the first step was to reduce overwhelm and bring a clear structure to the
             experience. Long, hard-to-scan lists were transformed into organized, digestible sections that made
             navigation more intuitive. Categories such as Pizza, Pasta, Combos, and Deals were simplified to help users
@@ -207,7 +207,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Data-driven iteration:</h2>
-          <p className="mt-4 max-w-[995px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[995px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             To validate design decisions, user behavior was analyzed and quick usability testing was conducted throughout
             the process. The insights revealed that users tend to navigate directly to familiar categories first, while
             deals play a strong role in influencing their choices. It also became clear that visual cues significantly
@@ -227,7 +227,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚡ Designing for actionability:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Once browsing was simplified, the focus shifted to enabling users to take action quickly and effortlessly. A
             sticky “Order Now” call-to-action was introduced to keep the next step always accessible, while the ordering
             flow was streamlined into a clear path from browsing to selection, customization, and final order. Deals and
@@ -248,7 +248,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🗂️ Information hierarchy framework:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Managing a large volume of menu content required a clear information hierarchy, which I structured into
             distinct priority zones. The highest priority zone highlights deals, combos, and featured items to
             immediately draw attention. The next level focuses on actionable elements such as menu items with pricing and
@@ -274,7 +274,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔄 Key interaction: Ordering flow:</h2>
-          <p className="mt-4 max-w-[1000px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1000px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The key interaction focuses on streamlining the ordering flow to create a faster and more intuitive menu
             browsing experience. By improving the visibility of deals and high-value items while reducing friction
             throughout the ordering process, the redesign aims to drive more direct online conversions. Together, these
@@ -286,7 +286,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Final solution:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,1.1vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The final solution strikes a balance between a content-heavy menu and a simple, usable experience. It
             empowers users to explore, decide, and order quickly, while giving the business a stronger digital presence
             with room to grow. Most importantly, it brings back what ordering food should always feel like — easy.
@@ -307,7 +307,7 @@ export function GeorgesCaseStudy() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">💡 Lessons learned:</h2>
-          <ul className="mt-4 max-w-[1001px] list-disc space-y-1 pl-[1.35rem] text-[clamp(15px,1.1vw,16px)] leading-[2] marker:text-black">
+          <ul className="mt-4 max-w-[1001px] list-disc space-y-1 pl-[1.35rem] text-[clamp(15px,3.4vw,16px)] leading-[2] marker:text-black">
             <li>Simplicity is key when dealing with large amounts of content — improves clarity and engagement by 35%</li>
             <li>Visual hierarchy plays a huge role in decision-making</li>
             <li>Highlighting key items directly impacts conversions</li>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Akatab, Akshar } from "next/font/google";
 import "./globals.css";
@@ -16,6 +16,13 @@ const akshar = Akshar({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#fffdfb",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://riyadesigns.studio"),

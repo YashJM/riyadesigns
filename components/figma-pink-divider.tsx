@@ -2,7 +2,7 @@
 export function FigmaPinkDivider({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex w-full justify-center py-[clamp(18px,2.4vw,28px)] ${className}`}
+      className={`flex w-full justify-center py-[clamp(1.25rem,5vw,2rem)] ${className}`}
       aria-hidden
     >
       <img

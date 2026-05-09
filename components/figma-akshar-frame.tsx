@@ -73,7 +73,7 @@ export function FigmaAksharFrame() {
       <FigmaHeader />
 
       {/* Hero: white band + soft ellipse accents (Figma 3147:146), not full-page gradient */}
-      <section className="relative isolate overflow-hidden bg-white pb-[clamp(28px,4vw,40px)] pt-[clamp(88px,9vw,110px)]">
+      <section className="relative isolate overflow-hidden bg-white pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <Image
           src="/figma/hero-ellipse-2.svg"
           alt=""
@@ -104,7 +104,7 @@ export function FigmaAksharFrame() {
             ← Back
           </Link>
           <h1 className="mt-8 text-[clamp(34px,3.2vw,40px)] font-black">📦 Akshar Packs</h1>
-          <p className="mt-3 max-w-[1011px] text-[clamp(16px,1.7vw,20px)] leading-loose">
+          <p className="mt-3 max-w-[1011px] text-[clamp(15px,3.6vw,20px)] leading-loose">
             Akshar Packs is a packaging solutions provider that delivers custom packaging solutions for a variety of
             industries. The goal of this redesign was to improve the user experience, clarity of product offerings, and
             conversion rates by streamlining product discovery and inquiry.
@@ -131,34 +131,34 @@ export function FigmaAksharFrame() {
               sizes="(max-width: 768px) 100vw, min(1001px, 92vw)"
             />
           </div>
-          <dl className="mt-8 flex flex-nowrap items-baseline gap-x-[clamp(14px,2.4vw,40px)] overflow-x-auto pb-1 text-[clamp(12px,1.35vw,24px)] [scrollbar-width:thin]">
-            <div className="flex shrink-0 items-baseline gap-1.5 whitespace-nowrap">
+          <dl className="mt-8 flex flex-col gap-3 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(14px,2.4vw,40px)] sm:gap-y-2">
+            <div className="flex min-w-0 flex-wrap items-baseline gap-1.5">
               <dt className="font-extrabold">🧑‍💻 Role:</dt>
-              <dd className="m-0 font-normal">UI/UX Design (End-to-End Product Design)</dd>
+              <dd className="m-0 min-w-0 font-normal">UI/UX Design (End-to-End Product Design)</dd>
             </div>
-            <div className="flex shrink-0 items-baseline gap-1.5 whitespace-nowrap">
-              <dt className="font-extrabold">⏳ Duration:</dt>
+            <div className="flex flex-wrap items-baseline gap-1.5">
+              <dt className="shrink-0 font-extrabold">⏳ Duration:</dt>
               <dd className="m-0 font-normal">4 Weeks</dd>
             </div>
-            <div className="flex shrink-0 items-baseline gap-1.5 whitespace-nowrap">
-              <dt className="font-extrabold">📱 Platform:</dt>
+            <div className="flex flex-wrap items-baseline gap-1.5">
+              <dt className="shrink-0 font-extrabold">📱 Platform:</dt>
               <dd className="m-0 font-normal">Web</dd>
             </div>
           </dl>
         </div>
       </section>
 
-      <section className="figma-shell pb-[clamp(56px,6vw,80px)] pt-[clamp(24px,3vw,32px)]">
+      <section className="figma-shell pb-[var(--space-content-pad-bottom)] pt-[var(--space-content-pad-top)]">
         {sections.map((section, index) => (
           <article
             key={section.title}
-            className={`pb-[clamp(30px,4vw,44px)] ${index === 0 ? "pt-[clamp(16px,2vw,24px)]" : "pt-[clamp(30px,4vw,44px)]"}`}
+            className={`pb-[clamp(1.75rem,6vw,2.75rem)] ${index === 0 ? "pt-0" : "pt-[clamp(1.75rem,6vw,2.75rem)]"}`}
           >
             <hr className="case-study-rule mb-[clamp(20px,2.8vw,28px)]" aria-hidden />
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">
               {section.icon} {section.title}:
             </h2>
-            <p className="mt-4 max-w-[1005px] text-[clamp(15px,1.1vw,16px)] leading-loose">{section.body}</p>
+            <p className="mt-4 max-w-[1005px] text-[clamp(15px,3.4vw,16px)] leading-loose">{section.body}</p>
             {section.image && section.image2 ? (
               <div className="mt-6 grid gap-4 md:grid-cols-2 md:gap-5">
                 <div className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]">
