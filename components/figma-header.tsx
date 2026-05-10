@@ -4,9 +4,9 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isNavRouteActive } from "@/lib/nav-active";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
 ] as const;
@@ -28,7 +28,7 @@ function CloseIcon() {
 }
 
 export function FigmaHeader() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
   const barRef = useRef<HTMLDivElement>(null);
   const [menuTopPx, setMenuTopPx] = useState(0);
@@ -73,7 +73,12 @@ export function FigmaHeader() {
           >
             <Link
               href="/"
-              className="flex min-w-0 items-center gap-1.5 text-[clamp(18px,4.2vw,26px)] leading-none font-bold md:gap-2.5"
+              className={`flex min-w-0 items-center gap-1.5 text-[clamp(18px,4.2vw,26px)] leading-none font-bold transition-[color,opacity,transform] duration-200 md:gap-2.5 ${
+                pathname === "/"
+                  ? "text-brand"
+                  : "text-black hover:text-brand/90 active:scale-[0.99]"
+              }`}
+              aria-current={pathname === "/" ? "page" : undefined}
             >
               <span className="truncate">Riya Patel</span>
               <Image
@@ -98,21 +103,34 @@ export function FigmaHeader() {
             </button>
 
             <nav
-              className="hidden items-center gap-1 text-[clamp(16px,1.4vw,24px)] font-bold leading-none md:flex md:gap-1"
+              className="hidden items-center gap-0.5 text-[clamp(16px,1.4vw,24px)] font-bold leading-none md:flex md:gap-1"
               aria-label="Primary"
             >
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="rounded-md px-2 py-[9px] md:px-3 lg:px-[18px] lg:py-[9px]"
-                >
-                  {label}
-                </Link>
-              ))}
+              {navLinks.map(({ href, label }) => {
+                const active = isNavRouteActive(pathname, href);
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-full px-2 py-[9px] transition-[color,background-color,transform] duration-200 md:px-3 lg:px-[18px] lg:py-[9px] ${
+                      active
+                        ? "bg-white/75 text-brand shadow-[0_1px_0_rgba(0,0,0,0.06)] ring-1 ring-black/10"
+                        : "text-black hover:bg-white/45 hover:text-brand active:scale-[0.98]"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/contact"
-                className="ml-1 rounded-[86px] bg-[#f387ab] px-5 py-2.5 text-black lg:ml-[42px] lg:px-[26px] lg:py-[10px] lg:text-[clamp(16px,1.25vw,20px)]"
+                aria-current={isNavRouteActive(pathname, "/contact") ? "page" : undefined}
+                className={`ml-1 rounded-[86px] px-5 py-2.5 text-black transition-[box-shadow,background-color,transform] duration-200 lg:ml-[42px] lg:px-[26px] lg:py-[10px] lg:text-[clamp(16px,1.25vw,20px)] ${
+                  isNavRouteActive(pathname, "/contact")
+                    ? "bg-brand font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ring-2 ring-black/30"
+                    : "bg-[#f387ab] font-bold hover:bg-[#e97aa1] hover:brightness-105 active:scale-[0.98]"
+                }`}
               >
                 Hire Me
               </Link>
@@ -125,7 +143,7 @@ export function FigmaHeader() {
         <>
           <button
             type="button"
-            className="fixed inset-0 z-[45] cursor-default bg-black/25 md:hidden"
+            className="fixed inset-0 z-45 cursor-default bg-black/25 md:hidden"
             aria-label="Close menu"
             onClick={() => setOpen(false)}
           />
@@ -148,19 +166,32 @@ export function FigmaHeader() {
             }}
           >
             <nav className="figma-shell flex flex-col py-3" aria-label="Mobile primary">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="rounded-lg px-2 py-3.5 text-[1.05rem] font-bold text-black active:bg-black/4"
-                  onClick={() => setOpen(false)}
-                >
-                  {label}
-                </Link>
-              ))}
+              {navLinks.map(({ href, label }) => {
+                const active = isNavRouteActive(pathname, href);
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-xl px-3 py-3.5 text-[1.05rem] font-bold transition-[background-color,color,transform] duration-200 active:scale-[0.99] ${
+                      active
+                        ? "bg-white/85 text-brand shadow-sm ring-1 ring-black/10"
+                        : "text-black hover:bg-white/60 hover:text-brand active:bg-black/4"
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/contact"
-                className="mt-2 inline-flex min-h-12 items-center justify-center rounded-[86px] bg-[#f387ab] px-4 py-3 text-center text-[1.05rem] font-bold text-black"
+                aria-current={isNavRouteActive(pathname, "/contact") ? "page" : undefined}
+                className={`mt-2 inline-flex min-h-12 items-center justify-center rounded-[86px] px-4 py-3 text-center text-[1.05rem] text-black transition-[box-shadow,background-color,transform] duration-200 ${
+                  isNavRouteActive(pathname, "/contact")
+                    ? "bg-brand font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ring-2 ring-black/25"
+                    : "bg-[#f387ab] font-bold hover:brightness-105 active:scale-[0.98]"
+                }`}
                 onClick={() => setOpen(false)}
               >
                 Hire Me

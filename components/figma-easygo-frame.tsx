@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
+
+const EASYGO_HERO_SRC = PROJECT_LISTING_VISUALS.easygo.thumbnail;
 
 function SectionDivider() {
   return (
@@ -40,18 +43,14 @@ function StudyImage({
   );
 }
 
-const impactCards = [
+const easygoImpactMetrics = [
   {
-    src: "/figma/easygo-impact-1.png",
-    w: 854,
-    h: 122,
-    alt: "35% faster bookings",
+    title: "35% faster bookings",
+    body: "Faster booking flow led to a strong increase in successful ride completions",
   },
   {
-    src: "/figma/easygo-impact-2.png",
-    w: 854,
-    h: 150,
-    alt: "20% increase in engagement",
+    title: "20% increase in engagement",
+    body: "Enhanced real-time feedback and simplified flows made users more confident and active within the app",
   },
 ] as const;
 
@@ -104,10 +103,10 @@ export function FigmaEasygoFrame() {
           </p>
 
           <StudyImage
-            src="/figma/easygo-hero.png"
-            alt="EasyGo ride-booking collage on green background"
-            width={1003}
-            height={247}
+            src={EASYGO_HERO_SRC}
+            alt="EasyGo ride-booking hero"
+            width={1024}
+            height={243}
             maxWidthClass="max-w-[min(100%,1003px)]"
           />
 
@@ -363,22 +362,28 @@ export function FigmaEasygoFrame() {
 
         <section>
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Impact:</h2>
-          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
+          <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2] text-black">
             The design improvements focused on reducing friction and improving real-time clarity resulted in a smoother and
             more efficient ride-booking experience. Users were able to complete ride bookings up to 35% faster, while
             overall engagement increased by around 20%. Additionally, simplifying the booking flow and improving visibility
             reduced user uncertainty and increased trust in the platform.
           </p>
-          <div className="mt-6 flex max-w-[min(100%,854px)] flex-col gap-[clamp(12px,1.8vw,18px)]">
-            {impactCards.map((card) => (
-              <Image
-                key={card.src}
-                src={card.src}
-                alt={card.alt}
-                width={card.w}
-                height={card.h}
-                className="h-auto w-full rounded-[clamp(14px,1.2vw,18px)]"
-              />
+          <div className="mt-[clamp(20px,2.5vw,28px)] flex max-w-[min(100%,854px)] flex-col gap-[clamp(14px,2vw,20px)]">
+            {easygoImpactMetrics.map((card) => (
+              <div
+                key={card.title}
+                className="flex items-start gap-[clamp(14px,2.2vw,22px)] rounded-[clamp(12px,1.2vw,16px)] bg-[#FDE2E9] px-[clamp(18px,2.5vw,26px)] py-[clamp(16px,2.2vw,22px)]"
+              >
+                <span className="shrink-0 select-none text-[clamp(22px,3.5vw,28px)] leading-none" aria-hidden>
+                  ⬆️
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="m-0 text-[clamp(18px,2.2vw,24px)] font-extrabold leading-snug text-black">{card.title}</p>
+                  <p className="m-0 mt-[clamp(8px,1.2vw,12px)] text-[clamp(14px,3.2vw,16px)] font-normal leading-[1.65] text-black">
+                    {card.body}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </section>

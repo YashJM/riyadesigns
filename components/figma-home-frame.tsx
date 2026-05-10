@@ -2,48 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 import { FigmaPinkDivider } from "@/components/figma-pink-divider";
-import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
+import { PROJECT_LISTING_SUMMARY, PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
 
 const featuredMeta = [
-  {
-    slug: "akshar-packs",
-    title: "Akshar Packaging",
-    summary:
-      "Akshar Packs is a custom packaging solutions provider across diverse industries. The redesign simplifies the experience, sharpens product clarity, and streamlines inquiries to improve discovery and conversion.",
-  },
-  {
-    slug: "zapp-wallet",
-    title: "Zapp Wallet",
-    summary:
-      "Zapp Wallet offers a seamless and secure way to manage everyday payments, bringing speed and simplicity to every transaction. Designed with clarity and ease in mind, it empowers users to move, track, and control their money with confidence.",
-  },
-  {
-    slug: "georges-pizza",
-    title: "George’s Pizza & Steakhouse",
-    summary:
-      "George’s Pizza & Steakhouse is known for its rich flavors and loyal customer base, but its old website didn’t reflect the brand. I redesigned it to be clean, modern, and easy to navigate, improving menu exploration and online ordering.",
-  },
-  {
-    slug: "tripon",
-    title: "TripOn",
-    summary:
-      "TripOn connects every stage of travel into a fluid, effortless experience from exploring destinations to planning and booking with ease. Thoughtfully designed to feel both intuitive and inspiring, it empowers users to navigate their journeys with confidence and curiosity.",
-  },
-  {
-    slug: "easygo",
-    title: "EasyGo",
-    summary:
-      "EasyGo simplifies everyday travel with a smooth, intuitive booking experience designed for speed and convenience. From quick rides to reliable journeys, it helps users get where they need to go with ease and confidence.",
-  },
+  { slug: "akshar-packs", title: "Akshar Packaging" },
+  { slug: "zapp-wallet", title: "Zapp Wallet" },
+  { slug: "georges-pizza", title: "George’s Pizza & Steakhouse" },
+  { slug: "tripon", title: "TripOn" },
+  { slug: "easygo", title: "EasyGo" },
 ] as const;
 
 const featured = featuredMeta.map((item) => {
   const visuals = PROJECT_LISTING_VISUALS[item.slug];
+  const summary = PROJECT_LISTING_SUMMARY[item.slug];
   if (!visuals) {
     throw new Error(`Missing PROJECT_LISTING_VISUALS for slug: ${item.slug}`);
   }
+  if (!summary) {
+    throw new Error(`Missing PROJECT_LISTING_SUMMARY for slug: ${item.slug}`);
+  }
   return {
     ...item,
+    summary,
     image: visuals.thumbnail,
     fallback: visuals.accent,
   };

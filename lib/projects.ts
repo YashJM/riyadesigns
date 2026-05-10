@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
+import { PROJECT_LISTING_SUMMARY, PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
 
 export type Project = {
   slug: string;
@@ -29,10 +29,11 @@ export function getAllProjects(): Project[] {
       const { data, content } = matter(raw);
       const slug = String(data.slug ?? normalizeSlug(file));
       const listing = PROJECT_LISTING_VISUALS[slug];
+      const listingSummary = PROJECT_LISTING_SUMMARY[slug];
       return {
         slug,
         title: String(data.title ?? ""),
-        tagline: String(data.tagline ?? ""),
+        tagline: listingSummary ?? String(data.tagline ?? ""),
         year: String(data.year ?? ""),
         roles: Array.isArray(data.roles) ? data.roles.map(String) : [],
         thumbnail: listing?.thumbnail ?? String(data.thumbnail ?? ""),

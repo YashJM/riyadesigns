@@ -24,45 +24,45 @@ const sections = [
   {
     icon: "🎯",
     title: "Goal",
-    body: "Design a clear, user-centered experience that simplifies discovery, supports customization decisions, and improves inquiry conversion.",
+    body: "The goal was to design a user-centered platform for Akshar Packaging that simplifies how users explore products and understand customization options. The experience focused on streamlining the inquiry process to improve lead generation and make communication more efficient. It also aimed to integrate seamlessly with CRM and communication systems to support business workflows. Additionally, a scalable design system was created to ensure consistency and support future growth of the platform.",
   },
   {
     icon: "👥",
     title: "Target Users",
-    body: "SMBs, design/operations teams, and startups looking for flexible and scalable custom packaging workflows.",
+    body: "The target users for Akshar Packaging include small to medium business owners who need reliable and scalable packaging solutions, designers and operations teams who require flexibility and precision in customization, as well as startups that are looking for quick, efficient, and cost-effective custom packaging to establish their brand presence.",
     image: "/figma/akshar-target-users.png",
   },
   {
     icon: "🔍",
     title: "Research",
-    body: "Interviews and surveys showed users need clear specs, pricing, and easy step-based inquiry flows.",
+    body: "For Akshar Packaging, research was conducted through interviews and surveys with business clients to better understand their needs and expectations. The key insights revealed that users want clear and detailed product specifications before reaching out to vendors, as this helps them make faster and more informed decisions. Easy access to packaging options, customization details, and pricing was identified as essential for a smooth decision-making process. Additionally, users prefer inquiry forms that are simple, intuitive, and broken into step-based flows to reduce effort and improve completion rates.",
     image: "/figma/akshar-research.png",
   },
   {
     icon: "🧠",
     title: "Ideation & Structure",
-    body: "Mapped user journeys from product discovery to inquiry, restructured IA, and validated with low-fi flows.",
+    body: "During the ideation and structure phase for Akshar Packaging, user journeys were mapped to create a clear and efficient flow from product discovery to customization and finally inquiry submission. The information architecture was restructured to ensure products and their specifications were easy to find and navigate without confusion. Based on these flows, low-fidelity wireframes were created to quickly visualize layout ideas, improve usability, and validate how users would interact with the platform before moving into detailed design.",
     image: "/figma/akshar-ideation.png",
   },
   {
     icon: "🎨",
     title: "Design & Prototyping",
-    body: "Built a scalable design system, redesigned listing and detail pages for clearer specs, and shipped a stepwise inquiry flow with sticky CTAs and CRM-aligned touchpoints.",
+    body: "During the design and prototyping phase for Akshar Packaging, a scalable design system was created to maintain consistency across the platform, including reusable components such as buttons, cards, forms, and typography styles. The product listing and product detail pages were redesigned to improve clarity, enhance visual hierarchy, and make specifications easier to understand. A stepwise inquiry flow was also developed to streamline CRM data capture and reduce user effort. To improve conversions and accessibility, sticky call-to-action elements and quick contact features were introduced throughout key screens. These user flows were further integrated with CRM touchpoints to support efficient communication and lead management. Finally, high-fidelity prototypes were built in Figma to bring the complete experience to life and validate interactions before development.",
   },
   {
     icon: "🧪",
     title: "Testing & Iteration",
-    body: "Sessions tightened customization clarity, FAQs and in-context guidance, multi-step progress cues, and quick contact access for faster support.",
+    body: "Testing and iteration were carried out through user sessions to evaluate the experience and refine key interactions based on feedback. Product customization clarity was improved to make options and specifications easier to understand and compare. FAQs and in-context guidance were introduced to support users during decision-making and reduce uncertainty. Progress indicators were enhanced within multi-step flows to give users a clearer sense of where they were in the process. Quick contact access was also added to enable faster communication with support or sales teams, improving responsiveness and overall usability.",
   },
   {
     icon: "📊",
     title: "Impact",
-    body: "Stronger exploration and inquiry flows, higher-quality leads, faster sales follow-up, and a foundation that scales as the product grows.",
+    body: "The impact of the redesign was significant, leading to a 3× faster product exploration and inquiry process for users. Lead conversion improved by 25%, reflecting a smoother and more intuitive user journey. CRM-based lead management became more efficient, enabling better organization and tracking of inquiries. Sales follow-ups were also accelerated through integrated workflows, improving response time and communication efficiency. Additionally, a scalable design system was successfully established, ensuring consistency and easier expansion of the platform in the future.",
   },
   {
     icon: "💡",
     title: "Key Takeaways",
-    body: "Structured content drives confident decisions; iteration surfaced usability gaps early; CRM alignment improved ops; the design system keeps everything consistent.",
+    body: "Key takeaways from the project highlight the importance of clear and well-structured content in improving user decision-making throughout the journey. Continuous iteration proved essential in uncovering hidden usability issues that were not initially apparent in early designs. Integrating CRM system significantly improved operational efficiency by streamlining lead management and communication workflows. Additionally, establishing a robust design system ensured consistency across the platform and enabled smooth scalability for future enhancements and feature expansion.",
     image: "/figma/akshar-hero.png",
   },
 ];
