@@ -27,7 +27,7 @@ export function SiteFooter() {
             <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[14px] w-[14px]" />
           </a>
         </div>
-        <p className="mt-8 font-support text-xs font-light leading-normal text-muted">
+        <p className="mt-8 font-support text-xs font-light leading-normal text-muted text-center">
           Designed &amp; crafted by Riya Patel ♥ © 2026
         </p>
       </div>
