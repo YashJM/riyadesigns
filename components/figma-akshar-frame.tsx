@@ -63,7 +63,6 @@ const sections = [
     icon: "💡",
     title: "Key Takeaways",
     body: "Key takeaways from the project highlight the importance of clear and well-structured content in improving user decision-making throughout the journey. Continuous iteration proved essential in uncovering hidden usability issues that were not initially apparent in early designs. Integrating CRM system significantly improved operational efficiency by streamlining lead management and communication workflows. Additionally, establishing a robust design system ensured consistency across the platform and enabled smooth scalability for future enhancements and feature expansion.",
-    image: "/figma/akshar-hero.png",
   },
 ];
 

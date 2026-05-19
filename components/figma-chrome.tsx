@@ -34,7 +34,7 @@ export function FigmaFooter() {
           </a>
         </div>
         <p className="mt-12 font-support text-[13px] font-light leading-normal md:mt-14">
-          Designed and built by Riya Patel © 2026
+          Designed and crafted by Riya Patel © 2026
         </p>
       </div>
     </footer>

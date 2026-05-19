@@ -6,8 +6,5 @@ export function isNavRouteActive(pathname: string, href: string): boolean {
   if (href === "/about") {
     return pathname === "/about" || pathname.startsWith("/about/");
   }
-  if (href === "/contact") {
-    return pathname === "/contact" || pathname.startsWith("/contact/");
-  }
   return pathname === href;
 }

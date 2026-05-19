@@ -67,5 +67,4 @@ Implemented using MCP context/screenshot:
 Pending frame URLs (with `node-id`) for exact parity iterations:
 
 - Work listing page frame URL
-- Contact page frame URL
 - Any additional project detail templates

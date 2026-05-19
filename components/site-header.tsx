@@ -42,17 +42,6 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            aria-current={isNavRouteActive(pathname, "/contact") ? "page" : undefined}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition-[box-shadow,background-color,transform,opacity] duration-200 ${
-              isNavRouteActive(pathname, "/contact")
-                ? "bg-brand text-foreground ring-2 ring-black/25 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
-                : "bg-brand text-foreground hover:opacity-90 active:scale-[0.98]"
-            }`}
-          >
-            Hire Me
-          </Link>
         </nav>
       </div>
     </header>

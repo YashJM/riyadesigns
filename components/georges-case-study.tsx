@@ -291,16 +291,6 @@ export function GeorgesCaseStudy() {
             empowers users to explore, decide, and order quickly, while giving the business a stronger digital presence
             with room to grow. Most importantly, it brings back what ordering food should always feel like — easy.
           </p>
-          <div className="mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(20px,2vw,30px)]">
-            <Image
-              src="/figma/georges-hero-main.png"
-              alt="Final hero experience highlighting the completed redesign"
-              width={1829}
-              height={889}
-              className="mx-auto max-w-[min(100%,976px)] h-auto w-full object-cover"
-              sizes="(max-width: 1000px) 100vw, 976px"
-            />
-          </div>
         </section>
 
         <SectionDivider />

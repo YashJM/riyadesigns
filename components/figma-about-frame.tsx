@@ -19,11 +19,11 @@ const sections = [
     title: "Beyond the Screen",
     body: [
       "When I’m not designing, I’m usually exploring creativity in different forms.",
-      "🎨 Painting is my escape — a space to experiment, slow down, and embrace imperfection.",
-      "🎬 I enjoy feel-good, story-driven shows like Friends — timeless, simple, and full of emotion.",
-      "🎾 I love sports like swimming, badminton, tennis, and pickleball.",
-      "✨ I’m naturally curious — always exploring new ideas, trends, and experiences.",
-      "🚴‍♀️ Trail climbing, cycling, sightseeing, and new places keep my perspective fresh.",
+      "🎨 Painting is my escape — a space to experiment, slow down, and embrace imperfection. It keeps my imagination alive and continuously inspires my design perspective.",
+      "🎬 I enjoy feel-good, story-driven shows like ‘Friends’ — timeless, simple, and full of emotion.",
+      "🎮 I love sports like swimming, badminton, tennis, and pickleball — a mix of focus, fun, and friendly competition.",
+      "✨ I’m naturally curious — always exploring new ideas, trends, and experiences. These interests constantly shape how I think, observe, and design.",
+      "When I need a reset — I step outside. 🚴‍♀️ Whether it’s trail climbing, cycling through scenic routes, sightseeing, or simply exploring new places — I’m drawn to experiences that help me see the world from a fresh perspective.",
     ],
   },
   {

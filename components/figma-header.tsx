@@ -123,17 +123,6 @@ export function FigmaHeader() {
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
-                aria-current={isNavRouteActive(pathname, "/contact") ? "page" : undefined}
-                className={`ml-1 rounded-[86px] px-5 py-2.5 text-black transition-[box-shadow,background-color,transform] duration-200 lg:ml-[42px] lg:px-[26px] lg:py-[10px] lg:text-[clamp(16px,1.25vw,20px)] ${
-                  isNavRouteActive(pathname, "/contact")
-                    ? "bg-brand font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ring-2 ring-black/30"
-                    : "bg-[#f387ab] font-bold hover:bg-[#e97aa1] hover:brightness-105 active:scale-[0.98]"
-                }`}
-              >
-                Hire Me
-              </Link>
             </nav>
           </div>
         </div>
@@ -184,18 +173,6 @@ export function FigmaHeader() {
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
-                aria-current={isNavRouteActive(pathname, "/contact") ? "page" : undefined}
-                className={`mt-2 inline-flex min-h-12 items-center justify-center rounded-[86px] px-4 py-3 text-center text-[1.05rem] text-black transition-[box-shadow,background-color,transform] duration-200 ${
-                  isNavRouteActive(pathname, "/contact")
-                    ? "bg-brand font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ring-2 ring-black/25"
-                    : "bg-[#f387ab] font-bold hover:brightness-105 active:scale-[0.98]"
-                }`}
-                onClick={() => setOpen(false)}
-              >
-                Hire Me
-              </Link>
             </nav>
           </div>
         </>
