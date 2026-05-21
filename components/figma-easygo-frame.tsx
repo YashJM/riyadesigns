@@ -115,7 +115,7 @@ export function FigmaEasygoFrame() {
               <span className="font-extrabold">🧑‍💻 Role:</span> UI/UX Design (Interaction Design)
             </p>
             <p className="m-0">
-              <span className="font-extrabold">⏳ Duration:</span> 10 Weeks
+              <span className="font-extrabold">⏳ Duration:</span> 3 Weeks
             </p>
             <p className="m-0">
               <span className="font-extrabold">📱 Platform:</span> Mobile

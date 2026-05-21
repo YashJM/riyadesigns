@@ -120,7 +120,7 @@ export function FigmaTriponFrame() {
               <span className="font-extrabold">🧑‍💻 Role:</span> UI/UX Design (Interaction Design)
             </p>
             <p className="m-0">
-              <span className="font-extrabold">⏳ Duration:</span> 12 Weeks
+              <span className="font-extrabold">⏳ Duration:</span> 4 Weeks
             </p>
             <p className="m-0">
               <span className="font-extrabold">📱 Platform:</span> Mobile
