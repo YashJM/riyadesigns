@@ -1,8 +1,55 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CaseStudyImageTrigger,
+  CaseStudyLightboxRoot,
+} from "@/components/case-study-lightbox";
 import { FigmaHeader, FigmaFooter } from "@/components/figma-chrome";
 
-const sections = [
+type ImageSize = { width: number; height: number };
+
+type AksharSection = {
+  icon: string;
+  title: string;
+  body?: string | string[];
+  image?: string;
+  image2?: string;
+  imageSize?: ImageSize;
+  image2Size?: ImageSize;
+  stackImages?: boolean;
+  containImage?: boolean;
+};
+
+function CaseStudyContainedImage({
+  src,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}) {
+  return (
+    <CaseStudyImageTrigger
+      src={src}
+      alt={alt}
+      className="flex justify-center overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black bg-[#fafafa] shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]"
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="mx-auto h-auto max-h-[min(52dvh,520px)] w-auto max-w-full object-contain"
+        sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
+      />
+    </CaseStudyImageTrigger>
+  );
+}
+
+const sections: AksharSection[] = [
   {
     icon: "📝",
     title: "About the project",
@@ -17,6 +64,8 @@ const sections = [
     body: "Led the Akshar Packaging project end-to-end using a research-driven approach, focusing on simplifying how users explore and inquire about packaging products. Conducted user research to identify key pain points such as unclear product specifications and complex inquiry processes. Defined the UX strategy and designed wireframes and high-fidelity prototypes to improve product discovery and navigation. Built a scalable design system to ensure consistency across the platform. Collaborated closely with developers to ensure smooth implementation and accurate design translation.",
     image: "/figma/akshar-contribution-a.png",
     image2: "/figma/akshar-contribution-b.png",
+    imageSize: { width: 1628, height: 897 },
+    image2Size: { width: 1416, height: 710 },
     stackImages: true,
   },
   {
@@ -24,6 +73,10 @@ const sections = [
     title: "Problem",
     body: "Businesses faced several challenges while interacting with the Akshar Packaging platform, including confusing navigation and poorly structured product categories that made it difficult to find relevant packaging solutions. Important details such as product specifications and customization options were not clearly visible, leading to uncertainty during decision-making. The inquiry process was inefficient and slowed down lead generation, while the lack of integration with CRM system further impacted communication and overall operational efficiency.",
     image: "/figma/akshar-problem.png",
+    image2: "/figma/akshar-research.png",
+    imageSize: { width: 736, height: 660 },
+    image2Size: { width: 604, height: 543 },
+    stackImages: true,
   },
   {
     icon: "🎯",
@@ -40,13 +93,14 @@ const sections = [
     icon: "🔍",
     title: "Research",
     body: "For Akshar Packaging, research was conducted through interviews and surveys with business clients to better understand their needs and expectations. The key insights revealed that users want clear and detailed product specifications before reaching out to vendors, as this helps them make faster and more informed decisions. Easy access to packaging options, customization details, and pricing was identified as essential for a smooth decision-making process. Additionally, users prefer inquiry forms that are simple, intuitive, and broken into step-based flows to reduce effort and improve completion rates.",
-    image: "/figma/akshar-research.png",
+    image: "/figma/akshar-ideation.png",
+    imageSize: { width: 1174, height: 436 },
+    containImage: true,
   },
   {
     icon: "🧠",
     title: "Ideation & Structure",
     body: "During the ideation and structure phase for Akshar Packaging, user journeys were mapped to create a clear and efficient flow from product discovery to customization and finally inquiry submission. The information architecture was restructured to ensure products and their specifications were easy to find and navigate without confusion. Based on these flows, low-fidelity wireframes were created to quickly visualize layout ideas, improve usability, and validate how users would interact with the platform before moving into detailed design.",
-    image: "/figma/akshar-ideation.png",
   },
   {
     icon: "🎨",
@@ -72,6 +126,7 @@ const sections = [
 
 export function FigmaAksharFrame() {
   return (
+    <CaseStudyLightboxRoot>
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
@@ -121,7 +176,9 @@ export function FigmaAksharFrame() {
               https://aksharpacks.com/
             </a>
           </p>
-          <div
+          <CaseStudyImageTrigger
+            src="/figma/akshar-hero.png"
+            alt="Akshar Packs hero"
             className="mt-8 overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black shadow-[0_16px_48px_-16px_rgba(0,0,0,0.14)]"
           >
             <Image
@@ -133,7 +190,7 @@ export function FigmaAksharFrame() {
               priority
               sizes="(max-width: 768px) 100vw, min(1001px, 92vw)"
             />
-          </div>
+          </CaseStudyImageTrigger>
           <dl className="mt-8 flex flex-col gap-3 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(14px,2.4vw,40px)] sm:gap-y-2">
             <div className="flex min-w-0 flex-wrap items-baseline gap-1.5">
               <dt className="font-extrabold">🧑‍💻 Role:</dt>
@@ -173,43 +230,89 @@ export function FigmaAksharFrame() {
             {section.image && section.image2 ? (
               <div
                 className={
-                  "stackImages" in section && section.stackImages
+                  section.stackImages
                     ? "mt-6 flex max-w-[1005px] flex-col gap-4"
                     : "mt-6 grid gap-4 md:grid-cols-2 md:gap-5"
                 }
               >
-                <div className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]">
-                  <Image
-                    src={section.image}
-                    alt={section.title}
-                    width={1005}
-                    height={359}
-                    className="h-auto w-full object-cover"
-                    sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]">
-                  <Image
-                    src={section.image2}
-                    alt={`${section.title} visual 2`}
-                    width={1005}
-                    height={359}
-                    className="h-auto w-full object-cover"
-                    sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
-                  />
-                </div>
+                {section.stackImages ? (
+                  <>
+                    <CaseStudyContainedImage
+                      src={section.image}
+                      alt={section.title}
+                      width={section.imageSize?.width ?? 1005}
+                      height={section.imageSize?.height ?? 600}
+                    />
+                    <CaseStudyContainedImage
+                      src={section.image2}
+                      alt={
+                        section.title === "Problem"
+                          ? "Akshar Packs VoIP and CRM integration screen"
+                          : `${section.title} visual 2`
+                      }
+                      width={section.image2Size?.width ?? 1005}
+                      height={section.image2Size?.height ?? 600}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <CaseStudyImageTrigger
+                      src={section.image}
+                      alt={section.title}
+                      className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]"
+                    >
+                      <Image
+                        src={section.image}
+                        alt={section.title}
+                        width={1005}
+                        height={359}
+                        className="h-auto w-full object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </CaseStudyImageTrigger>
+                    <CaseStudyImageTrigger
+                      src={section.image2}
+                      alt={`${section.title} visual 2`}
+                      className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]"
+                    >
+                      <Image
+                        src={section.image2}
+                        alt={`${section.title} visual 2`}
+                        width={1005}
+                        height={359}
+                        className="h-auto w-full object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </CaseStudyImageTrigger>
+                  </>
+                )}
               </div>
             ) : null}
             {section.image && !section.image2 ? (
-              <div className="mt-6 overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]">
-                <Image
-                  src={section.image}
-                  alt={section.title}
-                  width={1005}
-                  height={315}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
-                />
+              <div className="mt-6 max-w-[1005px]">
+                {section.containImage ? (
+                  <CaseStudyContainedImage
+                    src={section.image}
+                    alt="Akshar Packs Our Legacy in Packaging section"
+                    width={section.imageSize?.width ?? 1005}
+                    height={section.imageSize?.height ?? 600}
+                  />
+                ) : (
+                  <CaseStudyImageTrigger
+                    src={section.image}
+                    alt={section.title}
+                    className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]"
+                  >
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      width={1005}
+                      height={315}
+                      className="h-auto w-full object-cover"
+                      sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
+                    />
+                  </CaseStudyImageTrigger>
+                )}
               </div>
             ) : null}
           </article>
@@ -217,5 +320,6 @@ export function FigmaAksharFrame() {
       </section>
       <FigmaFooter />
     </div>
+    </CaseStudyLightboxRoot>
   );
 }

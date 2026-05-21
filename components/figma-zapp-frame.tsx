@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CaseStudyImageTrigger,
+  CaseStudyLightboxRoot,
+} from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
 function SectionDivider() {
@@ -32,11 +36,13 @@ function StudyImage({
   bordered?: boolean;
 }) {
   return (
-    <div
+    <CaseStudyImageTrigger
+      src={src}
+      alt={alt}
       className={`mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(18px,1.8vw,26px)] ${bordered ? "border border-black" : ""} ${maxWidthClass} mx-auto`}
     >
       <Image src={src} alt={alt} width={width} height={height} className="h-auto w-full object-cover" sizes="96vw" />
-    </div>
+    </CaseStudyImageTrigger>
   );
 }
 
@@ -69,6 +75,7 @@ const impactMetrics = [
 
 export function FigmaZappFrame() {
   return (
+    <CaseStudyLightboxRoot>
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
@@ -114,7 +121,11 @@ export function FigmaZappFrame() {
             clearly understanding their money.
           </p>
 
-          <div className="mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black">
+          <CaseStudyImageTrigger
+            src="/figma/zapp-hero-collage.png"
+            alt="Zapp Wallet product screens collage"
+            className="mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black"
+          >
             <Image
               src="/figma/zapp-hero-collage.png"
               alt="Zapp Wallet product screens collage"
@@ -124,7 +135,7 @@ export function FigmaZappFrame() {
               priority
               sizes="(max-width: 1100px) 100vw, 1001px"
             />
-          </div>
+          </CaseStudyImageTrigger>
 
           <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-col gap-2 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(18px,3vw,40px)] sm:gap-y-3">
             <p className="m-0 max-w-full min-w-0">
@@ -403,14 +414,20 @@ export function FigmaZappFrame() {
           </p>
           <div className="mt-6 flex max-w-[min(100%,854px)] flex-col gap-[clamp(12px,1.8vw,18px)]">
             {impactMetrics.map((m) => (
-              <Image
+              <CaseStudyImageTrigger
                 key={m.src}
                 src={m.src}
                 alt={m.alt}
-                width={m.w}
-                height={m.h}
-                className="h-auto w-full rounded-[clamp(14px,1.2vw,18px)]"
-              />
+                className="overflow-hidden rounded-[clamp(14px,1.2vw,18px)]"
+              >
+                <Image
+                  src={m.src}
+                  alt={m.alt}
+                  width={m.w}
+                  height={m.h}
+                  className="h-auto w-full"
+                />
+              </CaseStudyImageTrigger>
             ))}
           </div>
         </section>
@@ -434,5 +451,6 @@ export function FigmaZappFrame() {
 
       <FigmaFooter />
     </div>
+    </CaseStudyLightboxRoot>
   );
 }

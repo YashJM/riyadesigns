@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CaseStudyImageTrigger,
+  CaseStudyLightboxRoot,
+} from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
 function SectionDivider() {
@@ -32,11 +36,13 @@ function StudyImage({
   bordered?: boolean;
 }) {
   return (
-    <div
+    <CaseStudyImageTrigger
+      src={src}
+      alt={alt}
       className={`mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(18px,1.8vw,26px)] ${bordered ? "border border-black" : ""} ${maxWidthClass} mx-auto`}
     >
       <Image src={src} alt={alt} width={width} height={height} className="h-auto w-full object-cover" sizes="96vw" />
-    </div>
+    </CaseStudyImageTrigger>
   );
 }
 
@@ -63,6 +69,7 @@ const impactCards = [
 
 export function FigmaTriponFrame() {
   return (
+    <CaseStudyLightboxRoot>
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
@@ -354,14 +361,20 @@ export function FigmaTriponFrame() {
           </p>
           <div className="mt-6 flex max-w-[min(100%,854px)] flex-col gap-[clamp(12px,1.8vw,18px)]">
             {impactCards.map((card) => (
-              <Image
+              <CaseStudyImageTrigger
                 key={card.src}
                 src={card.src}
                 alt={card.alt}
-                width={card.w}
-                height={card.h}
-                className="h-auto w-full rounded-[clamp(14px,1.2vw,18px)]"
-              />
+                className="overflow-hidden rounded-[clamp(14px,1.2vw,18px)]"
+              >
+                <Image
+                  src={card.src}
+                  alt={card.alt}
+                  width={card.w}
+                  height={card.h}
+                  className="h-auto w-full"
+                />
+              </CaseStudyImageTrigger>
             ))}
           </div>
         </section>
@@ -382,5 +395,6 @@ export function FigmaTriponFrame() {
 
       <FigmaFooter />
     </div>
+    </CaseStudyLightboxRoot>
   );
 }

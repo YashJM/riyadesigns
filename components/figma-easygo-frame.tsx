@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CaseStudyImageTrigger,
+  CaseStudyLightboxRoot,
+} from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
 
@@ -35,11 +39,13 @@ function StudyImage({
   bordered?: boolean;
 }) {
   return (
-    <div
+    <CaseStudyImageTrigger
+      src={src}
+      alt={alt}
       className={`mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(18px,1.8vw,26px)] ${bordered ? "border border-black" : ""} ${maxWidthClass} mx-auto`}
     >
       <Image src={src} alt={alt} width={width} height={height} className="h-auto w-full object-cover" sizes="96vw" />
-    </div>
+    </CaseStudyImageTrigger>
   );
 }
 
@@ -56,6 +62,7 @@ const easygoImpactMetrics = [
 
 export function FigmaEasygoFrame() {
   return (
+    <CaseStudyLightboxRoot>
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
@@ -405,5 +412,6 @@ export function FigmaEasygoFrame() {
 
       <FigmaFooter />
     </div>
+    </CaseStudyLightboxRoot>
   );
 }

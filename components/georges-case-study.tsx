@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CaseStudyImageTrigger,
+  CaseStudyLightboxRoot,
+} from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
 const SITE_URL = "https://georgespizzasteakhouse.com/";
@@ -36,14 +40,15 @@ function CaptionImage({
     `${narrow ? "mx-auto max-w-[min(100%,488px)] " : "mx-auto max-w-[min(100%,856px)] "} block h-auto w-full`;
 
   return (
-    <div className={wrap}>
+    <CaseStudyImageTrigger src={src} alt={alt} className={wrap}>
       <Image src={src} alt={alt} width={width} height={height} className={inner} sizes="(max-width: 900px) 100vw, 856px" />
-    </div>
+    </CaseStudyImageTrigger>
   );
 }
 
 export function GeorgesCaseStudy() {
   return (
+    <CaseStudyLightboxRoot>
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
@@ -98,7 +103,11 @@ export function GeorgesCaseStudy() {
             </a>
           </p>
 
-          <div className="mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black">
+          <CaseStudyImageTrigger
+            src="/figma/georges-hero-main.png"
+            alt="George’s Pizza & Steakhouse redesigned landing experience"
+            className="mt-[clamp(20px,2.5vw,28px)] overflow-hidden rounded-[clamp(22px,2.1vw,30px)] border border-black"
+          >
             <Image
               src="/figma/georges-hero-main.png"
               alt="George’s Pizza & Steakhouse redesigned landing experience"
@@ -108,7 +117,7 @@ export function GeorgesCaseStudy() {
               priority
               sizes="(max-width: 1100px) 100vw, 1002px"
             />
-          </div>
+          </CaseStudyImageTrigger>
 
           <div className="mt-[clamp(20px,2.2vw,28px)] flex flex-col gap-2 text-[clamp(14px,3.5vw,24px)] sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-[clamp(18px,3vw,48px)] sm:gap-y-3">
             <p className="m-0">
@@ -311,5 +320,6 @@ export function GeorgesCaseStudy() {
 
       <FigmaFooter />
     </div>
+    </CaseStudyLightboxRoot>
   );
 }
