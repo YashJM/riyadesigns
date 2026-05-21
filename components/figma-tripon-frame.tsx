@@ -5,6 +5,8 @@ import {
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { MotionFadeIn } from "@/components/motion/fade-in";
+import { MotionRevealGroup } from "@/components/motion/reveal";
 
 function SectionDivider() {
   return (
@@ -73,7 +75,7 @@ export function FigmaTriponFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
+      <section className="figma-gradient motion-gradient-live relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -93,10 +95,10 @@ export function FigmaTriponFrame() {
           className="pointer-events-none absolute right-[max(0px,calc(50%-560px))] top-[-28px] z-0 w-[min(278px,74vw)] max-w-none select-none md:right-[12%]"
         />
 
-        <div className="figma-shell relative z-10">
+        <MotionFadeIn className="figma-shell relative z-10">
           <Link
             href="/work"
-            className="inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
+            className="motion-link inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
           >
             <span className="inline-flex size-[25px] items-center justify-center" aria-hidden>
               <span className="-rotate-135 inline-flex">
@@ -133,13 +135,13 @@ export function FigmaTriponFrame() {
               <span className="font-extrabold">📱 Platform:</span> Mobile
             </p>
           </div>
-        </div>
+        </MotionFadeIn>
       </section>
 
-      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
+      <MotionRevealGroup className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
           <p className="mt-4 max-w-[1002px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Planning a trip often requires switching between multiple platforms—searching destinations, comparing hotels,
@@ -158,7 +160,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem:</h2>
           <p className="mt-4 max-w-[1000px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Users often feel overwhelmed when exploring travel options due to information overload and disconnected
@@ -169,7 +171,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The goal was to design a travel experience that feels simple, fast, and inspiring. The interface needed to
@@ -180,7 +182,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🛠️ Design Process:</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="font-extrabold text-[clamp(18px,1.45vw,20px)] leading-[2.7]">🔄 Understanding User Flows</p>
@@ -202,7 +204,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📐 Wireframing &amp; Structure</h2>
           <div className="mt-4 max-w-[1002px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -224,7 +226,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎨 Visual Design &amp; System</h2>
           <div className="mt-4 max-w-[1002px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -245,7 +247,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔤 Typography</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -265,7 +267,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔁 Key User Flows:</h2>
 
           <h3 className="mt-[clamp(20px,2.5vw,28px)] text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">
@@ -333,7 +335,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Feedback &amp; UX Details</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The app incorporates clear feedback mechanisms such as loading states, pricing transparency, and structured
@@ -350,7 +352,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Impact:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Simplifying complex travel flows and improving visual clarity led to a smoother and more engaging trip planning
@@ -381,7 +383,7 @@ export function FigmaTriponFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🚀 Final Outcome:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             TripOn delivers a seamless and visually engaging travel experience by integrating discovery, booking, and trip
@@ -391,7 +393,7 @@ export function FigmaTriponFrame() {
             while also creating a scalable foundation for future travel features.
           </p>
         </section>
-      </div>
+      </MotionRevealGroup>
 
       <FigmaFooter />
     </div>

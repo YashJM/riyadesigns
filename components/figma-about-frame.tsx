@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Fragment } from "react";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { MotionFadeIn } from "@/components/motion/fade-in";
+import { MotionReveal } from "@/components/motion/reveal";
 
 type AboutSection = {
   icon: string;
@@ -59,19 +61,21 @@ export function FigmaAboutFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="figma-gradient relative overflow-hidden">
+      <section className="figma-gradient motion-gradient-live relative overflow-hidden">
         <div
-          className="pointer-events-none absolute left-[max(8px,env(safe-area-inset-left))] top-[clamp(72px,18vw,239px)] hidden h-[clamp(140px,32vw,290px)] w-[clamp(160px,42vw,354px)] rounded-full bg-[#ffd7e6] opacity-50 blur-[44px] sm:block sm:opacity-60"
+          className="motion-hero-float pointer-events-none absolute left-[max(8px,env(safe-area-inset-left))] top-[clamp(72px,18vw,239px)] hidden h-[clamp(140px,32vw,290px)] w-[clamp(160px,42vw,354px)] rounded-full bg-[#ffd7e6] opacity-50 blur-[44px] sm:block sm:opacity-60"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute right-[max(8px,env(safe-area-inset-right))] top-[clamp(420px,85vw,727px)] hidden h-[clamp(140px,32vw,290px)] w-[clamp(160px,42vw,354px)] rounded-full bg-[#f6dce9] opacity-50 blur-[44px] sm:block sm:opacity-60"
+          className="motion-hero-float-delayed pointer-events-none absolute right-[max(8px,env(safe-area-inset-right))] top-[clamp(420px,85vw,727px)] hidden h-[clamp(140px,32vw,290px)] w-[clamp(160px,42vw,354px)] rounded-full bg-[#f6dce9] opacity-50 blur-[44px] sm:block sm:opacity-60"
           aria-hidden
         />
         <div className="figma-shell pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
-          <h1 className="text-[clamp(34px,3.2vw,40px)] leading-[1.1] font-bold">✨ About Me</h1>
+          <MotionFadeIn>
+            <h1 className="text-[clamp(34px,3.2vw,40px)] leading-[1.1] font-bold">✨ About Me</h1>
+          </MotionFadeIn>
           <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,657px)_minmax(280px,365px)] lg:justify-between lg:gap-10">
-            <div className="text-[clamp(17px,4vw,24px)] leading-[1.5] sm:leading-[1.45]">
+            <MotionFadeIn delay={100} className="text-[clamp(17px,4vw,24px)] leading-[1.5] sm:leading-[1.45]">
               <p className="mb-2 text-[clamp(28px,2.6vw,32px)] font-bold">Hello 👋</p>
               <p>
                 I’m Riya Patel — a UI/UX designer with a product mindset, driven by
@@ -89,8 +93,8 @@ export function FigmaAboutFrame() {
                 balancing user needs with business goals to create experiences that
                 don’t just function well, but feel right.
               </p>
-            </div>
-            <div className="relative mx-auto h-[clamp(380px,60vw,548px)] w-full max-w-[365px] overflow-hidden rounded-[28px]">
+            </MotionFadeIn>
+            <MotionFadeIn delay={180} className="relative mx-auto h-[clamp(380px,60vw,548px)] w-full max-w-[365px] overflow-hidden rounded-[28px]">
               <Image
                 src="/figma/about-profile.png"
                 alt="Riya Patel"
@@ -98,15 +102,16 @@ export function FigmaAboutFrame() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 80vw, 365px"
               />
-            </div>
+            </MotionFadeIn>
           </div>
         </div>
       </section>
 
       <section className="figma-shell pb-[var(--space-content-pad-bottom)] pt-[var(--space-content-pad-top)]">
         {sections.map((section, idx) => (
-          <div
+          <MotionReveal
             key={section.title}
+            delay={idx * 70}
             className="border-t border-[#efced9] py-[clamp(1.75rem,6vw,3rem)] first:border-t-0 first:pt-0"
           >
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-bold">
@@ -139,7 +144,7 @@ export function FigmaAboutFrame() {
               </div>
             )}
             {idx === sections.length - 1 ? <div className="mt-10 border-t border-[#efced9]" /> : null}
-          </div>
+          </MotionReveal>
         ))}
       </section>
 

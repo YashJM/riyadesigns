@@ -15,7 +15,7 @@ export function FigmaFooter() {
         <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3 text-[clamp(16px,1.7vw,24px)] md:mt-9">
           <a
             href="mailto:hello@riyadesigns.studio"
-            className="inline-flex min-h-11 min-w-11 items-center gap-1 py-2"
+            className="motion-link inline-flex min-h-11 min-w-11 items-center gap-1 py-2"
           >
             <span>Email Me</span>
             <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[16px] w-[16px]" />
@@ -27,7 +27,7 @@ export function FigmaFooter() {
             href="https://www.linkedin.com/in/designerriya"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-1 py-2"
+            className="motion-link inline-flex min-h-11 items-center gap-1 py-2"
           >
             <span>LinkedIn</span>
             <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[16px] w-[16px]" />

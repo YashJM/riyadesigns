@@ -5,6 +5,8 @@ import {
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
 import { FigmaHeader, FigmaFooter } from "@/components/figma-chrome";
+import { MotionFadeIn } from "@/components/motion/fade-in";
+import { MotionRevealGroup } from "@/components/motion/reveal";
 
 type ImageSize = { width: number; height: number };
 
@@ -138,7 +140,7 @@ export function FigmaAksharFrame() {
           width={125}
           height={108}
           aria-hidden
-          className="pointer-events-none absolute left-[clamp(4px,2vw,24px)] top-[clamp(120px,18vw,200px)] z-0 h-[clamp(72px,14vw,160px)] w-[clamp(84px,16vw,180px)] opacity-95 max-md:top-[clamp(100px,22vw,160px)]"
+          className="motion-hero-float pointer-events-none absolute left-[clamp(4px,2vw,24px)] top-[clamp(120px,18vw,200px)] z-0 h-[clamp(72px,14vw,160px)] w-[clamp(84px,16vw,180px)] opacity-95 max-md:top-[clamp(100px,22vw,160px)]"
         />
         <Image
           src="/figma/hero-ellipse-1.svg"
@@ -146,7 +148,7 @@ export function FigmaAksharFrame() {
           width={268}
           height={264}
           aria-hidden
-          className="pointer-events-none absolute right-[clamp(-24px,-4vw,12px)] top-[clamp(-40px,-6vw,-12px)] z-0 h-[clamp(120px,22vw,220px)] w-[clamp(120px,22vw,230px)] opacity-90"
+          className="motion-hero-float-delayed pointer-events-none absolute right-[clamp(-24px,-4vw,12px)] top-[clamp(-40px,-6vw,-12px)] z-0 h-[clamp(120px,22vw,220px)] w-[clamp(120px,22vw,230px)] opacity-90"
         />
         <Image
           src="/figma/hero-ellipse-1.svg"
@@ -154,11 +156,11 @@ export function FigmaAksharFrame() {
           width={268}
           height={264}
           aria-hidden
-          className="pointer-events-none absolute bottom-[clamp(-48px,-8vw,-20px)] right-[clamp(8%,12vw,18%)] z-0 hidden h-[clamp(100px,18vw,190px)] w-[clamp(100px,18vw,200px)] opacity-[0.35] md:block"
+          className="motion-hero-float-delayed pointer-events-none absolute bottom-[clamp(-48px,-8vw,-20px)] right-[clamp(8%,12vw,18%)] z-0 hidden h-[clamp(100px,18vw,190px)] w-[clamp(100px,18vw,200px)] opacity-[0.35] md:block"
         />
 
-        <div className="figma-shell relative z-10">
-          <Link href="/work" className="inline-flex items-center gap-2 text-[clamp(20px,1.9vw,24px)] font-bold">
+        <MotionFadeIn className="figma-shell relative z-10">
+          <Link href="/work" className="motion-link inline-flex items-center gap-2 text-[clamp(20px,1.9vw,24px)] font-bold">
             ← Back
           </Link>
           <h1 className="mt-8 text-[clamp(34px,3.2vw,40px)] font-black">📦 Akshar Packs</h1>
@@ -205,14 +207,14 @@ export function FigmaAksharFrame() {
               <dd className="m-0 font-normal">Web</dd>
             </div>
           </dl>
-        </div>
+        </MotionFadeIn>
       </section>
 
-      <section className="figma-shell pb-[var(--space-content-pad-bottom)] pt-[var(--space-content-pad-top)]">
+      <MotionRevealGroup className="figma-shell pb-[var(--space-content-pad-bottom)] pt-[var(--space-content-pad-top)]">
         {sections.map((section, index) => (
           <article
             key={section.title}
-            className={`pb-[clamp(1.75rem,6vw,2.75rem)] ${index === 0 ? "pt-0" : "pt-[clamp(1.75rem,6vw,2.75rem)]"}`}
+            className={`motion-reveal pb-[clamp(1.75rem,6vw,2.75rem)] ${index === 0 ? "pt-0" : "pt-[clamp(1.75rem,6vw,2.75rem)]"}`}
           >
             <hr className="case-study-rule mb-[clamp(20px,2.8vw,28px)]" aria-hidden />
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">
@@ -293,7 +295,7 @@ export function FigmaAksharFrame() {
                 {section.containImage ? (
                   <CaseStudyContainedImage
                     src={section.image}
-                    alt="Akshar Packs Our Legacy in Packaging section"
+                    alt={section.title}
                     width={section.imageSize?.width ?? 1005}
                     height={section.imageSize?.height ?? 600}
                   />
@@ -317,7 +319,7 @@ export function FigmaAksharFrame() {
             ) : null}
           </article>
         ))}
-      </section>
+      </MotionRevealGroup>
       <FigmaFooter />
     </div>
     </CaseStudyLightboxRoot>

@@ -5,6 +5,8 @@ import {
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { MotionFadeIn } from "@/components/motion/fade-in";
+import { MotionRevealGroup } from "@/components/motion/reveal";
 import { PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
 
 const EASYGO_HERO_SRC = PROJECT_LISTING_VISUALS.easygo.thumbnail;
@@ -66,7 +68,7 @@ export function FigmaEasygoFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
+      <section className="figma-gradient motion-gradient-live relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -86,10 +88,10 @@ export function FigmaEasygoFrame() {
           className="pointer-events-none absolute right-[max(0px,calc(50%-560px))] top-[-28px] z-0 w-[min(278px,74vw)] max-w-none select-none md:right-[12%]"
         />
 
-        <div className="figma-shell relative z-10">
+        <MotionFadeIn className="figma-shell relative z-10">
           <Link
             href="/work"
-            className="inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
+            className="motion-link inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
           >
             <span className="inline-flex size-[25px] items-center justify-center" aria-hidden>
               <span className="-rotate-135 inline-flex">
@@ -128,13 +130,13 @@ export function FigmaEasygoFrame() {
               <span className="font-extrabold">📱 Platform:</span> Mobile
             </p>
           </div>
-        </div>
+        </MotionFadeIn>
       </section>
 
-      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
+      <MotionRevealGroup className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
           <div className="mt-4 max-w-[1003px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -158,7 +160,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem:</h2>
           <p className="mt-4 max-w-[1000px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Users often encounter friction throughout the ride-booking experience due to unclear pricing, multi-step
@@ -172,7 +174,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The goal was to design a ride-booking experience that feels intuitive, efficient, and dependable at every step.
@@ -186,7 +188,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🛠️ Design Process:</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="font-extrabold text-[clamp(18px,1.45vw,20px)] leading-[2.7]">🔄 Understanding User Journey</p>
@@ -207,7 +209,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📐 Wireframing &amp; Structure</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -228,7 +230,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎨 Visual Design &amp; System</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -248,7 +250,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔤 Typography</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p>
@@ -268,7 +270,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔁 Key User Flows:</h2>
 
           <h3 className="mt-[clamp(20px,2.5vw,28px)] text-[clamp(18px,1.45vw,20px)] font-extrabold leading-[2.7]">
@@ -349,7 +351,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Feedback &amp; UX Details:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The app includes important feedback mechanisms such as booking confirmation, loading states, and cancellation
@@ -367,7 +369,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Impact:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2] text-black">
             The design improvements focused on reducing friction and improving real-time clarity resulted in a smoother and
@@ -397,7 +399,7 @@ export function FigmaEasygoFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🚀 Final Outcome:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             EasyGo delivers a fast, intuitive, and reliable ride-booking experience by combining location tracking, ride
@@ -408,7 +410,7 @@ export function FigmaEasygoFrame() {
             rewards in the future.
           </p>
         </section>
-      </div>
+      </MotionRevealGroup>
 
       <FigmaFooter />
     </div>

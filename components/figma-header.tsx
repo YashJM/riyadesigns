@@ -30,6 +30,7 @@ function CloseIcon() {
 export function FigmaHeader() {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const barRef = useRef<HTMLDivElement>(null);
   const [menuTopPx, setMenuTopPx] = useState(0);
 
@@ -42,6 +43,13 @@ export function FigmaHeader() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useLayoutEffect(() => {
     if (!open) return;
@@ -66,7 +74,11 @@ export function FigmaHeader() {
   return (
     <>
       <header className="sticky top-0 z-40 w-full pt-[env(safe-area-inset-top)]">
-        <div className="w-full bg-[rgba(243,135,171,0.2)] backdrop-blur-xl">
+        <div
+          className={`w-full bg-[rgba(243,135,171,0.2)] backdrop-blur-xl transition-[background-color,box-shadow] duration-300 ease-[var(--ease-premium)] motion-safe:duration-300 ${
+            scrolled ? "bg-[rgba(243,135,171,0.32)] shadow-[0_8px_32px_-12px_rgba(243,135,171,0.45)]" : ""
+          }`}
+        >
           <div
             ref={barRef}
             className="figma-shell flex min-h-[60px] items-center justify-between gap-3 py-3 md:h-[109px] md:py-0"

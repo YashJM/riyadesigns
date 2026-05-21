@@ -20,6 +20,20 @@ npm run build
 
 The project uses `output: "export"` in `next.config.ts`, so static files are emitted to `out/` after build.
 
+## Cloudflare Pages deployment
+
+This site is a **static export** (`out/`). Do **not** use Cloudflare’s Next.js Workers preset, OpenNext, or `npx wrangler deploy`.
+
+See **[docs/cloudflare-pages.md](docs/cloudflare-pages.md)** for dashboard settings and troubleshooting.
+
+Quick settings:
+
+- **Framework preset:** None
+- **Build command:** `npm run build`
+- **Build output directory:** `out`
+- **Deploy command:** *(empty)*
+- **Node.js version:** `22`
+
 ## Netlify deployment
 
 This repo is configured for Netlify static hosting using `netlify.toml`.

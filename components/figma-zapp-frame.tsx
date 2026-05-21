@@ -5,6 +5,8 @@ import {
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { MotionFadeIn } from "@/components/motion/fade-in";
+import { MotionRevealGroup } from "@/components/motion/reveal";
 
 function SectionDivider() {
   return (
@@ -79,7 +81,7 @@ export function FigmaZappFrame() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <section className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
+      <section className="figma-gradient motion-gradient-live relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -99,10 +101,10 @@ export function FigmaZappFrame() {
           className="pointer-events-none absolute right-[max(0px,calc(50%-520px))] top-[-24px] z-0 w-[min(278px,72vw)] max-w-none select-none md:right-[10%]"
         />
 
-        <div className="figma-shell relative z-10">
+        <MotionFadeIn className="figma-shell relative z-10">
           <Link
             href="/work"
-            className="inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
+            className="motion-link inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
           >
             <span className="inline-flex size-[25px] items-center justify-center" aria-hidden>
               <span className="-rotate-135 inline-flex">
@@ -148,13 +150,13 @@ export function FigmaZappFrame() {
               <span className="font-extrabold">📱 Platform:</span> Mobile
             </p>
           </div>
-        </div>
+        </MotionFadeIn>
       </section>
 
-      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
+      <MotionRevealGroup className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
           <p className="mt-4 max-w-[1003px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Zapp Wallet is a digital financial application built to help users manage their money, make payments, and
@@ -177,7 +179,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Managing finances across multiple platforms often creates confusion and makes it difficult for users to track
@@ -190,7 +192,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The goal of Zapp Wallet was to create a financial experience that is simple, fast, and trustworthy. Clarity
@@ -203,7 +205,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🛠️ Design Process:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             🔄 Understanding User Flows The initial phase focused on mapping key user journeys in Zapp Wallet to ensure
@@ -221,7 +223,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📐 Wireframing &amp; Structure</h2>
           <p className="mt-4 max-w-[895px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Low-fidelity wireframes were used to organize information and define user priorities, ensuring important
@@ -238,7 +240,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎨 Visual Design &amp; System</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The color system uses a balanced fintech palette to highlight key actions, maintain clarity, and reinforce
@@ -255,7 +257,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔤 Typography</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Typography is structured to make financial information, especially numbers, instantly readable and easy to
@@ -273,7 +275,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔁 Key User Flows:</h2>
           <p className="mt-4 max-w-[997px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The onboarding and authentication flow is designed to help users get started quickly while maintaining strong
@@ -292,7 +294,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🖥️ Dashboard Experience:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The dashboard is designed as a centralized hub that gives users instant visibility into their financial
@@ -311,7 +313,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📤 Send Money Flow:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             This streamlined flow is designed to make money transfers as quick and effortless as possible by guiding users
@@ -330,7 +332,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚡ Payments &amp; Features:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             This allows users to complete everyday financial tasks quickly without getting lost in menus, making the
@@ -347,7 +349,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📈 Insights &amp; Analytics:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The app helps users understand spending behavior through charts, category insights, and transaction trends.
@@ -363,7 +365,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">💳 Cards &amp; Wallet Management:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Users can manage saved cards, view balances, and securely top up funds using a guided card form.
@@ -379,7 +381,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">👤 Profile &amp; Settings:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Account controls, security preferences, language, password changes, and support are organized in one clean
@@ -395,7 +397,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Feedback &amp; Success States:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Strong visual confirmation was used after every important financial action — transfers, scans, withdrawals, and
@@ -405,7 +407,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Impact:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The design focused on improving usability, reducing friction, and increasing engagement — resulting in a
@@ -434,7 +436,7 @@ export function FigmaZappFrame() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🚀 Final Outcome:</h2>
           <p className="mt-4 max-w-[1002px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Zapp Wallet delivers a clean and modern financial experience that simplifies how users manage their money on
@@ -447,7 +449,7 @@ export function FigmaZappFrame() {
             clarity or user experience.
           </p>
         </section>
-      </div>
+      </MotionRevealGroup>
 
       <FigmaFooter />
     </div>

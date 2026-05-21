@@ -5,6 +5,8 @@ import {
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { MotionFadeIn } from "@/components/motion/fade-in";
+import { MotionRevealGroup } from "@/components/motion/reveal";
 
 const SITE_URL = "https://georgespizzasteakhouse.com/";
 
@@ -52,7 +54,7 @@ export function GeorgesCaseStudy() {
     <div className="bg-[#fffdfb]">
       <FigmaHeader />
 
-      <div className="figma-gradient relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
+      <div className="figma-gradient motion-gradient-live relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
           src="/figma/georges-bg-ellipse-left.svg"
           alt=""
@@ -72,10 +74,10 @@ export function GeorgesCaseStudy() {
           className="pointer-events-none absolute right-[max(0px,calc(50%-580px))] top-[-20px] z-0 w-[min(278px,70vw)] max-w-none select-none md:right-[12%]"
         />
 
-        <div className="figma-shell relative z-10">
+        <MotionFadeIn className="figma-shell relative z-10">
           <Link
             href="/work"
-            className="inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
+            className="motion-link inline-flex items-center gap-[5px] text-[clamp(18px,1.8vw,24px)] font-bold text-black"
           >
             <span className="inline-flex size-[25px] items-center justify-center" aria-hidden>
               <span className="-rotate-135 inline-flex">
@@ -130,13 +132,13 @@ export function GeorgesCaseStudy() {
               <span className="font-extrabold">📱 Platform:</span> Web
             </p>
           </div>
-        </div>
+        </MotionFadeIn>
       </div>
 
-      <div className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
+      <MotionRevealGroup className="figma-shell pb-[var(--space-content-pad-bottom)] text-black">
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📝 Context:</h2>
           <div className="mt-4 max-w-[1003px] space-y-0 text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="m-0">
@@ -163,7 +165,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚠️ Problem</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The existing experience made browsing and ordering unnecessarily difficult for users. The menu felt
@@ -177,7 +179,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🎯 Goal:</h2>
           <div className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             <p className="m-0">
@@ -194,7 +196,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">👁️ Designing for clarity:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             With a content-heavy menu, the first step was to reduce overwhelm and bring a clear structure to the
@@ -214,7 +216,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">📊 Data-driven iteration:</h2>
           <p className="mt-4 max-w-[995px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             To validate design decisions, user behavior was analyzed and quick usability testing was conducted throughout
@@ -234,7 +236,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">⚡ Designing for actionability:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Once browsing was simplified, the focus shifted to enabling users to take action quickly and effortlessly. A
@@ -255,7 +257,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🗂️ Information hierarchy framework:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             Managing a large volume of menu content required a clear information hierarchy, which I structured into
@@ -281,7 +283,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">🔄 Key interaction: Ordering flow:</h2>
           <p className="mt-4 max-w-[1000px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The key interaction focuses on streamlining the ordering flow to create a faster and more intuitive menu
@@ -293,7 +295,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">✅ Final solution:</h2>
           <p className="mt-4 max-w-[1001px] text-[clamp(15px,3.4vw,16px)] leading-[2]">
             The final solution strikes a balance between a content-heavy menu and a simple, usable experience. It
@@ -304,7 +306,7 @@ export function GeorgesCaseStudy() {
 
         <SectionDivider />
 
-        <section>
+        <section className="motion-reveal">
           <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">💡 Lessons learned:</h2>
           <ul className="mt-4 max-w-[1001px] list-disc space-y-1 pl-[1.35rem] text-[clamp(15px,3.4vw,16px)] leading-[2] marker:text-black">
             <li>Simplicity is key when dealing with large amounts of content — improves clarity and engagement by 35%</li>
@@ -316,7 +318,7 @@ export function GeorgesCaseStudy() {
             <li>Iteration helps uncover issues you didn’t initially see</li>
           </ul>
         </section>
-      </div>
+      </MotionRevealGroup>
 
       <FigmaFooter />
     </div>

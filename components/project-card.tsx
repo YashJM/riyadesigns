@@ -17,8 +17,8 @@ export function ProjectCard({
   thumbnail,
 }: ProjectCardProps) {
   return (
-    <article className="rounded-[clamp(24px,2vw,30px)] border border-line bg-surface p-[clamp(16px,4vw,24px)] md:p-8">
-      <div className="relative h-[clamp(180px,23vw,247px)] overflow-hidden rounded-[clamp(16px,1.4vw,20px)]">
+    <article className="motion-card rounded-[clamp(24px,2vw,30px)] border border-line bg-surface p-[clamp(16px,4vw,24px)] md:p-8">
+      <div className="motion-card-media relative h-[clamp(180px,23vw,247px)] overflow-hidden rounded-[clamp(16px,1.4vw,20px)]">
         <div className="absolute inset-0" style={{ background: accent }} aria-hidden />
         <Image
           src={thumbnail}
@@ -32,7 +32,7 @@ export function ProjectCard({
       <p className="mt-2 text-[clamp(15px,3.6vw,16px)] leading-[1.7] text-muted">{summary}</p>
       <Link
         href={`/work/${slug}`}
-        className="mt-4 inline-flex items-center gap-1 rounded-full border border-black/20 bg-white px-5 py-2 text-[clamp(14px,1.1vw,16px)] font-semibold"
+        className="motion-cta mt-4 inline-flex items-center gap-1 rounded-full border border-black/20 bg-white px-5 py-2 text-[clamp(14px,1.1vw,16px)] font-semibold"
       >
         <span>View Project</span>
         <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[14px] w-[14px]" />
