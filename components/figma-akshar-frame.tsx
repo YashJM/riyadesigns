@@ -6,19 +6,23 @@ const sections = [
   {
     icon: "📝",
     title: "About the project",
-    body: "Akshar Packs is a packaging business focused on reliable, high-quality solutions. The redesign improved structure, hierarchy, and clarity so users can understand offerings and take action faster.",
+    body: [
+      "Akshar Packs is a packaging business focused on delivering reliable and high-quality solutions for its clients. While the company had a strong operational foundation, its digital presence didn’t fully reflect the professionalism and scale of the brand.",
+      "The existing experience lacked structure, visual hierarchy, and clear communication, making it difficult for users to understand the range of services or navigate through the information effectively. Instead of guiding users, the interface placed the burden on them to explore and interpret the content on their own. This created a gap between how the brand operates offline and how it is perceived online. The goal of this project was to design a website that brings clarity, structure, and a stronger visual identity—helping users quickly understand the offerings while building trust through a clean and modern experience.",
+    ],
   },
   {
     icon: "🧩",
     title: "My Contribution",
-    body: "Led end-to-end UX strategy, user research, wireframes, high-fidelity design, and developer handoff with a scalable component system.",
+    body: "Led the Akshar Packaging project end-to-end using a research-driven approach, focusing on simplifying how users explore and inquire about packaging products. Conducted user research to identify key pain points such as unclear product specifications and complex inquiry processes. Defined the UX strategy and designed wireframes and high-fidelity prototypes to improve product discovery and navigation. Built a scalable design system to ensure consistency across the platform. Collaborated closely with developers to ensure smooth implementation and accurate design translation.",
     image: "/figma/akshar-contribution-a.png",
     image2: "/figma/akshar-contribution-b.png",
+    stackImages: true,
   },
   {
     icon: "⚠️",
     title: "Problem",
-    body: "Navigation and product structure created friction. Product specifications and customization details were not clearly visible, reducing confidence and conversion.",
+    body: "Businesses faced several challenges while interacting with the Akshar Packaging platform, including confusing navigation and poorly structured product categories that made it difficult to find relevant packaging solutions. Important details such as product specifications and customization options were not clearly visible, leading to uncertainty during decision-making. The inquiry process was inefficient and slowed down lead generation, while the lack of integration with CRM system further impacted communication and overall operational efficiency.",
     image: "/figma/akshar-problem.png",
   },
   {
@@ -157,27 +161,41 @@ export function FigmaAksharFrame() {
             <h2 className="text-[clamp(26px,2.7vw,32px)] font-extrabold">
               {section.icon} {section.title}:
             </h2>
-            <p className="mt-4 max-w-[1005px] text-[clamp(15px,3.4vw,16px)] leading-loose">{section.body}</p>
+            {Array.isArray(section.body) ? (
+              <div className="mt-4 max-w-[1005px] space-y-4 text-[clamp(15px,3.4vw,16px)] leading-loose">
+                {section.body.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-4 max-w-[1005px] text-[clamp(15px,3.4vw,16px)] leading-loose">{section.body}</p>
+            )}
             {section.image && section.image2 ? (
-              <div className="mt-6 grid gap-4 md:grid-cols-2 md:gap-5">
+              <div
+                className={
+                  "stackImages" in section && section.stackImages
+                    ? "mt-6 flex max-w-[1005px] flex-col gap-4"
+                    : "mt-6 grid gap-4 md:grid-cols-2 md:gap-5"
+                }
+              >
                 <div className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]">
                   <Image
                     src={section.image}
                     alt={section.title}
-                    width={650}
+                    width={1005}
                     height={359}
                     className="h-auto w-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
                   />
                 </div>
                 <div className="overflow-hidden rounded-[clamp(16px,1.4vw,20px)] border border-black shadow-[0_12px_36px_-14px_rgba(0,0,0,0.12)]">
                   <Image
                     src={section.image2}
                     alt={`${section.title} visual 2`}
-                    width={650}
+                    width={1005}
                     height={359}
                     className="h-auto w-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, min(1005px, 92vw)"
                   />
                 </div>
               </div>
