@@ -1,7 +1,16 @@
 import Image from "next/image";
+import { Fragment } from "react";
 import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
 
-const sections = [
+type AboutSection = {
+  icon: string;
+  title: string;
+  body?: string[];
+  /** Multi-line blocks with one line-height gap between blocks (Design Philosophy layout). */
+  blocks?: string[][];
+};
+
+const sections: AboutSection[] = [
   {
     icon: "💡",
     title: "How I Think",
@@ -37,10 +46,10 @@ const sections = [
   {
     icon: "🌸",
     title: "Design Philosophy",
-    body: [
-      "I see design the same way I see life — a balance of structure and spontaneity.",
-      "Some things are carefully crafted, others beautifully unplanned.",
-      "And somewhere in between… that’s where the magic happens ✨",
+    blocks: [
+      ["I see design the same way I see life — a balance of structure and spontaneity."],
+      ["Some things are carefully crafted,", "others beautifully unplanned."],
+      ["And somewhere in between…", "that’s where the magic happens ✨"],
     ],
   },
 ];
@@ -104,11 +113,31 @@ export function FigmaAboutFrame() {
               <span className="mr-2">{section.icon}</span>
               {section.title}
             </h2>
-            <div className="mt-4 space-y-3 text-[clamp(15px,3.6vw,18px)] leading-[1.85] text-[#2d2d2d] sm:leading-[1.9]">
-              {section.body.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </div>
+            {section.blocks ? (
+              <div className="mt-4 text-[clamp(15px,3.6vw,18px)] leading-[1.85] text-[#2d2d2d] sm:leading-[1.9]">
+                {section.blocks.map((lines, blockIdx) => (
+                  <p
+                    key={blockIdx}
+                    className={
+                      blockIdx < section.blocks!.length - 1 ? "mb-[1em]" : undefined
+                    }
+                  >
+                    {lines.map((line, lineIdx) => (
+                      <Fragment key={lineIdx}>
+                        {lineIdx > 0 ? <br /> : null}
+                        {line}
+                      </Fragment>
+                    ))}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-4 space-y-3 text-[clamp(15px,3.6vw,18px)] leading-[1.85] text-[#2d2d2d] sm:leading-[1.9]">
+                {section.body?.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+            )}
             {idx === sections.length - 1 ? <div className="mt-10 border-t border-[#efced9]" /> : null}
           </div>
         ))}
