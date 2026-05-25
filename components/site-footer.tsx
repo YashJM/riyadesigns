@@ -12,7 +12,7 @@ export function SiteFooter() {
           ears (and coffee) 👇
         </p>
         <div className="mt-6 flex items-center gap-3 text-sm font-semibold md:text-base">
-          <a href="mailto:hello@riyadesigns.studio" className="inline-flex items-center gap-1">
+          <a href="mailto:designer.riyash@gmail.com" className="inline-flex items-center gap-1">
             <span>Email Me</span>
             <Image src="/figma/arrow.svg" alt="" width={19} height={19} aria-hidden className="h-[14px] w-[14px]" />
           </a>
