@@ -22,10 +22,6 @@ export const PROJECT_LISTING_VISUALS: Record<
     thumbnail: "/figma/card-tripon-hero.png",
     accent: "linear-gradient(135deg,#8fd4ff,#47aee8)",
   },
-  easygo: {
-    thumbnail: "/figma/card-easygo-hero.png",
-    accent: "linear-gradient(135deg,#96e6a2,#57ce73)",
-  },
 };
 
 /** Long-form blurbs (home featured + /work cards). Single source; overrides markdown tagline for listing UIs. */
@@ -38,6 +34,4 @@ export const PROJECT_LISTING_SUMMARY: Record<string, string> = {
     "George’s Pizza & Steakhouse is known for its rich flavors and loyal customer base, but its old website didn’t reflect the brand. I redesigned it to be clean, modern, and easy to navigate, improving menu exploration and online ordering.",
   tripon:
     "TripOn connects every stage of travel into a fluid, effortless experience from exploring destinations to planning and booking with ease. Thoughtfully designed to feel both intuitive and inspiring, it empowers users to navigate their journeys with confidence and curiosity.",
-  easygo:
-    "EasyGo simplifies everyday travel with a smooth, intuitive booking experience designed for speed and convenience. From quick rides to reliable journeys, it helps users get where they need to go with ease and confidence.",
 };

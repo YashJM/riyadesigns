@@ -6,7 +6,6 @@ import { GeorgesCaseStudy } from "@/components/georges-case-study";
 import { FigmaAksharFrame } from "@/components/figma-akshar-frame";
 import { FigmaZappFrame } from "@/components/figma-zapp-frame";
 import { FigmaTriponFrame } from "@/components/figma-tripon-frame";
-import { FigmaEasygoFrame } from "@/components/figma-easygo-frame";
 import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 
 type Props = {
@@ -48,9 +47,6 @@ export default async function ProjectPage({ params }: Props) {
   }
   if (slug === "tripon") {
     return <FigmaTriponFrame />;
-  }
-  if (slug === "easygo") {
-    return <FigmaEasygoFrame />;
   }
 
   return (

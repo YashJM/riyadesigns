@@ -11,7 +11,6 @@ const featuredMeta = [
   { slug: "zapp-wallet", title: "Zapp Wallet" },
   { slug: "georges-pizza", title: "George’s Pizza & Steakhouse" },
   { slug: "tripon", title: "TripOn" },
-  { slug: "easygo", title: "EasyGo" },
 ] as const;
 
 const featured = featuredMeta.map((item) => {
