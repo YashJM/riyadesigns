@@ -1,5 +1,5 @@
-import { FigmaHomeFrame } from "@/components/figma-home-frame";
+import { CelestialHome } from "@/components/celestial/celestial-home";
 
 export default function Home() {
-  return <FigmaHomeFrame />;
+  return <CelestialHome />;
 }

@@ -4,7 +4,7 @@ import {
   CaseStudyImageTrigger,
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
-import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { CaseStudyCelestial } from "@/components/celestial/case-study-celestial";
 import { MotionFadeIn } from "@/components/motion/fade-in";
 import { MotionRevealGroup } from "@/components/motion/reveal";
 
@@ -51,8 +51,7 @@ function CaptionImage({
 export function GeorgesCaseStudy() {
   return (
     <CaseStudyLightboxRoot>
-    <div className="bg-[#fffdfb]">
-      <FigmaHeader />
+    <CaseStudyCelestial>
 
       <div className="figma-gradient motion-gradient-live relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
@@ -320,8 +319,7 @@ export function GeorgesCaseStudy() {
         </section>
       </MotionRevealGroup>
 
-      <FigmaFooter />
-    </div>
+    </CaseStudyCelestial>
     </CaseStudyLightboxRoot>
   );
 }

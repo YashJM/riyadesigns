@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FigmaAboutFrame } from "@/components/figma-about-frame";
+import { CelestialAbout } from "@/components/celestial/celestial-about";
 
 export const metadata: Metadata = {
   title: "About",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <FigmaAboutFrame />;
+  return <CelestialAbout />;
 }

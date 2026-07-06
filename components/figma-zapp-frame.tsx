@@ -4,7 +4,7 @@ import {
   CaseStudyImageTrigger,
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
-import { FigmaFooter, FigmaHeader } from "@/components/figma-chrome";
+import { CaseStudyCelestial } from "@/components/celestial/case-study-celestial";
 import { MotionFadeIn } from "@/components/motion/fade-in";
 import { MotionRevealGroup } from "@/components/motion/reveal";
 
@@ -78,8 +78,7 @@ const impactMetrics = [
 export function FigmaZappFrame() {
   return (
     <CaseStudyLightboxRoot>
-    <div className="bg-[#fffdfb]">
-      <FigmaHeader />
+    <CaseStudyCelestial>
 
       <section className="figma-gradient motion-gradient-live relative isolate overflow-hidden pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
         <img
@@ -451,8 +450,7 @@ export function FigmaZappFrame() {
         </section>
       </MotionRevealGroup>
 
-      <FigmaFooter />
-    </div>
+    </CaseStudyCelestial>
     </CaseStudyLightboxRoot>
   );
 }

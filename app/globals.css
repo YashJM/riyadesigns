@@ -32,6 +32,23 @@
   /* Tighter than browser default — reads more polished with geometric sans (Akatab / Akshar) */
   --tracking-body: -0.013em;
   --tracking-display: -0.024em;
+
+  /* —— Celestial (dark) theme: home / work / about shell —— */
+  --space-ink: #05070f;
+  --space-navy: #0a0e1c;
+  --space-navy-2: #0e1430;
+  --celestial-fg: #e9edf8;
+  --celestial-muted: #97a1bd;
+  --celestial-faint: #59627e;
+  --celestial-line: rgba(233, 237, 248, 0.1);
+  --celestial-line-strong: rgba(233, 237, 248, 0.18);
+  --celestial-surface: rgba(255, 255, 255, 0.035);
+  --celestial-surface-hover: rgba(255, 255, 255, 0.06);
+  --star: #eef3ff;
+  --amber-hi: #ffe0a3;
+  --amber: #f5a623;
+  --amber-deep: #ef7a2a;
+  --amber-glow: rgba(245, 166, 35, 0.5);
 }
 
 @theme inline {
@@ -42,6 +59,15 @@
   --color-separator: var(--separator);
   --color-muted: var(--muted);
   --color-brand: var(--brand);
+  --color-space-ink: var(--space-ink);
+  --color-space-navy: var(--space-navy);
+  --color-celestial-fg: var(--celestial-fg);
+  --color-celestial-muted: var(--celestial-muted);
+  --color-celestial-faint: var(--celestial-faint);
+  --color-star: var(--star);
+  --color-amber: var(--amber);
+  --color-amber-hi: var(--amber-hi);
+  --color-amber-deep: var(--amber-deep);
   /* Portfolio / Figma: primary UI + body = Akatab; light supporting copy = Akshar (e.g. footer credit) */
   --font-sans: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
   --font-support: var(--font-akshar), ui-sans-serif, system-ui, sans-serif;
@@ -291,5 +317,302 @@ h3 {
 
   .motion-case-image:hover img {
     transform: scale(1.02);
+  }
+}
+
+/* ==========================================================================
+   Celestial theme — dark starfield shell (home / work / about)
+   ========================================================================== */
+
+.celestial-root {
+  position: relative;
+  min-height: 100dvh;
+  color: var(--celestial-fg);
+  background-color: var(--space-navy);
+  isolation: isolate;
+}
+
+/* Base sky: deep navy with soft amber + cool nebula pooling. Guaranteed
+   background even if the finisher canvas fails to load. */
+.celestial-sky {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(60% 45% at 50% 46%, rgba(245, 166, 35, 0.09), transparent 70%),
+    radial-gradient(120% 70% at 50% -15%, rgba(245, 166, 35, 0.05), transparent 55%),
+    radial-gradient(90% 60% at 84% 14%, rgba(70, 92, 190, 0.1), transparent 62%),
+    radial-gradient(80% 70% at 10% 90%, rgba(96, 66, 160, 0.09), transparent 62%),
+    linear-gradient(180deg, #070b16 0%, var(--space-navy) 45%, #060911 100%);
+}
+
+/* Finisher nebula canvas host — sits above the sky, below the stars. */
+.celestial-nebula {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+.celestial-nebula #finisher-canvas {
+  background-color: transparent !important;
+}
+
+.celestial-stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Faint grain to kill banding on the gradients */
+.celestial-grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scroll progress meter */
+.celestial-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: 2px;
+  background: transparent;
+  pointer-events: none;
+}
+.celestial-progress-bar {
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--amber-deep), var(--amber), var(--amber-hi));
+  box-shadow: 0 0 12px -2px var(--amber-glow);
+  will-change: transform;
+}
+
+/* Technical / mono accents (eyebrows, compass labels, scroll cue) */
+.celestial-mono {
+  font-family: var(--font-jetbrains), var(--font-mono);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+/* Amber gradient text (last name, highlights) */
+.text-amber-gradient {
+  background: linear-gradient(180deg, #ffe6b0 0%, var(--amber) 52%, var(--amber-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 6px 44px rgba(245, 166, 35, 0.3));
+}
+
+/* Micro-interaction primitives */
+.celestial-magnetic {
+  display: inline-flex;
+  transition: transform 0.3s var(--ease-premium);
+  will-change: transform;
+}
+.celestial-tilt {
+  transform: perspective(900px);
+  transform-style: preserve-3d;
+  transition: transform 0.28s var(--ease-premium);
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .celestial-magnetic,
+  .celestial-tilt {
+    transition: none;
+  }
+}
+
+.celestial-glass {
+  background: var(--celestial-surface);
+  border: 1px solid var(--celestial-line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Amber pill button */
+.celestial-cta {
+  background: linear-gradient(180deg, #ffcf7a, var(--amber));
+  color: #1a1204;
+  box-shadow: 0 10px 30px -10px var(--amber-glow), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* —— Celestial keyframes —— */
+@keyframes celestial-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes celestial-spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes celestial-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes celestial-scroll-cue {
+  0% { transform: translateY(0); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translateY(9px); opacity: 0; }
+}
+@keyframes celestial-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes celestial-shimmer {
+  0% { background-position: -140% 0; }
+  100% { background-position: 240% 0; }
+}
+
+/* Hero entrance stagger (motion-safe only) */
+.celestial-enter {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .celestial-enter {
+    opacity: 0;
+    animation: celestial-rise 0.9s var(--ease-premium) forwards;
+    animation-delay: var(--enter-delay, 0ms);
+  }
+  .celestial-spin-slow {
+    animation: celestial-spin 140s linear infinite;
+    transform-origin: center;
+  }
+  .celestial-spin-slower {
+    animation: celestial-spin-rev 220s linear infinite;
+    transform-origin: center;
+  }
+  .celestial-scroll-dot {
+    animation: celestial-scroll-cue 1.8s var(--ease-premium) infinite;
+  }
+}
+
+/* Amber-underline nav / link hover */
+.celestial-nav-link {
+  position: relative;
+  transition: color var(--duration-micro) ease;
+}
+.celestial-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--duration-micro) var(--ease-premium);
+}
+.celestial-nav-link:hover::after,
+.celestial-nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* Constellation card */
+.celestial-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--celestial-line);
+  transition:
+    transform var(--duration-micro) var(--ease-premium),
+    border-color var(--duration-micro) ease,
+    box-shadow var(--duration-micro) var(--ease-premium);
+}
+/* moving specular glare (driven by <Tilt/> via inherited CSS vars) */
+.celestial-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 240, 210, 0.14),
+    transparent 60%
+  );
+  opacity: var(--glare-o, 0);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .celestial-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--celestial-line-strong);
+    box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.9), 0 0 40px -22px var(--amber-glow);
+  }
+  .celestial-card .celestial-card-media img {
+    transition: transform 0.6s var(--ease-premium);
+  }
+  .celestial-card:hover .celestial-card-media img {
+    transform: scale(1.05);
+  }
+}
+
+/* ---- Case-study interior retheme: recolor the pixel-accurate pink/light
+   figma-* frames to the celestial dark theme via a scoped wrapper. Product
+   mockup images are left untouched (they're the real product screenshots). ---- */
+.cs-celestial {
+  color: var(--celestial-fg);
+}
+/* light gradient bands → transparent so the dark glass panel/sky shows through */
+.cs-celestial .figma-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.012)
+  );
+}
+.cs-celestial .text-black {
+  color: var(--celestial-fg);
+}
+.cs-celestial .text-muted {
+  color: var(--celestial-muted);
+}
+/* white / off-white cards → dark glass */
+.cs-celestial .bg-white,
+.cs-celestial .bg-\[\#fafafa\],
+.cs-celestial .bg-\[\#fffdfb\] {
+  background: var(--celestial-surface);
+  border-color: var(--celestial-line);
+}
+/* dark outline pills/buttons → light translucent outline */
+.cs-celestial .border-black {
+  border-color: var(--celestial-line-strong);
+}
+/* section rules / dividers */
+.cs-celestial .case-study-rule,
+.cs-celestial hr {
+  border-color: var(--celestial-line);
+}
+/* soft-tone decorative pink ellipse glows read as amber-ish nebula on dark */
+.cs-celestial img[src*="ellipse"],
+.cs-celestial img[src*="sparkle"] {
+  opacity: 0.28;
+  mix-blend-mode: screen;
+}
+
+/* Social icon button */
+.celestial-social {
+  transition:
+    transform var(--duration-micro) var(--ease-premium),
+    border-color var(--duration-micro) ease,
+    background-color var(--duration-micro) ease,
+    color var(--duration-micro) ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .celestial-social:hover {
+    transform: translateY(-2px);
+    color: var(--amber-hi);
+    border-color: var(--amber-glow);
+    background-color: rgba(245, 166, 35, 0.1);
   }
 }

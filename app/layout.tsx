@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Akatab, Akshar } from "next/font/google";
+import { Akatab, Akshar, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const akatab = Akatab({
@@ -17,11 +17,18 @@ const akshar = Akshar({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#fffdfb",
+  themeColor: "#0a0e1c",
 };
 
 export const metadata: Metadata = {
@@ -53,7 +60,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${akatab.variable} ${akshar.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${akatab.variable} ${akshar.variable} ${jetbrainsMono.variable} h-full`}
+    >
       <body className="min-h-full bg-background font-sans text-foreground antialiased">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YG8DJWMFPP"

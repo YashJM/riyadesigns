@@ -4,7 +4,7 @@ import {
   CaseStudyImageTrigger,
   CaseStudyLightboxRoot,
 } from "@/components/case-study-lightbox";
-import { FigmaHeader, FigmaFooter } from "@/components/figma-chrome";
+import { CaseStudyCelestial } from "@/components/celestial/case-study-celestial";
 import { MotionFadeIn } from "@/components/motion/fade-in";
 import { MotionRevealGroup } from "@/components/motion/reveal";
 
@@ -129,8 +129,7 @@ const sections: AksharSection[] = [
 export function FigmaAksharFrame() {
   return (
     <CaseStudyLightboxRoot>
-    <div className="bg-[#fffdfb]">
-      <FigmaHeader />
+    <CaseStudyCelestial>
 
       {/* Hero: white band + soft ellipse accents (Figma 3147:146), not full-page gradient */}
       <section className="relative isolate overflow-hidden bg-white pb-[var(--space-page-hero-bottom)] pt-[var(--space-hero-pad-top)]">
@@ -320,8 +319,7 @@ export function FigmaAksharFrame() {
           </article>
         ))}
       </MotionRevealGroup>
-      <FigmaFooter />
-    </div>
+    </CaseStudyCelestial>
     </CaseStudyLightboxRoot>
   );
 }
