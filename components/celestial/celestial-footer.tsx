@@ -64,6 +64,17 @@ export function CelestialFooter() {
         <p className="font-support text-[13px] font-light text-celestial-muted">
           {HOME_FOOTER.copyright}
         </p>
+        <p className="mt-2 font-support text-[12px] font-light text-celestial-faint">
+          Built by{" "}
+          <a
+            href="https://nevilpatel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-celestial-muted underline decoration-[var(--celestial-line)] underline-offset-2 transition-colors hover:text-amber-hi"
+          >
+            Nevilpatel.com
+          </a>
+        </p>
       </div>
     </footer>
   );
