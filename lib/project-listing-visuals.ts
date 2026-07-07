@@ -1,37 +1,41 @@
 /**
  * Card / listing imagery used on the home featured section and /work grid.
- * Keep these in sync so both surfaces show the same project previews.
+ * Kept in sync with lib/home-content.ts project entries.
  */
 export const PROJECT_LISTING_VISUALS: Record<
   string,
   { thumbnail: string; accent: string }
 > = {
+  "apple-tv-plus": {
+    thumbnail: "/figma/card-apple-tv-hero.png",
+    accent: "linear-gradient(135deg,#1a1a2e,#2d2d4a)",
+  },
   "akshar-packs": {
     thumbnail: "/figma/card-akshar-hero.png",
     accent: "linear-gradient(135deg,#f2d6c8,#eadfd7)",
+  },
+  "google-pay-ai": {
+    thumbnail: "/figma/card-google-pay-hero.png",
+    accent: "linear-gradient(135deg,#4285f4,#34a853)",
   },
   "zapp-wallet": {
     thumbnail: "/figma/zapp-hero.png",
     accent: "linear-gradient(135deg,#d9b2f3,#c794ec)",
   },
-  "georges-pizza": {
-    thumbnail: "/figma/card-georges-hero.png",
-    accent: "linear-gradient(135deg,#e7d2bf,#d4b7a1)",
-  },
-  tripon: {
-    thumbnail: "/figma/card-tripon-hero.png",
-    accent: "linear-gradient(135deg,#8fd4ff,#47aee8)",
+  "shopify-analytics": {
+    thumbnail: "/figma/card-shopify-hero.png",
+    accent: "linear-gradient(135deg,#95bf47,#5e8e3e)",
   },
 };
 
-/** Long-form blurbs (home featured + /work cards). Single source; overrides markdown tagline for listing UIs. */
 export const PROJECT_LISTING_SUMMARY: Record<string, string> = {
-  "akshar-packs":
-    "Akshar Packs is a custom packaging solutions provider across diverse industries. The redesign simplifies the experience, sharpens product clarity, and streamlines inquiries to improve discovery and conversion.",
+  "apple-tv-plus":
+    "Re-imagining Content Discovery Through Inclusive & Accessible Design.",
+  "akshar-packs": "Simplifying B2B Product Discovery.",
+  "google-pay-ai":
+    "Helping users make smarter financial decisions through proactive, personalized insights.",
   "zapp-wallet":
-    "Zapp Wallet offers a seamless and secure way to manage everyday payments, bringing speed and simplicity to every transaction. Designed with clarity and ease in mind, it empowers users to move, track, and control their money with confidence.",
-  "georges-pizza":
-    "George’s Pizza & Steakhouse is known for its rich flavors and loyal customer base, but its old website didn’t reflect the brand. I redesigned it to be clean, modern, and easy to navigate, improving menu exploration and online ordering.",
-  tripon:
-    "TripOn connects every stage of travel into a fluid, effortless experience from exploring destinations to planning and booking with ease. Thoughtfully designed to feel both intuitive and inspiring, it empowers users to navigate their journeys with confidence and curiosity.",
+    "Designing a Faster and More Trustworthy Mobile Wallet Experience.",
+  "shopify-analytics":
+    "Designing a Smarter Analytics Experience for Shopify Merchants.",
 };

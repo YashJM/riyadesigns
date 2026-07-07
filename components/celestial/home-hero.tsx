@@ -1,5 +1,6 @@
 import { Magnetic } from "@/components/celestial/magnetic";
 import { StarCompass } from "@/components/celestial/star-compass";
+import { HOME_HERO } from "@/lib/home-content";
 
 type Social = {
   label: string;
@@ -8,7 +9,6 @@ type Social = {
   icon: React.ReactNode;
 };
 
-/* NOTE: Update Dribbble / Behance URLs with Riya's real handles. */
 const socials: Social[] = [
   {
     label: "LinkedIn",
@@ -49,7 +49,6 @@ export function HomeHero() {
     <section className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-5 pt-24 pb-16 text-center">
       <StarCompass className="pointer-events-none absolute left-1/2 top-[47%] w-[clamp(680px,118vw,1360px)] -translate-x-1/2 -translate-y-1/2 opacity-90" />
 
-      {/* soft radial vignette to lift the name off the chart */}
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 h-[70vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
@@ -59,27 +58,26 @@ export function HomeHero() {
         aria-hidden
       />
 
-      <div className="relative z-10 flex flex-col items-center">
+      <div className="relative z-10 flex max-w-[52rem] flex-col items-center">
         <p
-          className="celestial-enter celestial-mono text-[11px] text-celestial-muted"
+          className="celestial-enter celestial-mono text-[10px] tracking-[0.12em] text-celestial-muted sm:text-[11px]"
           style={{ "--enter-delay": "80ms" } as React.CSSProperties}
         >
-          Hey, I&apos;m
+          {HOME_HERO.eyebrow}
         </p>
 
         <h1
-          className="celestial-enter mt-4 text-[clamp(3.25rem,15vw,9.5rem)] font-extrabold leading-[0.92] tracking-[-0.03em]"
+          className="celestial-enter mt-6 text-[clamp(2rem,6.5vw,3.5rem)] font-extrabold leading-[1.08] tracking-[-0.02em] text-celestial-fg"
           style={{ "--enter-delay": "160ms" } as React.CSSProperties}
         >
-          <span className="text-celestial-fg">Riya </span>
-          <span className="text-amber-gradient">Patel</span>
+          {HOME_HERO.headline}
         </h1>
 
         <p
-          className="celestial-enter celestial-mono mt-6 text-[clamp(11px,1.4vw,14px)] text-celestial-muted"
+          className="celestial-enter mt-6 max-w-[42rem] text-[clamp(15px,2vw,20px)] leading-[1.55] text-celestial-muted"
           style={{ "--enter-delay": "280ms" } as React.CSSProperties}
         >
-          UI / UX Designer
+          {HOME_HERO.subtitle}
         </p>
 
         <ul
@@ -107,7 +105,6 @@ export function HomeHero() {
         </ul>
       </div>
 
-      {/* scroll cue */}
       <a
         href="#featured"
         className="celestial-enter absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-celestial-faint transition-colors hover:text-celestial-muted"
@@ -120,7 +117,6 @@ export function HomeHero() {
         </span>
       </a>
 
-      {/* corner tag */}
       <span className="celestial-mono absolute bottom-6 right-6 hidden text-[10px] text-celestial-faint md:block">
         The Designer
       </span>

@@ -1,12 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { PROJECT_LISTING_SUMMARY, PROJECT_LISTING_VISUALS } from "@/lib/project-listing-visuals";
+import { HOME_FEATURED } from "@/lib/home-content";
+import { WORK_PROJECT_SLUGS, type WorkProjectSlug } from "@/lib/work-projects";
 
 export type Project = {
   slug: string;
   title: string;
   tagline: string;
+  subtitle: string;
+  metrics: string[];
+  tags: string[];
   year: string;
   roles: string[];
   thumbnail: string;
@@ -21,6 +25,12 @@ function normalizeSlug(fileName: string) {
   return fileName.replace(/\.md$/, "");
 }
 
+function getFeaturedMeta(slug: string) {
+  const featured = HOME_FEATURED.projects.find((p) => p.slug === slug);
+  if (!featured) return null;
+  return featured;
+}
+
 export function getAllProjects(): Project[] {
   const files = fs.readdirSync(projectsDir).filter((file) => file.endsWith(".md"));
   return files
@@ -28,16 +38,18 @@ export function getAllProjects(): Project[] {
       const raw = fs.readFileSync(path.join(projectsDir, file), "utf-8");
       const { data, content } = matter(raw);
       const slug = String(data.slug ?? normalizeSlug(file));
-      const listing = PROJECT_LISTING_VISUALS[slug];
-      const listingSummary = PROJECT_LISTING_SUMMARY[slug];
+      const featured = getFeaturedMeta(slug);
       return {
         slug,
-        title: String(data.title ?? ""),
-        tagline: listingSummary ?? String(data.tagline ?? ""),
-        year: String(data.year ?? ""),
+        title: String(data.title ?? featured?.title ?? ""),
+        tagline: featured?.subtitle ?? String(data.tagline ?? ""),
+        subtitle: featured?.subtitle ?? String(data.tagline ?? ""),
+        metrics: featured?.metrics ?? [],
+        tags: featured?.tags ?? [],
+        year: String(data.year ?? "2026"),
         roles: Array.isArray(data.roles) ? data.roles.map(String) : [],
-        thumbnail: listing?.thumbnail ?? String(data.thumbnail ?? ""),
-        accent: listing?.accent ?? String(data.accent ?? "#f5d7e2"),
+        thumbnail: featured?.image ?? String(data.thumbnail ?? ""),
+        accent: featured?.fallback ?? String(data.accent ?? "#f5d7e2"),
         externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
         content,
       } satisfies Project;
@@ -45,6 +57,19 @@ export function getAllProjects(): Project[] {
     .sort((a, b) => b.year.localeCompare(a.year));
 }
 
+export function getWorkProjects(): Project[] {
+  const bySlug = new Map(getAllProjects().map((project) => [project.slug, project]));
+  return WORK_PROJECT_SLUGS.map((slug) => {
+    const project = bySlug.get(slug);
+    if (!project) throw new Error(`Missing project markdown for: ${slug}`);
+    return project;
+  });
+}
+
 export function getProjectBySlug(slug: string) {
   return getAllProjects().find((project) => project.slug === slug);
+}
+
+export function getProjectByWorkSlug(slug: WorkProjectSlug) {
+  return getWorkProjects().find((project) => project.slug === slug);
 }
