@@ -25,14 +25,14 @@ function StudyImage({ image }: { image: CaseStudyImage }) {
     <CaseStudyImageTrigger
       src={image.src}
       alt={image.alt}
-      className="overflow-hidden rounded-[18px] border border-[var(--celestial-line)] bg-[#fafafa] shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]"
+      className="overflow-hidden rounded-[18px] border border-[var(--celestial-line)] bg-transparent shadow-[0_24px_64px_-32px_rgba(0,0,0,0.85)]"
     >
       <Image
         src={image.src}
         alt={image.alt}
         width={width}
         height={height}
-        className="block h-auto max-w-full object-contain"
+        className="block h-auto max-w-full bg-transparent object-contain"
         style={{ width: `${width}px`, maxWidth: "100%" }}
         sizes={`(max-width: 768px) 100vw, ${width}px`}
       />
