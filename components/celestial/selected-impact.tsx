@@ -5,7 +5,7 @@ export function SelectedImpact() {
   return (
     <section className="relative z-10 mx-auto w-full max-w-[var(--content-max)] px-[max(1.25rem,env(safe-area-inset-left))] py-[clamp(3rem,8vw,5rem)]">
       <MotionReveal>
-        <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-tight text-celestial-fg">
+        <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">
           Selected Impact
         </h2>
       </MotionReveal>

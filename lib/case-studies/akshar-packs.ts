@@ -3,8 +3,10 @@ import type { CaseStudyData } from "@/lib/case-studies/types";
 export const aksharPacksCaseStudy: CaseStudyData = {
   slug: "akshar-packs",
   title: "Akshar Packs",
-  subtitle: "Improving Product Discovery & Lead Capture for a B2B Packaging Platform",
+  subtitle:
+    "Improving Product Discovery & Lead Capture for a B2B Packaging Platform",
   externalUrl: "https://aksharpacks.com/",
+  overviewTitle: "Project Overview",
   intro: [
     "Akshar Packs is a B2B packaging company that helps businesses find custom packaging solutions across different industries.",
     "For this project, I redesigned the website from research to implementation support, focusing on improving product discovery, simplifying the inquiry journey, and helping the sales team capture more structured CRM-ready lead information.",
@@ -36,7 +38,9 @@ export const aksharPacksCaseStudy: CaseStudyData = {
       images: [
         {
           src: "/figma/case-studies/akshar/business-context.png",
-          alt: "Akshar Packs business context screen",
+          alt: "Akshar Packs pricing and business context screen",
+          width: 737,
+          height: 364,
         },
       ],
     },
@@ -51,6 +55,8 @@ export const aksharPacksCaseStudy: CaseStudyData = {
         {
           src: "/figma/case-studies/akshar/challenge.png",
           alt: "Akshar Packs inquiry challenge",
+          width: 584,
+          height: 536,
         },
       ],
     },
@@ -67,12 +73,6 @@ export const aksharPacksCaseStudy: CaseStudyData = {
         "One key insight was that users usually arrive with a specific packaging need in mind. They may be looking for a certain box type, material, size, or industry use case, so the website needed to guide them faster instead of making them browse through unclear options.",
         "Another insight was that product details needed stronger hierarchy. For B2B customers, product pages need to answer practical questions quickly: what the product is, what can be customized, what specifications are available, and how to request a quote.",
         "I also found that long or unclear inquiry forms can create hesitation. Users need guidance on what information to provide, while the sales team needs structured details such as product type, quantity, customization needs, and contact information.",
-      ],
-      images: [
-        {
-          src: "/figma/case-studies/akshar/research.png",
-          alt: "Akshar Packs research insights",
-        },
       ],
     },
     {
@@ -99,12 +99,34 @@ export const aksharPacksCaseStudy: CaseStudyData = {
             "I reorganized product categories and improved the product card layout so users could scan options faster and move toward the right packaging category with less effort.",
             "This mattered because most B2B customers do not browse randomly. They usually come with a specific packaging requirement, so the experience needed to guide them quickly.",
           ],
+          images: [
+            {
+              src: "/figma/case-studies/akshar/design-a.png",
+              alt: "Akshar Packs product discovery design",
+              width: 710,
+              height: 394,
+            },
+          ],
         },
         {
           title: "2. Improved Product Detail Pages",
           body: [
             "I redesigned product detail pages to make specifications, customization options, use cases, and inquiry actions easier to understand. Important information was grouped into clear sections so users could feel more confident before contacting the team.",
             "For B2B customers, unclear product information creates hesitation. Clear product details help build trust and support faster decision-making.",
+          ],
+          images: [
+            {
+              src: "/figma/case-studies/akshar/design-b.png",
+              alt: "Akshar Packs product detail design screen one",
+              width: 455,
+              height: 274,
+            },
+            {
+              src: "/figma/case-studies/akshar/design-detail-b.png",
+              alt: "Akshar Packs product detail design screen two",
+              width: 485,
+              height: 274,
+            },
           ],
         },
         {
@@ -120,6 +142,14 @@ export const aksharPacksCaseStudy: CaseStudyData = {
             "The inquiry experience was designed with CRM workflows in mind. The goal was to make submitted information easier to organize, qualify, and follow up on.",
             "Good UX should create value for both the customer and the team behind the experience. In this case, the inquiry flow needed to help users submit requests easily while giving the sales team the information they needed to respond quickly.",
           ],
+          images: [
+            {
+              src: "/figma/case-studies/akshar/design-inquiry.png",
+              alt: "Akshar Packs CRM inquiry form design",
+              width: 742,
+              height: 412,
+            },
+          ],
         },
         {
           title: "5. Created a Scalable Design System",
@@ -127,21 +157,27 @@ export const aksharPacksCaseStudy: CaseStudyData = {
             "I created reusable components such as product cards, buttons, form fields, CTA sections, typography styles, and layout patterns to keep the experience consistent across the website.",
             "This helped reduce design repetition and made it easier to scale the website with future product pages or new categories.",
           ],
-        },
-      ],
-      images: [
-        {
-          src: "/figma/case-studies/akshar/design-a.png",
-          alt: "Akshar Packs product discovery design",
-        },
-        {
-          src: "/figma/case-studies/akshar/design-b.png",
-          alt: "Akshar Packs product detail design",
+          images: [
+            {
+              src: "/figma/case-studies/akshar/design-system-a.png",
+              alt: "Akshar Packs design system CTA component",
+              width: 418,
+              height: 171,
+            },
+            {
+              src: "/figma/case-studies/akshar/design-system-b.png",
+              alt: "Akshar Packs design system navigation component",
+              width: 856,
+              height: 46,
+            },
+          ],
+          imageLayout: "stack",
         },
       ],
     },
     {
       title: "Wireframes",
+      layout: "split",
       paragraphs: [
         "Before moving into high-fidelity design, I created wireframes to explore the page structure, product discovery flow, product detail hierarchy, and inquiry form experience.",
         "The wireframes helped validate the structure early and made it easier to discuss functionality with stakeholders and developers before investing time in detailed UI.",
@@ -150,6 +186,8 @@ export const aksharPacksCaseStudy: CaseStudyData = {
         {
           src: "/figma/case-studies/akshar/wireframe.png",
           alt: "Akshar Packs wireframes",
+          width: 447,
+          height: 326,
         },
       ],
     },
@@ -159,11 +197,18 @@ export const aksharPacksCaseStudy: CaseStudyData = {
         "The final design created a clearer and more conversion-focused website experience.",
         "I improved the navigation, product listing pages, product detail pages, inquiry CTAs, responsive layouts, and CRM-ready lead capture. The final experience helped users move from browsing to inquiry with less confusion, while giving the sales team better information to follow up.",
       ],
-      images: [
-        {
-          src: "/figma/case-studies/akshar/final.png",
-          alt: "Akshar Packs final design",
-        },
+    },
+    {
+      title: "Business Impact",
+      paragraphs: [
+        "The redesign improved both the customer experience and the internal sales workflow.",
+        "Product exploration and inquiry became 3× faster, lead conversion improved by 25%, and product information became easier to understand and compare. Inquiry data also became more structured for CRM-based follow-up, helping the sales team respond more quickly with better context.",
+      ],
+      metrics: [
+        { value: "38%", label: "Faster transaction completion" },
+        { value: "27%", label: "Increase in engagement" },
+        { value: "Reduced", label: "Cognitive load across core workflows" },
+        { value: "Improved", label: "Task completion efficiency" },
       ],
     },
     {
@@ -173,11 +218,5 @@ export const aksharPacksCaseStudy: CaseStudyData = {
         "By improving product discovery, simplifying the inquiry flow, and supporting CRM-based lead management, the redesign created a smoother customer experience and a more efficient process for the business.",
       ],
     },
-  ],
-  metrics: [
-    { value: "38%", label: "Faster transaction completion" },
-    { value: "27%", label: "Increase in engagement" },
-    { value: "Reduced", label: "Cognitive load across core workflows" },
-    { value: "Improved", label: "Task completion efficiency" },
   ],
 };

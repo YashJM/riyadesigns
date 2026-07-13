@@ -42,7 +42,7 @@ export function CaseStudyCelestial({ children }: { children: ReactNode }) {
               All Work
             </Link>
           </Magnetic>
-          <span className="celestial-mono text-[10px] text-celestial-faint">Case Study</span>
+          <span className="celestial-eyebrow text-celestial-faint">Case Study</span>
         </MotionFadeIn>
 
         <MotionFadeIn

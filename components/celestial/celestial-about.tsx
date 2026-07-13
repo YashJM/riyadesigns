@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CelestialFooter } from "@/components/celestial/celestial-footer";
 import { CelestialHeader } from "@/components/celestial/celestial-header";
+import { CelestialProse, ProseLine } from "@/components/celestial/celestial-prose";
 import { CelestialShell } from "@/components/celestial/celestial-shell";
 import { MotionFadeIn } from "@/components/motion/fade-in";
 import { MotionReveal } from "@/components/motion/reveal";
@@ -12,11 +13,11 @@ import {
 
 function AboutParagraphs({ paragraphs }: { paragraphs: readonly string[] }) {
   return (
-    <div className="mt-4 space-y-5 text-[clamp(1rem,2.2vw,1.125rem)] leading-[1.65] text-celestial-muted">
+    <CelestialProse className="mt-4">
       {paragraphs.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
+        <ProseLine key={paragraph}>{paragraph}</ProseLine>
       ))}
-    </div>
+    </CelestialProse>
   );
 }
 
@@ -29,7 +30,7 @@ export function CelestialAbout() {
         <div className="celestial-glass rounded-[28px] px-[clamp(1.5rem,5vw,3rem)] py-[clamp(2rem,6vw,3.5rem)]">
           <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(240px,304px)]">
             <MotionFadeIn>
-              <h1 className="text-[clamp(2rem,5vw,2.5rem)] font-bold tracking-tight text-celestial-fg">
+              <h1 className="text-[clamp(2rem,5vw,2.5rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">
                 {ABOUT_INTRO.title}
               </h1>
               <AboutParagraphs paragraphs={ABOUT_INTRO.paragraphs} />
@@ -59,7 +60,7 @@ export function CelestialAbout() {
               delay={idx * 70}
               className="border-t border-[var(--celestial-line)] py-[clamp(1.75rem,5vw,2.75rem)] first:border-t-0 first:pt-0"
             >
-              <h2 className="text-[clamp(1.35rem,3vw,1.875rem)] font-bold tracking-tight text-celestial-fg">
+              <h2 className="text-[clamp(1.35rem,3vw,1.875rem)] font-semibold tracking-[var(--tracking-display)] text-celestial-fg">
                 {section.title}
               </h2>
               <AboutParagraphs paragraphs={section.paragraphs} />
@@ -70,20 +71,20 @@ export function CelestialAbout() {
             delay={ABOUT_SECTIONS.length * 70}
             className="border-t border-[var(--celestial-line)] py-[clamp(1.75rem,5vw,2.75rem)]"
           >
-            <h2 className="text-[clamp(1.35rem,3vw,1.875rem)] font-bold tracking-tight text-celestial-fg">
+            <h2 className="text-[clamp(1.35rem,3vw,1.875rem)] font-semibold tracking-[var(--tracking-display)] text-celestial-fg">
               {ABOUT_PHILOSOPHY.title}
             </h2>
-            <p className="mt-4 text-[clamp(1rem,2.2vw,1.125rem)] leading-[1.65] text-celestial-muted">
-              {ABOUT_PHILOSOPHY.intro}
-            </p>
-            <div className="mt-6 space-y-5 text-[clamp(1rem,2.2vw,1.125rem)] leading-[1.65] text-celestial-muted">
+            <CelestialProse className="mt-4">
+              <ProseLine>{ABOUT_PHILOSOPHY.intro}</ProseLine>
+            </CelestialProse>
+            <CelestialProse className="mt-6">
               {ABOUT_PHILOSOPHY.principles.map((principle) => (
                 <div key={principle.title}>
                   <p className="font-bold text-celestial-fg">{principle.title}</p>
-                  <p className="mt-1">{principle.body}</p>
+                  <ProseLine className="mt-1">{principle.body}</ProseLine>
                 </div>
               ))}
-            </div>
+            </CelestialProse>
           </MotionReveal>
         </div>
       </section>

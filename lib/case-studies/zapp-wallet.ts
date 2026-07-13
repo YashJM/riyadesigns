@@ -9,6 +9,7 @@ export const zappWalletCaseStudy: CaseStudyData = {
     "As digital financial products continue to evolve, users expect transactions to be fast, secure, and effortless. However, many wallet experiences become increasingly complex as more features are added, making it difficult for users to complete simple financial tasks with confidence.",
     "For this project, I focused on creating a user-centered wallet experience that balances speed, clarity, trust, and control. My goal was to simplify complex financial workflows, reduce cognitive load, and help users feel confident before, during, and after every transaction.",
   ],
+  overviewTitle: "Project Overview",
   meta: {
     role: "UX Designer / Product Designer",
     timeline: "5 Weeks",
@@ -54,14 +55,25 @@ export const zappWalletCaseStudy: CaseStudyData = {
       paragraphs: [
         "Before exploring solutions, I wanted to understand how users approached common financial tasks and where friction occurred throughout the experience.",
         "I conducted competitor analysis, reviewed fintech interaction patterns, mapped user journeys, and performed heuristic evaluations of common wallet experiences.",
-        "I focused on answering three key questions: How can users complete common financial tasks faster? How can financial information become easier to understand? How can the experience reinforce trust without creating additional friction?",
+      ],
+      numberedList: {
+        intro: "I focused on answering three key questions:",
+        items: [
+          "How can users complete common financial tasks faster?",
+          "How can financial information become easier to understand?",
+          "How can the experience reinforce trust without creating additional friction?",
+        ],
+      },
+      closingParagraphs: [
         "As part of the discovery process, I synthesized findings into themes and opportunity areas using affinity mapping and behavioral pattern analysis.",
         "This helped move the conversation beyond individual screens and focus on the broader user experience.",
       ],
       images: [
         {
           src: "/figma/case-studies/zapp/research.png",
-          alt: "Zapp Wallet research insights",
+          alt: "Zapp Wallet authentication and sign-up research screens",
+          width: 988,
+          height: 425,
         },
       ],
     },
@@ -74,6 +86,21 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "Clear feedback was another important insight. Confirmation screens, transaction details, and success states helped users feel confident that their actions were completed successfully.",
         "Security also needed to feel seamless. PIN and biometric verification had to support trust without interrupting the flow.",
       ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/research-competitive.png",
+          alt: "Identity verification flow explored during research and discovery",
+          width: 761,
+          height: 335,
+        },
+        {
+          src: "/figma/case-studies/zapp/research-affinity.png",
+          alt: "Password recovery flow explored during research and discovery",
+          width: 636,
+          height: 428,
+        },
+      ],
+      imageLayout: "stack",
     },
     {
       title: "UX Strategy",
@@ -134,6 +161,14 @@ export const zappWalletCaseStudy: CaseStudyData = {
       paragraphs: [
         "During task analysis, I identified the send money flow as one of the most important and frequently used journeys in the app. Users needed the transfer process to feel fast, but they also needed enough reassurance before completing a money action. To reduce cognitive load, I simplified the flow into a clear sequence: selecting a recipient, entering an amount, reviewing transaction details, authenticating, and confirming the transfer. I intentionally kept the review and confirmation steps because, in fintech, user confidence matters just as much as speed.",
       ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/send-money.png",
+          alt: "Zapp Wallet send money flow screens",
+          width: 1212,
+          height: 682,
+        },
+      ],
     },
     {
       title: "Payments, QR & Everyday Actions",
@@ -141,6 +176,14 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "Beyond transfers, users needed quick access to everyday financial tasks.",
         "I organized QR payments, top-ups, requests, and transaction history into predictable navigation patterns that reduced effort and improved discoverability.",
         "The goal was to surface frequently used actions while maintaining a clean and focused interface.",
+      ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/payments.png",
+          alt: "Zapp Wallet payments, QR, and everyday action screens",
+          width: 733,
+          height: 670,
+        },
       ],
     },
     {
@@ -151,12 +194,28 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "To address this, I introduced visual summaries, spending categories, and activity trends that helped users identify patterns and make more informed financial decisions.",
         "I intentionally kept the analytics lightweight and scannable to support quick understanding.",
       ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/wallet.png",
+          alt: "Zapp Wallet financial insights and analytics screens",
+          width: 843,
+          height: 405,
+        },
+      ],
     },
     {
       title: "Wallet Management & Cards",
       paragraphs: [
         "Managing cards and balances involves sensitive financial information, so I wanted this part of the experience to feel clear, calm, and predictable. Users needed to view balances, manage saved cards, top up funds, and verify details before taking action without feeling unsure.",
         "To support this, I designed the flows with clear labels, readable amounts, guided steps, and consistent interaction patterns. The goal was to make wallet management feel structured and reliable while reducing friction and helping users complete card-related tasks with confidence.",
+      ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/profile.png",
+          alt: "Zapp Wallet card and wallet management screens",
+          width: 629,
+          height: 607,
+        },
       ],
     },
     {
@@ -166,6 +225,14 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "Rather than treating settings as secondary screens, I approached them as part of the trust experience.",
         "Users should always know where to manage their account and security preferences.",
       ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/profile-settings.png",
+          alt: "Zapp Wallet profile, settings, and security screens",
+          width: 676,
+          height: 677,
+        },
+      ],
     },
     {
       title: "Design System",
@@ -173,6 +240,21 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "To support consistency and scalability across Zapp Wallet, I created a reusable design system that helped keep the mobile experience clear, accessible, and easy to extend. The system included typography, color palette, buttons, cards, form elements, navigation patterns, feedback states, success messages, and transaction components.",
         "From a UX perspective, the goal was not just visual consistency. I wanted users to experience the same patterns across key financial flows, so actions felt familiar and predictable. From a product perspective, the design system also created a stronger foundation for future features and helped support smoother developer handoff.",
       ],
+      images: [
+        {
+          src: "/figma/case-studies/zapp/design-system-colors.png",
+          alt: "Zapp Wallet color palette and design tokens",
+          width: 471,
+          height: 251,
+        },
+        {
+          src: "/figma/case-studies/zapp/design-system-typography.png",
+          alt: "Zapp Wallet typography scale and type styles",
+          width: 399,
+          height: 241,
+        },
+      ],
+      imageLayout: "stack",
     },
     {
       title: "Final Experience",
@@ -181,11 +263,19 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "By simplifying workflows, improving information hierarchy, strengthening feedback, and reducing friction across key journeys, the product became easier to learn and easier to trust.",
         "Instead of feeling like a collection of financial features, the experience feels like a connected ecosystem designed around user needs.",
       ],
-      images: [
-        {
-          src: "/figma/case-studies/zapp/screens.png",
-          alt: "Zapp Wallet final mobile screens",
-        },
+    },
+    {
+      title: "Business Impact",
+      paragraphs: [
+        "The redesign improved the overall wallet experience by making key financial tasks faster, clearer, and more trustworthy.",
+        "Transaction completion became 35% faster, engagement increased by 20%, and users had better visibility into their spending behavior. By simplifying core workflows, improving feedback states, and reducing cognitive load, the app helped users complete financial actions with more confidence.",
+        "The final experience also created a stronger foundation for future product growth, with reusable patterns and a scalable design system that can support new wallet features over time.",
+      ],
+      metrics: [
+        { value: "35%", label: "Faster transactions" },
+        { value: "20%", label: "Increased engagement" },
+        { value: "Higher", label: "User confidence" },
+        { value: "Better", label: "Financial awareness" },
       ],
     },
     {
@@ -196,11 +286,5 @@ export const zappWalletCaseStudy: CaseStudyData = {
         "Looking ahead, I would be interested in validating some of these decisions with a broader group of users through moderated interviews, usability testing, and A/B experiments. I would also explore transaction drop-off points and dashboard behavior in more detail to identify additional opportunities for improving engagement and task completion.",
       ],
     },
-  ],
-  metrics: [
-    { value: "35%", label: "Faster transactions" },
-    { value: "20%", label: "Increased engagement" },
-    { value: "Higher", label: "User confidence" },
-    { value: "Better", label: "Financial awareness" },
   ],
 };

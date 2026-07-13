@@ -18,11 +18,22 @@ export type CaseStudyMeta = {
 export type CaseStudySection = {
   title: string;
   paragraphs?: string[];
-  items?: { title: string; body: string | string[] }[];
+  numberedList?: { intro: string; items: string[] };
+  closingParagraphs?: string[];
+  items?: {
+    title: string;
+    body: string | string[];
+    images?: CaseStudyImage[];
+    imageLayout?: "stack" | "grid";
+  }[];
   steps?: string[];
   principles?: { title: string; body: string }[];
   cards?: { title: string; body: string }[];
   images?: CaseStudyImage[];
+  imageLayout?: "stack" | "grid";
+  /** Side-by-side text and image layout (e.g. wireframes). */
+  layout?: "split";
+  metrics?: CaseStudyMetric[];
 };
 
 export type CaseStudyMetric = {
@@ -37,6 +48,8 @@ export type CaseStudyData = {
   subtitle: string;
   intro: string[];
   externalUrl?: string;
+  /** Optional heading above role/timeline meta (e.g. Project Overview). */
+  overviewTitle?: string;
   meta: CaseStudyMeta;
   heroImage?: CaseStudyImage;
   sections: CaseStudySection[];

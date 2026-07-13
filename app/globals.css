@@ -19,7 +19,12 @@
   --space-hero-top: clamp(7rem, 11vw, 9.5rem);
   --text-display: clamp(2.25rem, 4vw, 3.5rem);
   --text-heading: clamp(1.75rem, 2.5vw, 2.5rem);
-  --text-body-lg: clamp(1.125rem, 1.8vw, 1.75rem);
+  --text-body: clamp(1.0625rem, 2.2vw, 1.25rem);
+  --text-body-lg: clamp(1.125rem, 2.4vw, 1.375rem);
+  --leading-body: 1.7;
+  --leading-body-relaxed: 1.75;
+  --duration-prose: 0.85s;
+  --prose-stagger: 100ms;
   /* Vertical rhythm: tuned for mobile-first spacing */
   --space-hero-pad-top: clamp(4.25rem, 11vw, 6.875rem);
   --space-hero-pad-bottom: clamp(3rem, 9vw, 5.5rem);
@@ -32,6 +37,9 @@
   /* Tighter than browser default — reads more polished with geometric sans (Akatab / Akshar) */
   --tracking-body: -0.013em;
   --tracking-display: -0.024em;
+  --tracking-eyebrow: 0.04em;
+  --text-celestial-eyebrow: clamp(0.75rem, 1.6vw, 0.8125rem);
+  --text-celestial-tag: 0.75rem;
 
   /* —— Celestial (dark) theme: home / work / about shell —— */
   --space-ink: #05070f;
@@ -113,6 +121,8 @@ h3 {
 
 .prose-content {
   font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--leading-body-relaxed);
 }
 
 .prose-content h2 {
@@ -124,9 +134,42 @@ h3 {
 
 .prose-content p,
 .prose-content li {
-  line-height: 1.8;
   color: var(--muted);
   font-weight: 400;
+}
+
+/* Long-form paragraph copy — celestial dark theme */
+.celestial-prose {
+  font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--celestial-muted);
+  max-width: 68ch;
+}
+
+.celestial-prose-lead {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-relaxed);
+}
+
+.celestial-prose > p + p,
+.celestial-prose > .prose-line + .prose-line,
+.celestial-prose > div + div {
+  margin-top: 1.2em;
+}
+
+.celestial-prose li {
+  line-height: var(--leading-body);
+}
+
+.celestial-prose ol {
+  list-style: decimal;
+  padding-left: 1.35rem;
+}
+
+.celestial-prose ol > li + li {
+  margin-top: 0.5em;
 }
 
 .prose-content ul {
@@ -395,10 +438,29 @@ h3 {
   will-change: transform;
 }
 
-/* Technical / mono accents (eyebrows, compass labels, scroll cue) */
+/* Section eyebrows & meta labels — Akshar, readable size, amber accent */
+.celestial-eyebrow {
+  font-family: var(--font-akshar), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--text-celestial-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--amber);
+}
+
+/* Pill tags on project cards */
+.celestial-tag {
+  font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--text-celestial-tag);
+  font-weight: 500;
+  letter-spacing: var(--tracking-body);
+}
+
+/* Decorative mono accents only (scroll cue, numeric badges) */
 .celestial-mono {
   font-family: var(--font-jetbrains), var(--font-mono);
-  letter-spacing: 0.34em;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -470,6 +532,89 @@ h3 {
 @keyframes celestial-shimmer {
   0% { background-position: -140% 0; }
   100% { background-position: 240% 0; }
+}
+
+@keyframes prose-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Staggered reading reveal — paragraphs sharpen into focus as you scroll */
+.motion-prose .prose-line {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-prose .prose-line {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(5px);
+  }
+
+  .motion-fade-in.is-inview .motion-prose .prose-line,
+  .motion-reveal.is-inview .motion-prose .prose-line,
+  .motion-prose.is-inview .prose-line {
+    animation: prose-line-in var(--duration-prose) var(--ease-premium) forwards;
+    animation-delay: calc(var(--prose-stagger) * 2);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(1),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(1),
+  .motion-prose.is-inview > .prose-line:nth-child(1) {
+    animation-delay: calc(var(--prose-stagger) * 0);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(2),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(2),
+  .motion-prose.is-inview > .prose-line:nth-child(2) {
+    animation-delay: calc(var(--prose-stagger) * 1);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(3),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(3),
+  .motion-prose.is-inview > .prose-line:nth-child(3) {
+    animation-delay: calc(var(--prose-stagger) * 2);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(4),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(4),
+  .motion-prose.is-inview > .prose-line:nth-child(4) {
+    animation-delay: calc(var(--prose-stagger) * 3);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(5),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(5),
+  .motion-prose.is-inview > .prose-line:nth-child(5) {
+    animation-delay: calc(var(--prose-stagger) * 4);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(6),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(6),
+  .motion-prose.is-inview > .prose-line:nth-child(6) {
+    animation-delay: calc(var(--prose-stagger) * 5);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(7),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(7),
+  .motion-prose.is-inview > .prose-line:nth-child(7) {
+    animation-delay: calc(var(--prose-stagger) * 6);
+  }
+
+  .motion-fade-in.is-inview .motion-prose > .prose-line:nth-child(8),
+  .motion-reveal.is-inview .motion-prose > .prose-line:nth-child(8),
+  .motion-prose.is-inview > .prose-line:nth-child(8) {
+    animation-delay: calc(var(--prose-stagger) * 7);
+  }
 }
 
 /* Hero entrance stagger (motion-safe only) */
@@ -562,6 +707,10 @@ h3 {
    mockup images are left untouched (they're the real product screenshots). ---- */
 .cs-celestial {
   color: var(--celestial-fg);
+}
+.cs-celestial p:not(.celestial-eyebrow):not([class*="font-semibold"]):not([class*="font-bold"]) {
+  font-size: var(--text-body);
+  line-height: var(--leading-body-relaxed);
 }
 /* light gradient bands → transparent so the dark glass panel/sky shows through */
 .cs-celestial .figma-gradient {

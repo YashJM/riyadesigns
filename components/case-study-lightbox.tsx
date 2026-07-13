@@ -161,7 +161,7 @@ export function CaseStudyImageTrigger({
       type="button"
       data-lightbox-src={src}
       data-lightbox-alt={alt}
-      className={`motion-case-image block w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f387ab] focus-visible:ring-offset-2 ${className ?? ""}`}
+      className={`motion-case-image mx-auto block w-fit max-w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f387ab] focus-visible:ring-offset-2 ${className ?? ""}`}
       onClick={() => context.open(src)}
       aria-label={`View full size: ${alt}`}
     >

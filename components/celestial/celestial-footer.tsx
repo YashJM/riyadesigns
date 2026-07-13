@@ -30,7 +30,7 @@ export function CelestialFooter() {
       className="relative z-10 mx-auto w-full max-w-[var(--content-max)] scroll-mt-24 px-[max(1.25rem,env(safe-area-inset-left))] pb-[max(3rem,env(safe-area-inset-bottom))] pt-[clamp(3rem,8vw,5rem)]"
     >
       <MotionReveal className="celestial-glass overflow-hidden rounded-[28px] px-[clamp(1.5rem,5vw,3.5rem)] py-[clamp(2.5rem,7vw,4.5rem)] text-center">
-        <h2 className="mx-auto max-w-[22ch] text-[clamp(2rem,6vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-celestial-fg">
+        <h2 className="mx-auto max-w-[22ch] text-[clamp(2rem,6vw,3.75rem)] font-bold leading-[1.05] tracking-[var(--tracking-display)] text-celestial-fg">
           {HOME_FOOTER.headline}
         </h2>
         <p className="mx-auto mt-5 max-w-[52ch] text-[clamp(1rem,2.4vw,1.25rem)] leading-[1.55] text-celestial-muted">

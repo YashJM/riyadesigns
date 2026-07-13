@@ -1,7 +1,7 @@
 /** Home page copy and featured project data (synced with Figma home design). */
 
 export const HOME_HERO = {
-  eyebrow: "PRODUCT DESIGNER • SAAS • ONBOARDING • UX STRATEGY",
+  eyebrow: "Product Designer · SaaS · Onboarding · UX Strategy",
   headline: "I design products that simplify complex workflows.",
   subtitle:
     "I help SaaS teams create smoother onboarding, clearer product discovery, and simpler customer workflows through thoughtful product design.",
@@ -25,7 +25,6 @@ export type HomeFeaturedProject = {
 };
 
 export const HOME_FEATURED = {
-  eyebrow: "Selected Work",
   title: "Featured Product Work",
   description:
     "Selected projects where I used research, UX strategy, and thoughtful design to simplify workflows and improve product outcomes.",

@@ -45,10 +45,10 @@ export default function WorkPage() {
 
       <section className="relative z-10 mx-auto w-full max-w-[var(--content-max)] px-[max(1.25rem,env(safe-area-inset-left))] pt-[clamp(8rem,18vw,11rem)] pb-[clamp(2rem,5vw,3rem)] text-center sm:text-left">
         <MotionFadeIn>
-          <p className="celestial-mono text-[11px] text-amber">Portfolio</p>
+          <p className="celestial-eyebrow">Portfolio</p>
         </MotionFadeIn>
         <MotionFadeIn delay={80}>
-          <h1 className="mt-4 text-[clamp(2.5rem,9vw,5rem)] font-extrabold tracking-tight text-celestial-fg">
+          <h1 className="mt-4 text-[clamp(2.25rem,7vw,4rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">
             Featured Product Work
           </h1>
         </MotionFadeIn>
@@ -87,7 +87,7 @@ export default function WorkPage() {
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col px-3 pb-2 pt-5">
-                    <h2 className="text-[clamp(1.25rem,2.2vw,1.75rem)] font-bold tracking-tight text-celestial-fg">
+                    <h2 className="text-[clamp(1.25rem,2.2vw,1.75rem)] font-semibold tracking-[var(--tracking-display)] text-celestial-fg">
                       {project.title}
                     </h2>
                     <p className="mt-2 text-[15px] font-semibold leading-[1.45] text-celestial-fg/90">

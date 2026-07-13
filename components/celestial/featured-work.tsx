@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Tilt } from "@/components/celestial/tilt";
+import { ProseReveal } from "@/components/motion/prose-reveal";
 import { MotionReveal } from "@/components/motion/reveal";
 import { HOME_FEATURED } from "@/lib/home-content";
 
@@ -26,7 +27,7 @@ function ArrowIcon() {
 }
 
 export function FeaturedWork() {
-  const { eyebrow, title, description, projects } = HOME_FEATURED;
+  const { title, description, projects } = HOME_FEATURED;
 
   return (
     <section
@@ -35,13 +36,12 @@ export function FeaturedWork() {
     >
       <MotionReveal className="flex items-end justify-between gap-6 border-b border-[var(--celestial-line)] pb-6">
         <div>
-          <p className="celestial-mono text-[11px] text-amber">{eyebrow}</p>
-          <h2 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-tight text-celestial-fg">
+          <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">
             {title}
           </h2>
-          <p className="mt-4 max-w-[68ch] text-[clamp(15px,2vw,18px)] leading-[1.55] text-celestial-muted">
-            {description}
-          </p>
+          <ProseReveal lead className="mt-4 max-w-[68ch]">
+            <p className="prose-line">{description}</p>
+          </ProseReveal>
         </div>
         <Link
           href="/work"
@@ -76,7 +76,7 @@ export function FeaturedWork() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col px-3 pb-2 pt-5">
-                  <h3 className="text-[clamp(1.25rem,2.2vw,1.75rem)] font-bold tracking-tight text-celestial-fg">
+                  <h3 className="text-[clamp(1.25rem,2.2vw,1.75rem)] font-semibold tracking-[var(--tracking-display)] text-celestial-fg">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-[15px] font-semibold leading-[1.45] text-celestial-fg/90">
@@ -91,7 +91,7 @@ export function FeaturedWork() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="celestial-mono rounded-full border border-[var(--celestial-line)] bg-white/5 px-2.5 py-1 text-[11px] text-celestial-muted"
+                        className="celestial-tag rounded-full border border-[var(--celestial-line)] bg-white/5 px-2.5 py-1 text-celestial-muted"
                       >
                         {tag}
                       </span>
