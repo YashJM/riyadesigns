@@ -21,7 +21,9 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
   },
   heroImage: {
     src: "/figma/case-studies/apple-tv/hero.png",
-    alt: "Apple TV+ content discovery concept",
+    alt: "Apple TV+ content discovery concept across TV, tablet, and mobile",
+    width: 856,
+    height: 571,
   },
   sections: [
     {
@@ -36,8 +38,10 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       ],
       images: [
         {
-          src: "/figma/case-studies/apple-tv/research.png",
-          alt: "Apple TV+ research findings",
+          src: "/figma/case-studies/apple-tv/screens.png",
+          alt: "Apple TV+ problem analysis — endless scrolling, decision fatigue, and the typical discovery journey",
+          width: 856,
+          height: 571,
         },
       ],
     },
@@ -47,6 +51,14 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
         "I didn't want to design another recommendation engine or simply reorganize the interface. My goal was to create a content discovery experience that helps people spend less time searching and more time enjoying something they'll genuinely want to watch.",
         "Success meant reducing decision fatigue, building trust in recommendations, and creating a discovery experience that encourages users to make confident decisions while supporting engagement across the Apple TV+ ecosystem.",
         "I wanted every design decision to be grounded in real user insights. That meant simplifying the browsing journey, making accessibility visible from the start, and creating an experience that feels intuitive, inclusive, and effortless for everyone, regardless of how they discover or consume content.",
+      ],
+      images: [
+        {
+          src: "/figma/case-studies/apple-tv/goal.png",
+          alt: "Apple TV+ goals and success measures — less time searching, confident decisions, accessible for everyone",
+          width: 720,
+          height: 631,
+        },
       ],
     },
     {
@@ -68,6 +80,14 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
         "One participant told me, \"Sometimes I spend longer choosing a movie than actually watching one.\"",
         "The most eye-opening conversation came from a participant who regularly uses Audio Descriptions. \"I often have to open multiple titles before I know whether they're actually accessible.\"",
         "That insight completely changed my perspective. I realized the challenge wasn't simply helping people discover more content—it was helping them make confident decisions. Accessibility wasn't a feature to be added later; it needed to be part of the discovery experience from the very beginning.",
+      ],
+      images: [
+        {
+          src: "/figma/case-studies/apple-tv/research.png",
+          alt: "Apple TV+ discovery and research — research plan, participant quotes, affinity mapping, and accessibility findings",
+          width: 620,
+          height: 1306,
+        },
       ],
     },
     {
@@ -136,8 +156,10 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       ],
       images: [
         {
-          src: "/figma/case-studies/apple-tv/design.png",
-          alt: "Apple TV+ redesigned discovery experience",
+          src: "/figma/case-studies/apple-tv/design-ui.png",
+          alt: "Apple TV+ redesigned discovery experience — simplified home, transparent recommendations, and visible accessibility",
+          width: 560,
+          height: 1069,
         },
       ],
     },
@@ -148,6 +170,14 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
         "From VoiceOver support and Dynamic Type to Closed Captions, Audio Descriptions, remote focus states, readable typography, high-contrast colors, reduced motion, and cognitive accessibility, every decision was made to ensure content could be discovered and enjoyed by more people.",
         "The goal wasn't to design a separate accessible experience. It was to design one experience that feels intuitive, inclusive, and accessible for everyone.",
       ],
+      images: [
+        {
+          src: "/figma/case-studies/apple-tv/accessibility.png",
+          alt: "Apple TV+ built-in accessibility support — Closed Captions, Audio Descriptions, Sign Language, VoiceOver, Dynamic Type, and high contrast",
+          width: 760,
+          height: 466,
+        },
+      ],
     },
     {
       title: "Testing & Iteration",
@@ -156,8 +186,10 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       ],
       images: [
         {
-          src: "/figma/case-studies/apple-tv/screens.png",
-          alt: "Apple TV+ prototype screens",
+          src: "/figma/case-studies/apple-tv/testing-wide.png",
+          alt: "Apple TV+ prototype testing tasks and iteration outcomes",
+          width: 760,
+          height: 497,
         },
       ],
     },
