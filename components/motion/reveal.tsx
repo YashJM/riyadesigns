@@ -42,7 +42,7 @@ export function MotionReveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.01, rootMargin: "0px 0px -4% 0px" },
     );
 
     observer.observe(el);
@@ -93,7 +93,9 @@ export function MotionRevealGroup({
           }
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
+      // Tall case-study sections (large images) may never reach a 10% ratio in
+      // a short viewport — use a near-zero threshold so any peek reveals them.
+      { threshold: 0.01, rootMargin: "0px 0px -4% 0px" },
     );
 
     targets.forEach((el) => observer.observe(el));

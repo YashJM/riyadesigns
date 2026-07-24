@@ -33,7 +33,7 @@ function StudyImage({ image }: { image: CaseStudyImage }) {
         width={width}
         height={height}
         className="block h-auto max-w-full bg-transparent object-contain"
-        style={{ width: `${width}px`, maxWidth: "100%" }}
+        style={{ width: `${width}px`, maxWidth: "100%", height: "auto" }}
         sizes={`(max-width: 768px) 100vw, ${width}px`}
       />
     </CaseStudyImageTrigger>
@@ -60,8 +60,8 @@ function StudyImageGroup({
 
   return (
     <div className={`${groupClass} ${className}`.trim()}>
-      {images.map((img) => (
-        <StudyImage key={img.src} image={img} />
+      {images.map((img, index) => (
+        <StudyImage key={`${img.src}-${img.alt}-${index}`} image={img} />
       ))}
     </div>
   );
