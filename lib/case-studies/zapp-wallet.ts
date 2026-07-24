@@ -24,6 +24,8 @@ export const zappWalletCaseStudy: CaseStudyData = {
   heroImage: {
     src: "/figma/case-studies/zapp/hero.png",
     alt: "Zapp Wallet mobile app hero",
+    width: 721,
+    height: 363,
   },
   sections: [
     {
@@ -37,7 +39,9 @@ export const zappWalletCaseStudy: CaseStudyData = {
       images: [
         {
           src: "/figma/case-studies/zapp/opportunity.png",
-          alt: "Zapp Wallet opportunity analysis",
+          alt: "Zapp Wallet splash and onboarding screens",
+          width: 909,
+          height: 435,
         },
       ],
     },
@@ -134,7 +138,9 @@ export const zappWalletCaseStudy: CaseStudyData = {
       images: [
         {
           src: "/figma/case-studies/zapp/flow.png",
-          alt: "Zapp Wallet user flow mapping",
+          alt: "Zapp Wallet user journey and flow mapping diagram",
+          width: 954,
+          height: 1214,
         },
       ],
     },
@@ -153,6 +159,8 @@ export const zappWalletCaseStudy: CaseStudyData = {
         {
           src: "/figma/case-studies/zapp/dashboard.png",
           alt: "Zapp Wallet dashboard design",
+          width: 1084,
+          height: 607,
         },
       ],
     },
@@ -254,7 +262,7 @@ export const zappWalletCaseStudy: CaseStudyData = {
           height: 241,
         },
       ],
-      imageLayout: "stack",
+      imageLayout: "grid",
     },
     {
       title: "Final Experience",

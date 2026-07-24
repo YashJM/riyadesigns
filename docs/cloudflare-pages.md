@@ -12,7 +12,7 @@ ENOENT: no such file or directory, open '.next/standalone/.next/server/pages-man
 
 Use these values exactly. Do **not** add a deploy command.
 
-| Setting | Value |
+| Setting | Value | 
 |--------|--------|
 | **Production branch** | `main` (or your default branch) |
 | **Framework preset** | **None** (not “Next.js” Workers / OpenNext) |
