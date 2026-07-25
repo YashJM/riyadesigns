@@ -1,8 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { HOME_FEATURED } from "@/lib/home-content";
-import { WORK_PROJECT_SLUGS, type WorkProjectSlug } from "@/lib/work-projects";
+import { HOME_CASE_STUDIES, HOME_FEATURED } from "@/lib/home-content";
+import {
+  CASE_STUDY_SLUGS,
+  WORK_PROJECT_SLUGS,
+  type WorkProjectSlug,
+} from "@/lib/work-projects";
 
 export type Project = {
   slug: string;
@@ -26,7 +30,9 @@ function normalizeSlug(fileName: string) {
 }
 
 function getFeaturedMeta(slug: string) {
-  const featured = HOME_FEATURED.projects.find((p) => p.slug === slug);
+  const featured = [...HOME_FEATURED.projects, ...HOME_CASE_STUDIES.projects].find(
+    (p) => p.slug === slug,
+  );
   if (!featured) return null;
   return featured;
 }
@@ -57,13 +63,21 @@ export function getAllProjects(): Project[] {
     .sort((a, b) => b.year.localeCompare(a.year));
 }
 
-export function getWorkProjects(): Project[] {
+function getProjectsForSlugs(slugs: readonly string[]): Project[] {
   const bySlug = new Map(getAllProjects().map((project) => [project.slug, project]));
-  return WORK_PROJECT_SLUGS.map((slug) => {
+  return slugs.map((slug) => {
     const project = bySlug.get(slug);
     if (!project) throw new Error(`Missing project markdown for: ${slug}`);
     return project;
   });
+}
+
+export function getWorkProjects(): Project[] {
+  return getProjectsForSlugs(WORK_PROJECT_SLUGS);
+}
+
+export function getCaseStudyProjects(): Project[] {
+  return getProjectsForSlugs(CASE_STUDY_SLUGS);
 }
 
 export function getProjectBySlug(slug: string) {
@@ -71,5 +85,5 @@ export function getProjectBySlug(slug: string) {
 }
 
 export function getProjectByWorkSlug(slug: WorkProjectSlug) {
-  return getWorkProjects().find((project) => project.slug === slug);
+  return getProjectsForSlugs([slug])[0];
 }

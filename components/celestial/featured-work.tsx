@@ -3,7 +3,11 @@ import Link from "next/link";
 import { Tilt } from "@/components/celestial/tilt";
 import { ProseReveal } from "@/components/motion/prose-reveal";
 import { MotionReveal } from "@/components/motion/reveal";
-import { HOME_FEATURED } from "@/lib/home-content";
+import {
+  HOME_CASE_STUDIES,
+  HOME_FEATURED,
+  type HomeFeaturedProject,
+} from "@/lib/home-content";
 
 function ArrowIcon() {
   return (
@@ -26,12 +30,28 @@ function ArrowIcon() {
   );
 }
 
-export function FeaturedWork() {
-  const { title, description, projects } = HOME_FEATURED;
+type ProjectSectionProps = {
+  id: string;
+  title: string;
+  description: string;
+  projects: readonly HomeFeaturedProject[];
+  cta: string;
+  gridClass: string;
+  viewAllHref?: string;
+};
 
+function ProjectSection({
+  id,
+  title,
+  description,
+  projects,
+  cta,
+  gridClass,
+  viewAllHref,
+}: ProjectSectionProps) {
   return (
     <section
-      id="featured"
+      id={id}
       className="relative z-10 mx-auto w-full max-w-[var(--content-max)] scroll-mt-24 px-[max(1.25rem,env(safe-area-inset-left))] py-[clamp(4rem,10vw,7rem)]"
     >
       <MotionReveal className="flex items-end justify-between gap-6 border-b border-[var(--celestial-line)] pb-6">
@@ -43,15 +63,17 @@ export function FeaturedWork() {
             <p className="prose-line">{description}</p>
           </ProseReveal>
         </div>
-        <Link
-          href="/work"
-          className="celestial-nav-link hidden shrink-0 self-start pb-1 text-sm font-medium text-celestial-muted transition-colors hover:text-celestial-fg sm:block"
-        >
-          View all
-        </Link>
+        {viewAllHref ? (
+          <Link
+            href={viewAllHref}
+            className="celestial-nav-link hidden shrink-0 self-start pb-1 text-sm font-medium text-celestial-muted transition-colors hover:text-celestial-fg sm:block"
+          >
+            View all
+          </Link>
+        ) : null}
       </MotionReveal>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`mt-10 grid gap-6 ${gridClass}`}>
         {projects.map((item, index) => (
           <MotionReveal key={item.slug} delay={index * 80}>
             <Tilt className="h-full">
@@ -98,7 +120,7 @@ export function FeaturedWork() {
                     ))}
                   </div>
                   <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-hi">
-                    View Case Study
+                    {cta}
                     <ArrowIcon />
                   </span>
                 </div>
@@ -108,5 +130,35 @@ export function FeaturedWork() {
         ))}
       </div>
     </section>
+  );
+}
+
+export function FeaturedWork() {
+  const { title, description, projects } = HOME_FEATURED;
+  return (
+    <ProjectSection
+      id="featured"
+      title={title}
+      description={description}
+      projects={projects}
+      cta="View Project"
+      gridClass="sm:grid-cols-2"
+      viewAllHref="/work"
+    />
+  );
+}
+
+export function CaseStudies() {
+  const { title, description, projects } = HOME_CASE_STUDIES;
+  return (
+    <ProjectSection
+      id="case-studies"
+      title={title}
+      description={description}
+      projects={projects}
+      cta="View Case Study"
+      gridClass="sm:grid-cols-2 lg:grid-cols-3"
+      viewAllHref="/case-studies"
+    />
   );
 }

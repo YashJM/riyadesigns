@@ -27,7 +27,43 @@ export type HomeFeaturedProject = {
 export const HOME_FEATURED = {
   title: "Featured Product Work",
   description:
-    "Selected projects where I used research, UX strategy, and thoughtful design to simplify workflows and improve product outcomes.",
+    "Client and product work where I used research, UX strategy, and thoughtful design to simplify workflows and improve product outcomes.",
+  projects: [
+    {
+      slug: "akshar-packs",
+      title: "Akshar Packs",
+      subtitle: "Simplifying B2B Product Discovery",
+      metrics: [
+        "38% Faster transaction completion",
+        "27% Increase in engagement",
+        "Reduced Cognitive load across core workflows",
+        "Improved Task completion efficiency",
+      ],
+      tags: ["B2B", "Product Design", "UX Design", "Visual Design"],
+      image: "/figma/card-akshar-hero.png",
+      fallback: "linear-gradient(135deg,#f2d6c8,#eadfd7)",
+    },
+    {
+      slug: "zapp-wallet",
+      title: "Zapp Wallet",
+      subtitle: "Designing a Faster and More Trustworthy Mobile Wallet Experience",
+      metrics: [
+        "35% Faster transactions",
+        "20% Increased engagement",
+        "Higher user confidence",
+        "Better financial awareness",
+      ],
+      tags: ["Fintech", "Mobile UX", "Product Design"],
+      image: "/figma/zapp-hero.png",
+      fallback: "linear-gradient(135deg,#d9b2f3,#c794ec)",
+    },
+  ] satisfies HomeFeaturedProject[],
+} as const;
+
+export const HOME_CASE_STUDIES = {
+  title: "Case Studies",
+  description:
+    "In-depth, research-driven explorations of established products — reimagining how they could work better for their users.",
   projects: [
     {
       slug: "apple-tv-plus",
@@ -45,20 +81,6 @@ export const HOME_FEATURED = {
       fallback: "linear-gradient(135deg,#1a1a2e,#2d2d4a)",
     },
     {
-      slug: "akshar-packs",
-      title: "Akshar Packs",
-      subtitle: "Simplifying B2B Product Discovery",
-      metrics: [
-        "38% Faster transaction completion",
-        "27% Increase in engagement",
-        "Reduced Cognitive load across core workflows",
-        "Improved Task completion efficiency",
-      ],
-      tags: ["B2B", "Product Design", "UX Design", "Visual Design"],
-      image: "/figma/card-akshar-hero.png",
-      fallback: "linear-gradient(135deg,#f2d6c8,#eadfd7)",
-    },
-    {
       slug: "google-pay-ai",
       title: "Google Pay — AI Spending Intelligence",
       subtitle:
@@ -71,20 +93,6 @@ export const HOME_FEATURED = {
       tags: ["AI", "Fintech", "Product Thinking", "UX"],
       image: "/figma/card-google-pay-hero.png",
       fallback: "linear-gradient(135deg,#4285f4,#34a853)",
-    },
-    {
-      slug: "zapp-wallet",
-      title: "Zapp Wallet",
-      subtitle: "Designing a Faster and More Trustworthy Mobile Wallet Experience",
-      metrics: [
-        "35% Faster transactions",
-        "20% Increased engagement",
-        "Higher user confidence",
-        "Better financial awareness",
-      ],
-      tags: ["Fintech", "Mobile UX", "Product Design"],
-      image: "/figma/zapp-hero.png",
-      fallback: "linear-gradient(135deg,#d9b2f3,#c794ec)",
     },
     {
       slug: "shopify-analytics",

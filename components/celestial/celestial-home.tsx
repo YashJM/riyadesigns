@@ -1,7 +1,7 @@
 import { CelestialFooter } from "@/components/celestial/celestial-footer";
 import { CelestialHeader } from "@/components/celestial/celestial-header";
 import { CelestialShell } from "@/components/celestial/celestial-shell";
-import { FeaturedWork } from "@/components/celestial/featured-work";
+import { CaseStudies, FeaturedWork } from "@/components/celestial/featured-work";
 import { HomeHero } from "@/components/celestial/home-hero";
 import { SelectedImpact } from "@/components/celestial/selected-impact";
 
@@ -12,6 +12,7 @@ export function CelestialHome() {
       <HomeHero />
       <SelectedImpact />
       <FeaturedWork />
+      <CaseStudies />
       <CelestialFooter />
     </CelestialShell>
   );

@@ -6,6 +6,7 @@ import { isNavRouteActive } from "@/lib/nav-active";
 
 const navItems = [
   { href: "/work", label: "Work" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/about", label: "About" },
 ];
 

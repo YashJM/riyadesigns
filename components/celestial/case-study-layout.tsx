@@ -8,6 +8,7 @@ import { CelestialProse, ProseLine } from "@/components/celestial/celestial-pros
 import { MotionFadeIn } from "@/components/motion/fade-in";
 import { MotionRevealGroup } from "@/components/motion/reveal";
 import type { CaseStudyData, CaseStudyImage } from "@/lib/case-studies/types";
+import { isCaseStudySlug } from "@/lib/work-projects";
 
 function SectionRule() {
   return <hr className="border-[var(--celestial-line)]" aria-hidden />;
@@ -130,9 +131,14 @@ function MetricsGrid({ metrics }: { metrics: NonNullable<CaseStudyData["metrics"
 }
 
 export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
+  const isCaseStudy = isCaseStudySlug(data.slug);
+
   return (
     <CaseStudyLightboxRoot>
-      <CaseStudyCelestial>
+      <CaseStudyCelestial
+        backHref={isCaseStudy ? "/case-studies" : "/work"}
+        backLabel={isCaseStudy ? "All Case Studies" : "All Work"}
+      >
         <section className="px-[clamp(1.25rem,4vw,2.5rem)] pb-[clamp(2rem,5vw,3rem)] pt-[clamp(1.5rem,4vw,2.5rem)]">
           <MotionFadeIn>
             <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">

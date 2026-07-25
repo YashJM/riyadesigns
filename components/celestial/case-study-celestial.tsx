@@ -11,7 +11,15 @@ import { MotionFadeIn } from "@/components/motion/fade-in";
  * on the celestial background, with the shared dark header/footer. Keeps the
  * original layouts intact while unifying the site chrome.
  */
-export function CaseStudyCelestial({ children }: { children: ReactNode }) {
+export function CaseStudyCelestial({
+  children,
+  backHref = "/work",
+  backLabel = "All Work",
+}: {
+  children: ReactNode;
+  backHref?: string;
+  backLabel?: string;
+}) {
   return (
     <CelestialShell>
       <CelestialHeader />
@@ -20,7 +28,7 @@ export function CaseStudyCelestial({ children }: { children: ReactNode }) {
         <MotionFadeIn className="mb-5 flex items-center justify-between gap-4">
           <Magnetic as="span" strength={0.3}>
             <Link
-              href="/work"
+              href={backHref}
               className="celestial-glass group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-celestial-muted transition-colors hover:text-celestial-fg"
             >
               <svg
@@ -39,7 +47,7 @@ export function CaseStudyCelestial({ children }: { children: ReactNode }) {
                   strokeLinejoin="round"
                 />
               </svg>
-              All Work
+              {backLabel}
             </Link>
           </Magnetic>
           <span className="celestial-eyebrow text-celestial-faint">Case Study</span>

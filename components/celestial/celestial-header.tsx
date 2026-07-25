@@ -7,6 +7,7 @@ import { isNavRouteActive } from "@/lib/nav-active";
 
 const navLinks: { href: string; label: string; external?: boolean }[] = [
   { href: "/work", label: "Work" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/about", label: "About" },
   { href: "mailto:designer.riyash@gmail.com", label: "Contact", external: true },
 ];
