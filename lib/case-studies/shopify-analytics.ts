@@ -11,19 +11,23 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
   ],
   meta: {
     role: "Product Designer / UX Researcher",
+    roleDetail:
+      "Product strategy, UX research, product requirements, MVP thinking, dashboard UX, AI experience design.",
     platform: "Shopify Merchant Analytics",
+    platformDetail:
+      "Revenue tracking, product performance, customer insights, inventory intelligence.",
     tools: "Figma, FigJam, Miro",
+    toolsDetail:
+      "User flows, journey mapping, wireframes, prototypes, usability testing, design system.",
     scope: "End-to-end product design",
-    responsibilities:
-      "Product strategy, UX research, product requirements, MVP thinking, dashboard UX, AI experience design. Tools supported user flows, journey mapping, wireframes, prototypes, usability testing, and design system work. Scope covered a responsive dashboard, AI insight cards, KPI modules, analytics workflows, and design handoff.",
-    focusAreas:
-      "Revenue tracking, product performance, customer insights, inventory intelligence",
+    scopeDetail:
+      "Responsive dashboard, AI insight cards, KPI modules, analytics workflows, design handoff.",
   },
   heroImage: {
     src: "/figma/case-studies/shopify/hero.png",
-    alt: "Shopify Merchant Analytics dashboard — store performance overview",
-    width: 1536,
-    height: 1024,
+    alt: "Shopify Merchant Analytics — Store Performance Overview dashboard with revenue, orders, conversion, and inventory alerts",
+    width: 823,
+    height: 510,
   },
   sections: [
     {
@@ -55,36 +59,66 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
     },
     {
       title: "Problem Statement",
-      paragraphs: [
-        "Merchants need a faster and clearer way to understand store performance and make informed business decisions.",
-        "Running a Shopify store means keeping track of revenue, orders, conversion rates, inventory, customer behavior, and marketing performance. While Shopify provides plenty of data, merchants often have to switch between multiple reports, compare metrics manually, and piece everything together before they understand what's actually happening in their business.",
-        'Most analytics dashboards answer "What happened?" but leave merchants figuring out "Why did it happen?" and "What should I do next?" on their own. This takes time, increases cognitive load, and can delay important business decisions, especially for small business owners who don\'t have a dedicated analytics team.',
-        "The challenge was to design an analytics dashboard that makes business data easier to understand and act on. By combining clear data visualization with AI-powered insights, the experience helps merchants spot issues sooner, understand why performance changes, and make better decisions from one place.",
-      ],
-      cards: [
+      content: [
         {
-          title: "Proactive decision support",
-          body: "The goal was to move the dashboard from passive reporting to proactive decision support.",
+          kind: "text",
+          emphasis: true,
+          text: "Merchants need a faster and clearer way to understand store performance and make informed business decisions.",
         },
         {
-          title: "Diagnosing revenue drops",
-          body: "Revenue drops can be hard to diagnose because the cause may be traffic, conversion, inventory, pricing, or marketing.",
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/problem-highlights.png",
+              alt: "Shopify analytics problem highlights — revenue, conversion, and inventory metrics that are hard to interpret at a glance",
+              width: 957,
+              height: 269,
+            },
+          ],
         },
         {
-          title: "Reducing cognitive load",
-          body: "Too many metrics create cognitive load and make the dashboard harder to scan.",
+          kind: "text",
+          text: "Running a Shopify store means keeping track of revenue, orders, conversion rates, inventory, customer behavior, and marketing performance. While Shopify provides plenty of data, merchants often have to switch between multiple reports, compare metrics manually, and piece everything together before they understand what's actually happening in their business.",
         },
         {
-          title: "Transparent AI recommendations",
-          body: "Merchants need AI recommendations that feel transparent, useful, and connected to real business data.",
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/problem-dashboard.png",
+              alt: "Shopify analytics dashboard showing a revenue drop that is difficult to diagnose across traffic, conversion, inventory, and marketing",
+              width: 472,
+              height: 299,
+            },
+          ],
         },
-      ],
-      images: [
         {
-          src: "/figma/case-studies/shopify/problem-overview.png",
-          alt: "Shopify analytics problem statement — current challenges and merchant needs",
-          width: 1536,
-          height: 1024,
+          kind: "cards",
+          cards: [
+            {
+              title: "Proactive decision support",
+              body: "The goal was to move the dashboard from passive reporting to proactive decision support.",
+            },
+            {
+              title: "Diagnosing revenue drops",
+              body: "Revenue drops can be hard to diagnose because the cause may be traffic, conversion, inventory, pricing, or marketing.",
+            },
+            {
+              title: "Reducing cognitive load",
+              body: "Too many metrics create cognitive load and make the dashboard harder to scan.",
+            },
+            {
+              title: "Transparent AI recommendations",
+              body: "Merchants need AI recommendations that feel transparent, useful, and connected to real business data.",
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: 'Most analytics dashboards answer "What happened?" but leave merchants figuring out "Why did it happen?" and "What should I do next?" on their own. This takes time, increases cognitive load, and can delay important business decisions, especially for small business owners who don\'t have a dedicated analytics team.',
+        },
+        {
+          kind: "text",
+          text: "The challenge was to design an analytics dashboard that makes business data easier to understand and act on. By combining clear data visualization with AI-powered insights, the experience helps merchants spot issues sooner, understand why performance changes, and make better decisions from one place.",
         },
       ],
     },
@@ -117,18 +151,41 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
     },
     {
       title: "Research and Discovery",
-      paragraphs: [
-        "Understanding how merchants use analytics to make business decisions.",
-        "Before designing the dashboard, I wanted to understand how Shopify merchants review store performance, which metrics they rely on most, and where they struggle when using analytics.",
-        "Through user interviews, competitive analysis, journey mapping, and usability research, I found that the biggest challenge wasn't a lack of data—it was making sense of it. Most merchants spent more time interpreting reports than acting on them.",
-        "Use strong information architecture, visual hierarchy, and progressive disclosure to improve understanding.",
-      ],
-      images: [
+      content: [
         {
-          src: "/figma/case-studies/shopify/research.png",
-          alt: "Shopify analytics research — user interviews, journey mapping, and competitive analysis",
-          width: 1536,
-          height: 1024,
+          kind: "text",
+          emphasis: true,
+          text: "Understanding how merchants use analytics to make business decisions.",
+        },
+        {
+          kind: "text",
+          text: "Before designing the dashboard, I wanted to understand how Shopify merchants review store performance, which metrics they rely on most, and where they struggle when using analytics.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/research-a.png",
+              alt: "Shopify analytics research — merchant interview findings and how store owners review performance",
+              width: 880,
+              height: 260,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "Through user interviews, competitive analysis, journey mapping, and usability research, I found that the biggest challenge wasn't a lack of data—it was making sense of it. Most merchants spent more time interpreting reports than acting on them. Use strong information architecture, visual hierarchy, and progressive disclosure to improve understanding.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/research-b.png",
+              alt: "Shopify analytics research — competitive analysis and journey mapping of the analytics experience",
+              width: 784,
+              height: 305,
+            },
+          ],
         },
       ],
     },
@@ -145,9 +202,9 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
           images: [
             {
               src: "/figma/case-studies/shopify/information-architecture.png",
-              alt: "Shopify analytics information architecture and dashboard structure",
-              width: 1536,
-              height: 1024,
+              alt: "Shopify analytics information architecture — dashboard organized around store health, revenue, products, inventory, customers, and marketing",
+              width: 754,
+              height: 405,
             },
           ],
         },
@@ -157,9 +214,9 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
           images: [
             {
               src: "/figma/case-studies/shopify/user-flows.png",
-              alt: "Shopify analytics user flows for merchant tasks and AI recommendations",
-              width: 1536,
-              height: 1024,
+              alt: "Shopify analytics user flows — checking daily performance, investigating revenue changes, spotting low stock, and acting on AI recommendations",
+              width: 827,
+              height: 464,
             },
           ],
         },
@@ -168,10 +225,10 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
           body: "Using low- and high-fidelity wireframes, I designed a responsive dashboard with KPI cards, data visualizations, AI insight cards, tables, filters, and alert states. The interface was built with a clear visual hierarchy to improve scanability, reduce cognitive load, and make key insights easier to understand.",
           images: [
             {
-              src: "/figma/case-studies/shopify/interface-design-a.png",
-              alt: "Shopify analytics interface design — dashboard wireframes, KPI modules, and responsive layouts",
-              width: 1536,
-              height: 1024,
+              src: "/figma/case-studies/shopify/interface-design.png",
+              alt: "Shopify analytics interface design — responsive dashboard with KPI cards, data visualizations, AI insight cards, tables, filters, and alert states",
+              width: 1033,
+              height: 552,
             },
           ],
         },
@@ -183,10 +240,10 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
           ],
           images: [
             {
-              src: "/figma/case-studies/shopify/screens.png",
-              alt: "Shopify analytics product thinking — balancing depth, simplicity, and AI guidance",
-              width: 1536,
-              height: 1024,
+              src: "/figma/case-studies/shopify/product-thinking.png",
+              alt: "Shopify analytics product thinking — product principles, an AI insight in action, and what was intentionally included vs left out",
+              width: 1048,
+              height: 588,
             },
           ],
         },
@@ -202,14 +259,6 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
         "The Product Performance, Inventory Intelligence, and Customer Insights screens help merchants explore their business in greater detail. Product Performance combines sales, traffic, and conversion data to identify top-performing and underperforming products.",
         "Inventory Intelligence highlights low-stock products, sales velocity, and reorder opportunities before inventory impacts sales. Customer Insights organizes key metrics such as new versus returning customers, repeat purchase rate, customer lifetime value, and retention trends, helping merchants better understand customer behavior and make more informed business decisions.",
       ],
-      images: [
-        {
-          src: "/figma/case-studies/shopify/hero.png",
-          alt: "Shopify Merchant Analytics executive overview dashboard",
-          width: 1536,
-          height: 1024,
-        },
-      ],
     },
     {
       title: "Core Product Interfaces",
@@ -221,26 +270,50 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
         {
           title: "Business Overview",
           body: "A quick summary of the store's performance, bringing together key business metrics and AI insights so merchants can understand what's happening at a glance.",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/core-business-overview.png",
+              alt: "Shopify Merchant Analytics business overview — key metrics and AI insights summarized in one view",
+              width: 551,
+              height: 356,
+            },
+          ],
         },
         {
           title: "AI Insights",
           body: "AI recommendations explain important changes, highlight potential issues, and suggest the next best action, helping merchants spend less time interpreting reports.",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/core-ai-insights.png",
+              alt: "Shopify Merchant Analytics AI insights — recommendations explaining what changed, why it matters, and the next best action",
+              width: 536,
+              height: 395,
+            },
+          ],
         },
         {
           title: "Product & Inventory Performance",
           body: "Inventory trends and product performance are combined into one view, making it easier to spot low-stock products, identify underperforming items, and respond before sales are affected.",
+          images: [
+            {
+              src: "/figma/case-studies/shopify/core-inventory.png",
+              alt: "Shopify Merchant Analytics product and inventory performance — low-stock products and underperforming items in one view",
+              width: 536,
+              height: 385,
+            },
+          ],
         },
         {
           title: "Scalable Design System",
           body: "Built with reusable components and consistent design patterns, creating a flexible foundation that can grow with future analytics features while keeping the experience familiar and easy to use.",
-        },
-      ],
-      images: [
-        {
-          src: "/figma/case-studies/shopify/interface-gallery.png",
-          alt: "Shopify Merchant Analytics core product interfaces — overview, AI insights, inventory, and design system",
-          width: 1536,
-          height: 1024,
+          images: [
+            {
+              src: "/figma/case-studies/shopify/core-design-system.png",
+              alt: "Shopify Merchant Analytics design system — reusable components and consistent patterns across the dashboard",
+              width: 646,
+              height: 418,
+            },
+          ],
         },
       ],
     },
@@ -301,23 +374,11 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
       paragraphs: [
         "Exploring opportunities to make the dashboard even more useful.",
       ],
-      items: [
-        {
-          title: "01",
-          body: "Enhance AI recommendations with more personalized insights.",
-        },
-        {
-          title: "02",
-          body: "Introduce customizable dashboard views for different merchant needs.",
-        },
-        {
-          title: "03",
-          body: "Improve inventory forecasting with smarter predictions and proactive alerts.",
-        },
-        {
-          title: "04",
-          body: "Increase AI transparency with clearer explanations and feedback options.",
-        },
+      numberedCards: [
+        "Enhance AI recommendations with more personalized insights.",
+        "Introduce customizable dashboard views for different merchant needs.",
+        "Improve inventory forecasting with smarter predictions and proactive alerts.",
+        "Increase AI transparency with clearer explanations and feedback options.",
       ],
     },
   ],

@@ -4,6 +4,7 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
   slug: "apple-tv-plus",
   title: "Apple TV+",
   subtitle: "From Endless Browsing to Confident Watching",
+  tagline: "Re-imagining Content Discovery Through Inclusive & Accessible Design",
   intro: [
     "Apple TV+ offers an incredible library of movies, TV shows, live sports, and Apple Originals, yet finding something worth watching isn't always as enjoyable as watching it. As streaming libraries continue to grow, many people spend more time scrolling through recommendations, comparing titles, or switching between streaming platforms than actually pressing play.",
     "For this conceptual project, I wanted to understand why that happens. Instead of redesigning the interface, I approached the challenge from both a Product Designer and UX Research perspective to uncover what makes content discovery feel overwhelming. By combining user research, product thinking, and inclusive design, I explored how Apple TV+ could help people make faster, more confident decisions while making accessibility a natural part of the discovery experience rather than an afterthought.",
@@ -27,6 +28,13 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
   },
   sections: [
     {
+      title: "Project Overview",
+      paragraphs: [
+        "Streaming platforms have given us more content than ever before, but finding something worth watching has become increasingly difficult. Instead of enjoying content, many users spend valuable time scrolling through endless recommendations, comparing streaming services, or struggling to decide what to watch next.",
+        "I wanted to explore how Apple TV+ could help people spend less time browsing and more time confidently watching. By understanding user behavior, applying product thinking, and designing with accessibility in mind, I explored opportunities to simplify content discovery, build trust in recommendations, and create a more inclusive viewing experience.",
+      ],
+    },
+    {
       title: "The Problem",
       paragraphs: [
         "It started with something I had experienced myself.",
@@ -34,7 +42,7 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
         "Rather than assuming this was only my experience, I wanted to understand whether others felt the same way.",
         "As I spoke with people who regularly used streaming services, a clear pattern began to emerge. Most users didn't struggle because there wasn't enough content—they struggled because there was too much of it. Endless rows of recommendations, repeated suggestions, and a lack of context made choosing something to watch feel surprisingly difficult.",
         "The research also uncovered another challenge. Users who relied on accessibility features such as Audio Descriptions, Closed Captions, or VoiceOver often had to open multiple titles before knowing whether a movie or show met their needs. Accessibility wasn't difficult to use—it was difficult to find.",
-        "That changed how I framed the problem. This wasn't about helping people discover more content. It was about helping them make confident decisions, while ensuring everyone could discover content in a way that worked for them.",
+        "That changed how I framed the problem. This wasn't about helping people discover more content. It was about helping them make confident decisions, while ensuring everyone could discover content in a way that worked for them. That insight became the foundation for every product decision that followed.",
       ],
       images: [
         {
@@ -194,6 +202,39 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       ],
     },
     {
+      title: "Impact",
+      paragraphs: [
+        "The outcomes below are based on prototype usability testing and concept validation, not live production data.",
+        "These results suggest that a simpler, more transparent, and accessible discovery experience can help users spend less time searching and more time enjoying content.",
+      ],
+      metrics: [
+        {
+          value: "38%",
+          label: "Faster Content Discovery",
+          description:
+            "Users found something to watch more quickly with less browsing.",
+        },
+        {
+          value: "45%",
+          label: "Higher Recommendation Confidence",
+          description:
+            "Clearer recommendations helped users make decisions with greater trust.",
+        },
+        {
+          value: "30%",
+          label: "Improved Task Completion",
+          description:
+            "Participants completed common browsing tasks more efficiently and with fewer errors.",
+        },
+        {
+          value: "65%",
+          label: "Faster Accessibility Discovery",
+          description:
+            "Users located accessibility features such as Audio Descriptions and Closed Captions more easily.",
+        },
+      ],
+    },
+    {
       title: "Reflection",
       paragraphs: [
         "This project changed the way I think about content discovery. I learned that the real challenge isn't helping people find more content—it's helping them make confident decisions. By combining user research with product thinking, I was able to design an experience that balances user needs, business goals, and accessibility from the very beginning. It also reinforced that accessibility isn't a feature to add later—it's a design principle that creates a better experience for everyone.",
@@ -204,32 +245,6 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       paragraphs: [
         "If I continued evolving this concept, I'd explore how Apple Intelligence could make content discovery more conversational and context-aware, while introducing smarter household profiles, seamless cross-device continuity, and personalized accessibility preferences. More importantly, this project reinforced a simple idea that guided every design decision: the best products don't give people more choices—they help them make better ones.",
       ],
-    },
-  ],
-  metrics: [
-    {
-      value: "38%",
-      label: "Faster Content Discovery",
-      description:
-        "Users found something to watch more quickly with less browsing.",
-    },
-    {
-      value: "45%",
-      label: "Higher Recommendation Confidence",
-      description:
-        "Clearer recommendations helped users make decisions with greater trust.",
-    },
-    {
-      value: "30%",
-      label: "Improved Task Completion",
-      description:
-        "Participants completed common browsing tasks more efficiently and with fewer errors.",
-    },
-    {
-      value: "65%",
-      label: "Faster Accessibility Discovery",
-      description:
-        "Users located accessibility features such as Audio Descriptions and Closed Captions more easily.",
     },
   ],
 };

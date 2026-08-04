@@ -7,7 +7,11 @@ import { CaseStudyCelestial } from "@/components/celestial/case-study-celestial"
 import { CelestialProse, ProseLine } from "@/components/celestial/celestial-prose";
 import { MotionFadeIn } from "@/components/motion/fade-in";
 import { MotionRevealGroup } from "@/components/motion/reveal";
-import type { CaseStudyData, CaseStudyImage } from "@/lib/case-studies/types";
+import type {
+  CaseStudyContentBlock,
+  CaseStudyData,
+  CaseStudyImage,
+} from "@/lib/case-studies/types";
 import { isCaseStudySlug } from "@/lib/work-projects";
 
 function SectionRule() {
@@ -70,25 +74,39 @@ function StudyImageGroup({
 
 function MetaRow({ meta }: { meta: CaseStudyData["meta"] }) {
   const rows = [
-    meta.role && { label: "Role", value: meta.role },
-    meta.timeline && { label: "Timeline", value: meta.timeline },
-    meta.platform && { label: "Platform", value: meta.platform },
-    meta.tools && { label: "Tools", value: meta.tools },
-    meta.scope && { label: "Scope", value: meta.scope },
-  ].filter(Boolean) as { label: string; value: string }[];
+    meta.role && { label: "Role", value: meta.role, detail: meta.roleDetail },
+    meta.timeline && {
+      label: "Timeline",
+      value: meta.timeline,
+      detail: meta.timelineDetail,
+    },
+    meta.platform && {
+      label: "Platform",
+      value: meta.platform,
+      detail: meta.platformDetail,
+    },
+    meta.tools && { label: "Tools", value: meta.tools, detail: meta.toolsDetail },
+    meta.scope && { label: "Scope", value: meta.scope, detail: meta.scopeDetail },
+  ].filter(Boolean) as { label: string; value: string; detail?: string }[];
 
   if (rows.length === 0) return null;
 
   return (
-    <dl className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-8">
+    <dl className="mt-8 grid gap-4 sm:grid-cols-2">
       {rows.map((row) => (
-        <div key={row.label} className="min-w-0">
-          <dt className="celestial-eyebrow">
-            {row.label}
-          </dt>
-          <dd className="mt-1 text-[var(--text-body)] leading-[1.5] text-celestial-muted">
+        <div
+          key={row.label}
+          className="celestial-glass flex flex-col rounded-[18px] p-5 sm:p-6"
+        >
+          <dt className="celestial-eyebrow text-amber-hi">{row.label}</dt>
+          <dd className="mt-2 text-[clamp(1.05rem,2vw,1.25rem)] font-semibold leading-[1.4] text-celestial-fg">
             {row.value}
           </dd>
+          {row.detail ? (
+            <div className="mt-2 text-[15px] leading-[1.6] text-celestial-muted">
+              {row.detail}
+            </div>
+          ) : null}
         </div>
       ))}
     </dl>
@@ -130,6 +148,75 @@ function MetricsGrid({ metrics }: { metrics: NonNullable<CaseStudyData["metrics"
   );
 }
 
+function SectionCards({
+  cards,
+}: {
+  cards: { title: string; body: string }[];
+}) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {cards.map((card) => (
+        <div key={card.title} className="celestial-glass rounded-[18px] p-5">
+          <p className="font-semibold text-celestial-fg">{card.title}</p>
+          <p className="mt-2 text-[var(--text-body)] leading-[1.55] text-celestial-muted">
+            {card.body}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Renders ordered content blocks so text and images interleave in source order. */
+function SectionContent({ blocks }: { blocks: CaseStudyContentBlock[] }) {
+  return (
+    <div className="mt-6 flex flex-col gap-6">
+      {blocks.map((block, i) => {
+        if (block.kind === "text") {
+          return (
+            <CelestialProse key={i} className="max-w-[52rem]">
+              <ProseLine
+                className={
+                  block.emphasis ? "font-semibold text-celestial-fg" : undefined
+                }
+              >
+                {block.text}
+              </ProseLine>
+            </CelestialProse>
+          );
+        }
+        if (block.kind === "images") {
+          return (
+            <StudyImageGroup key={i} images={block.images} layout={block.layout} />
+          );
+        }
+        return <SectionCards key={i} cards={block.cards} />;
+      })}
+    </div>
+  );
+}
+
+/** Numbered rows with the number inline with its text, each in a bordered card. */
+function NumberedCards({ items }: { items: string[] }) {
+  return (
+    <div className="mt-6 flex flex-col gap-3">
+      {items.map((text, i) => (
+        <div
+          key={text}
+          className="celestial-glass flex items-start gap-3 rounded-[14px] px-5 py-4"
+        >
+          <span className="shrink-0 font-bold text-celestial-fg">
+            {String(i + 1).padStart(2, "0")}.
+          </span>
+          <span className="text-[var(--text-body)] leading-[1.6] text-celestial-muted">
+            {text}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
   const isCaseStudy = isCaseStudySlug(data.slug);
 
@@ -147,6 +234,11 @@ export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
             <p className="mt-4 max-w-[52rem] text-[clamp(1.1rem,2.4vw,1.5rem)] font-semibold leading-[1.45] text-celestial-fg/90">
               {data.subtitle}
             </p>
+            {data.tagline ? (
+              <p className="mt-2 max-w-[52rem] text-[clamp(1rem,2vw,1.25rem)] font-medium italic leading-[1.45] text-celestial-muted">
+                {data.tagline}
+              </p>
+            ) : null}
             <CelestialProse lead className="mt-6 max-w-[52rem]">
               {data.intro.map((p) => (
                 <ProseLine key={p}>{p}</ProseLine>
@@ -200,6 +292,10 @@ export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
               <h2 className="mt-[clamp(1.75rem,5vw,2.75rem)] text-[clamp(1.35rem,3vw,1.875rem)] font-semibold tracking-[var(--tracking-display)] text-celestial-fg">
                 {section.title}
               </h2>
+
+              {section.content?.length ? (
+                <SectionContent blocks={section.content} />
+              ) : null}
 
               {section.layout === "split" &&
               section.paragraphs?.length &&
@@ -332,6 +428,10 @@ export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
                     </div>
                   ))}
                 </div>
+              ) : null}
+
+              {section.numberedCards?.length ? (
+                <NumberedCards items={section.numberedCards} />
               ) : null}
 
               {section.layout !== "split" && section.images?.length ? (
