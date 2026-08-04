@@ -195,9 +195,9 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       images: [
         {
           src: "/figma/case-studies/apple-tv/testing-wide.png",
-          alt: "Apple TV+ prototype testing tasks and iteration outcomes",
-          width: 760,
-          height: 497,
+          alt: "Apple TV+ testing process — Recruitment, Task-Based Scenarios, Think-Aloud Sessions, Feedback Analysis, and Iterate & Refine",
+          width: 682,
+          height: 176,
         },
       ],
     },
