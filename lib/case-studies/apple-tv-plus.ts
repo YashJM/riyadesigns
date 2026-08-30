@@ -11,14 +11,15 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
   ],
   meta: {
     role: "Product Designer / UX Researcher",
-    platform: "Apple TV+ (tvOS, iOS, iPadOS & macOS)",
+    roleDetail: "Led research, strategy, and end-to-end product design.",
     tools: "Figma, FigJam, Miro",
-    scope:
-      "End-to-End Product Design — from user research and product strategy to final designs and validation.",
-    responsibilities:
-      "Led research, strategy, and end-to-end product design.",
-    focusAreas:
-      "Content Discovery, Inclusive Design, Accessibility, Product Strategy, Usability Testing",
+    toolsDetail: "Used for research, ideation, prototyping, and testing.",
+    platform: "Apple TV+ (tvOS, iOS, iPadOS & macOS)",
+    platformDetail:
+      "Designed a seamless, accessible content discovery experience across Apple devices",
+    scope: "End-to-End Product Design",
+    scopeDetail:
+      "From user research and product strategy to final designs and validation.",
   },
   heroImage: {
     src: "/figma/case-studies/apple-tv/hero.png",
@@ -83,7 +84,8 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       paragraphs: [
         "Before opening Figma, I wanted to understand why finding something to watch had become so frustrating.",
         "I spoke with people who regularly use streaming platforms, observed how they browsed for content, explored competitor experiences, and reviewed Apple's Human Interface Guidelines alongside WCAG accessibility standards. My goal wasn't to validate assumptions—it was to understand what was really getting in the way.",
-        "Going into the research, I expected people to talk about poor recommendations. They didn't. Instead, they talked about the experience of browsing itself.",
+        "Going into the research, I expected people to talk about poor recommendations.",
+        "They didn't. Instead, they talked about the experience of browsing itself.",
         "Scrolling through endless rows of content felt overwhelming, and the longer people searched, the less confident they became about choosing anything at all.",
         "One participant told me, \"Sometimes I spend longer choosing a movie than actually watching one.\"",
         "The most eye-opening conversation came from a participant who regularly uses Audio Descriptions. \"I often have to open multiple titles before I know whether they're actually accessible.\"",
@@ -136,19 +138,19 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       principles: [
         {
           title: "Reduce cognitive load",
-          body: "Simplify content discovery through clearer hierarchy and fewer competing choices.",
+          body: "through simplified content discovery.",
         },
         {
           title: "Increase trust",
-          body: "Make recommendations transparent and relevant so users understand why content is suggested.",
+          body: "with transparent and relevant recommendations.",
         },
         {
           title: "Integrate accessibility",
-          body: "Surface accessibility features throughout the discovery experience, not after opening a title.",
+          body: "throughout the discovery experience.",
         },
         {
-          title: "Support confident decisions",
-          body: "Help users choose faster and start watching sooner.",
+          title: "Support faster and more confident",
+          body: "viewing decisions.",
         },
       ],
     },
@@ -174,9 +176,11 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
     {
       title: "Accessibility by Design",
       paragraphs: [
-        "Accessibility wasn't something I added at the end of the design process. It shaped the experience from the very beginning.",
+        "Accessibility wasn't something I added at the end of the design process.",
+        "It shaped the experience from the very beginning.",
         "From VoiceOver support and Dynamic Type to Closed Captions, Audio Descriptions, remote focus states, readable typography, high-contrast colors, reduced motion, and cognitive accessibility, every decision was made to ensure content could be discovered and enjoyed by more people.",
-        "The goal wasn't to design a separate accessible experience. It was to design one experience that feels intuitive, inclusive, and accessible for everyone.",
+        "The goal wasn't to design a separate accessible experience.",
+        "It was to design one experience that feels intuitive, inclusive, and accessible for everyone.",
       ],
       images: [
         {

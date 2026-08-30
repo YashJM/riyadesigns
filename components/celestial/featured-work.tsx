@@ -8,6 +8,7 @@ import {
   HOME_FEATURED,
   type HomeFeaturedProject,
 } from "@/lib/home-content";
+import { isCaseStudySlug } from "@/lib/work-projects";
 
 function ArrowIcon() {
   return (
@@ -37,7 +38,6 @@ type ProjectSectionProps = {
   projects: readonly HomeFeaturedProject[];
   cta: string;
   gridClass: string;
-  viewAllHref?: string;
 };
 
 function ProjectSection({
@@ -47,30 +47,19 @@ function ProjectSection({
   projects,
   cta,
   gridClass,
-  viewAllHref,
 }: ProjectSectionProps) {
   return (
     <section
       id={id}
-      className="relative z-10 mx-auto w-full max-w-[var(--content-max)] scroll-mt-24 px-[max(1.25rem,env(safe-area-inset-left))] py-[clamp(4rem,10vw,7rem)]"
+      className="relative z-10 mx-auto w-full max-w-[var(--content-max)] scroll-mt-24 border-t border-[var(--celestial-line)] px-[max(1.25rem,env(safe-area-inset-left))] py-[clamp(4rem,10vw,7rem)]"
     >
-      <MotionReveal className="flex items-end justify-between gap-6 border-b border-[var(--celestial-line)] pb-6">
-        <div>
-          <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">
-            {title}
-          </h2>
-          <ProseReveal lead className="mt-4 max-w-[68ch]">
-            <p className="prose-line">{description}</p>
-          </ProseReveal>
-        </div>
-        {viewAllHref ? (
-          <Link
-            href={viewAllHref}
-            className="celestial-nav-link hidden shrink-0 self-start pb-1 text-sm font-medium text-celestial-muted transition-colors hover:text-celestial-fg sm:block"
-          >
-            View all
-          </Link>
-        ) : null}
+      <MotionReveal>
+        <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-[var(--tracking-display)] text-celestial-fg">
+          {title}
+        </h2>
+        <ProseReveal lead className="mt-4 max-w-[68ch]">
+          <p className="prose-line">{description}</p>
+        </ProseReveal>
       </MotionReveal>
 
       <div className={`mt-10 grid gap-6 ${gridClass}`}>
@@ -78,7 +67,7 @@ function ProjectSection({
           <MotionReveal key={item.slug} delay={index * 80}>
             <Tilt className="h-full">
               <Link
-                href={`/work/${item.slug}`}
+                href={`${isCaseStudySlug(item.slug) ? "/case-studies" : "/work"}/${item.slug}`}
                 className="celestial-card group flex h-full flex-col overflow-hidden rounded-[26px] p-3"
               >
                 <div
@@ -133,32 +122,27 @@ function ProjectSection({
   );
 }
 
+// Home page shows one combined grid (case studies + featured work) in Figma order,
+// with Therapix pinned to the first slot.
+const HOME_PROJECTS: readonly HomeFeaturedProject[] = [
+  HOME_FEATURED.projects[0], // therapix
+  HOME_CASE_STUDIES.projects[0], // apple-tv-plus
+  HOME_FEATURED.projects[1], // akshar-packs
+  HOME_CASE_STUDIES.projects[1], // google-pay-ai
+  HOME_FEATURED.projects[2], // zapp-wallet
+  HOME_CASE_STUDIES.projects[2], // shopify-analytics
+];
+
 export function FeaturedWork() {
-  const { title, description, projects } = HOME_FEATURED;
+  const { title, description } = HOME_FEATURED;
   return (
     <ProjectSection
       id="featured"
       title={title}
       description={description}
-      projects={projects}
-      cta="View Project"
-      gridClass="sm:grid-cols-2"
-      viewAllHref="/work"
-    />
-  );
-}
-
-export function CaseStudies() {
-  const { title, description, projects } = HOME_CASE_STUDIES;
-  return (
-    <ProjectSection
-      id="case-studies"
-      title={title}
-      description={description}
-      projects={projects}
+      projects={HOME_PROJECTS}
       cta="View Case Study"
       gridClass="sm:grid-cols-2 lg:grid-cols-3"
-      viewAllHref="/case-studies"
     />
   );
 }

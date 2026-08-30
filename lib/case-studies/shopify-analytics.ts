@@ -12,16 +12,16 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
   meta: {
     role: "Product Designer / UX Researcher",
     roleDetail:
-      "Product strategy, UX research, product requirements, MVP thinking, dashboard UX, AI experience design.",
+      "Product strategy, UX research, product requirements, MVP thinking, dashboard UX, AI experience design",
     platform: "Shopify Merchant Analytics",
     platformDetail:
-      "Revenue tracking, product performance, customer insights, inventory intelligence.",
+      "Revenue tracking, product performance, customer insights, inventory intelligence",
     tools: "Figma, FigJam, Miro",
     toolsDetail:
-      "User flows, journey mapping, wireframes, prototypes, usability testing, design system.",
+      "User flows, journey mapping, wireframes, prototypes, usability testing, design system",
     scope: "End-to-end product design",
     scopeDetail:
-      "Responsive dashboard, AI insight cards, KPI modules, analytics workflows, design handoff.",
+      "Responsive dashboard, AI insight cards, KPI modules, analytics workflows, design hand off",
   },
   heroImage: {
     src: "/figma/case-studies/shopify/hero.png",
@@ -95,19 +95,19 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
           kind: "cards",
           cards: [
             {
-              title: "Proactive decision support",
+              title: "1.",
               body: "The goal was to move the dashboard from passive reporting to proactive decision support.",
             },
             {
-              title: "Diagnosing revenue drops",
+              title: "2.",
               body: "Revenue drops can be hard to diagnose because the cause may be traffic, conversion, inventory, pricing, or marketing.",
             },
             {
-              title: "Reducing cognitive load",
+              title: "3.",
               body: "Too many metrics create cognitive load and make the dashboard harder to scan.",
             },
             {
-              title: "Transparent AI recommendations",
+              title: "4.",
               body: "Merchants need AI recommendations that feel transparent, useful, and connected to real business data.",
             },
           ],
@@ -140,12 +140,12 @@ export const shopifyAnalyticsCaseStudy: CaseStudyData = {
           body: "Insights explain what changed, why it matters, and what to do next.",
         },
         {
-          title: "Responsive Dashboard UX",
-          body: "Layouts planned for desktop, tablet, and mobile viewing contexts.",
-        },
-        {
           title: "Scalable Component system",
           body: "KPI cards, insight cards, charts, tables, filters, alerts, and empty states.",
+        },
+        {
+          title: "Responsive Dashboard UX",
+          body: "Layouts planned for desktop, tablet, and mobile viewing contexts.",
         },
       ],
     },

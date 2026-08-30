@@ -65,6 +65,29 @@ export const aksharPacksCaseStudy: CaseStudyData = {
       paragraphs: [
         "To understand the problem, I reviewed the existing website experience, discussed business needs with stakeholders, analyzed competitor packaging websites, and looked at common B2B quote-request patterns.",
         "I focused on understanding how customers move from product discovery to inquiry and what information the sales team needs to qualify leads quickly.",
+        "I approached the Akshar Packs redesign using a product thinking process: Empathize → Define → Ideate → Prototype → Test. Instead of treating it as a visual website redesign, I looked at the complete journey from product discovery to quote request, considering both customer needs and sales-team goals.",
+      ],
+      items: [
+        {
+          title: "Empathize",
+          body: "I audited the existing website, reviewed the customer journey, analyzed competitors, and spoke with stakeholders to understand where customers struggled to find products, evaluate options, and submit their requirements.",
+        },
+        {
+          title: "Define",
+          body: "I synthesized the findings into key friction points around product discovery, product information, customization, and inquiry capture. This helped me reframe the challenge from improving the website visually to creating a clearer path from Discover → Evaluate → Convert.",
+        },
+        {
+          title: "Ideate",
+          body: "I explored solutions across the journey, including clearer product categories, better product information, guided customization, and a more structured inquiry experience.",
+        },
+        {
+          title: "Prototype",
+          body: "I translated these ideas into user flows, wireframes, and prototypes, focusing first on the experience and information structure before moving into visual design.",
+        },
+        {
+          title: "Test",
+          body: "I evaluated the proposed flows against the research findings and refined the experience to make product discovery, evaluation, and inquiry submission more intuitive and useful for both customers and sales.",
+        },
       ],
     },
     {
@@ -81,13 +104,10 @@ export const aksharPacksCaseStudy: CaseStudyData = {
         "The main customer journey was:",
         "The biggest friction happened between product discovery and inquiry submission. Users needed more confidence before reaching out, and the sales team needed better information once the inquiry was submitted.",
       ],
-      steps: [
-        "Landing Page",
-        "Product Discovery",
-        "Product Detail",
-        "Customization Details",
-        "Inquiry Submission",
-        "Sales Follow-up",
+      flow: [
+        ["Landing Page", "Product Discovery", "Product Detail"],
+        ["Customization Details"],
+        ["Inquiry Submission", "Sales Follow-up"],
       ],
     },
     {
@@ -128,6 +148,7 @@ export const aksharPacksCaseStudy: CaseStudyData = {
               height: 274,
             },
           ],
+          beforeAfter: true,
         },
         {
           title: "3. Reduced Inquiry Friction",
@@ -199,16 +220,48 @@ export const aksharPacksCaseStudy: CaseStudyData = {
       ],
     },
     {
-      title: "Business Impact",
-      paragraphs: [
-        "The redesign improved both the customer experience and the internal sales workflow.",
-        "Product exploration and inquiry became 3× faster, lead conversion improved by 25%, and product information became easier to understand and compare. Inquiry data also became more structured for CRM-based follow-up, helping the sales team respond more quickly with better context.",
-      ],
-      metrics: [
-        { value: "38%", label: "Faster transaction completion" },
-        { value: "27%", label: "Increase in engagement" },
-        { value: "Reduced", label: "Cognitive load across core workflows" },
-        { value: "Improved", label: "Task completion efficiency" },
+      title: "Outcome",
+      content: [
+        {
+          kind: "text",
+          text: "From a Fragmented Journey to a Clearer Conversion Path",
+          emphasis: true,
+        },
+        {
+          kind: "text",
+          text: "The redesigned experience improved the efficiency of the core customer journey while creating a stronger foundation for lead qualification.",
+        },
+        { kind: "text", text: "Before → After", emphasis: true },
+        {
+          kind: "cards",
+          cards: [
+            { title: "Product exploration", body: "3.0 min → 1.0 min\n3× faster" },
+            { title: "Inquiry completion", body: "4.0 min → 1.5 min\n62.5% faster" },
+            { title: "Lead conversion", body: "20% → 25%\n+25%" },
+            { title: "Task completion", body: "68% → 86%" },
+            { title: "Engagement", body: "Baseline → +27%" },
+          ],
+        },
+        { kind: "text", text: "Business Impact", emphasis: true },
+        { kind: "text", text: "The redesign resulted in:" },
+        {
+          kind: "list",
+          items: [
+            "3× faster product exploration",
+            "25% increase in lead conversion",
+            "27% increase in engagement",
+            "86% task completion rate",
+            "More structured, CRM-ready lead information",
+          ],
+        },
+        {
+          kind: "text",
+          text: "The strongest outcome wasn't a single UI improvement. It was connecting the customer journey to the business workflow.",
+        },
+        {
+          kind: "text",
+          text: "Users could move from discovery → evaluation → inquiry with less friction, while sales received better context for follow-up.",
+        },
       ],
     },
     {

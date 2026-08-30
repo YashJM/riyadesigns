@@ -21,11 +21,12 @@ export type CaseStudyMeta = {
   scopeDetail?: string;
 };
 
-/** An ordered content block, used to interleave text, images, and cards. */
+/** An ordered content block, used to interleave text, images, cards, and lists. */
 export type CaseStudyContentBlock =
   | { kind: "text"; text: string; emphasis?: boolean }
   | { kind: "images"; images: CaseStudyImage[]; layout?: "stack" | "grid" }
-  | { kind: "cards"; cards: { title: string; body: string }[] };
+  | { kind: "cards"; cards: { title: string; body: string }[] }
+  | { kind: "list"; items: string[] };
 
 export type CaseStudySection = {
   title: string;
@@ -44,8 +45,13 @@ export type CaseStudySection = {
     body: string | string[];
     images?: CaseStudyImage[];
     imageLayout?: "stack" | "grid";
+    /** Shows a centered "Before  →  After" caption beneath this item's images. */
+    beforeAfter?: boolean;
   }[];
   steps?: string[];
+  /** Rows of a connected flow diagram (e.g. a customer journey), rendered
+   *  with directional arrows between steps and a drop to the next row. */
+  flow?: string[][];
   principles?: { title: string; body: string }[];
   cards?: { title: string; body: string }[];
   images?: CaseStudyImage[];

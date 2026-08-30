@@ -9,24 +9,27 @@ const navLinks: { href: string; label: string; external?: boolean }[] = [
   { href: "/work", label: "Work" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/about", label: "About" },
-  { href: "mailto:designer.riyash@gmail.com", label: "Contact", external: true },
+  { href: "/#contact", label: "Contact" },
 ];
 
 function Logo({ active }: { active: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-2.5"
+      className="group flex items-baseline gap-[0.09em]"
       aria-current={active ? "page" : undefined}
     >
+      <span className="text-[18px] font-bold tracking-[-0.02em] text-celestial-fg">
+        riya
+      </span>
+      <span className="text-[18px] font-bold tracking-[-0.02em] text-amber-hi transition-colors group-hover:text-celestial-fg">
+        patel
+      </span>
       <span
-        className="celestial-cta grid size-9 place-items-center rounded-[11px] text-[15px] font-extrabold tracking-tight"
+        className="celestial-mono ml-0.5 text-[13px] text-amber transition-colors group-hover:text-amber-hi"
         aria-hidden
       >
-        RP
-      </span>
-      <span className="text-[17px] font-bold tracking-tight text-celestial-fg">
-        Riya Patel
+        /
       </span>
     </Link>
   );
@@ -68,27 +71,35 @@ export function CelestialHeader() {
           <Logo active={pathname === "/"} />
 
           <nav
-            className="hidden items-center gap-1 text-[15px] font-medium text-celestial-muted md:flex"
+            className="hidden items-center text-[15px] font-medium text-celestial-muted md:flex"
             aria-label="Primary"
           >
-            {navLinks.map((item) => {
+            {navLinks.map((item, index) => {
               const active = !item.external && isNavRouteActive(pathname, item.href);
               const cls =
-                "celestial-nav-link rounded-full px-3.5 py-2 transition-colors hover:text-celestial-fg";
-              return item.external ? (
-                <a key={item.href} href={item.href} className={cls}>
-                  {item.label}
-                </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  data-active={active}
-                  aria-current={active ? "page" : undefined}
-                  className={`${cls} ${active ? "text-celestial-fg" : ""}`}
-                >
-                  {item.label}
-                </Link>
+                "celestial-nav-link rounded-full px-3 py-2 transition-colors hover:text-celestial-fg";
+              return (
+                <span key={item.href} className="flex items-center">
+                  {index > 0 ? (
+                    <span className="celestial-mono select-none text-[13px] text-amber-hi/45" aria-hidden>
+                      /
+                    </span>
+                  ) : null}
+                  {item.external ? (
+                    <a href={item.href} className={cls}>
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      data-active={active}
+                      aria-current={active ? "page" : undefined}
+                      className={`${cls} ${active ? "text-celestial-fg" : ""}`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </span>
               );
             })}
           </nav>
