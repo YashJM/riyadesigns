@@ -1,7 +1,7 @@
 import { HOME_CASE_STUDIES, HOME_FEATURED } from "@/lib/home-content";
 
 /** Client/product work in display order (synced with Figma). */
-export const WORK_PROJECT_SLUGS = ["akshar-packs", "zapp-wallet"] as const;
+export const WORK_PROJECT_SLUGS = ["therapix", "akshar-packs", "zapp-wallet"] as const;
 
 /** In-depth case studies in display order. */
 export const CASE_STUDY_SLUGS = [

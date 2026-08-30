@@ -12,12 +12,14 @@ export const googlePayAiCaseStudy: CaseStudyData = {
   ],
   meta: {
     role: "Product Designer / UX Designer",
-    platform: "Google Pay (Android & iOS)",
-    tools: "Figma, Maze, Google Analytics, Notion",
-    responsibilities:
+    roleDetail:
       "Led product strategy, user research, UX design, prototyping, and concept validation.",
-    focusAreas:
-      "AI Experience Design, Financial UX, Proactive Insights, Budget Management, Mobile UX",
+    tools: "Figma, Maze, Google Analytics, Notion",
+    toolsDetail:
+      "Used for wireframing, prototyping, usability testing, research synthesis, and documenting design decisions.",
+    platform: "Google Pay (Android & iOS)",
+    platformDetail:
+      "Designed an AI-powered spending intelligence experience for mobile users.",
   },
   heroImage: {
     src: "/figma/case-studies/google-pay/hero.png",

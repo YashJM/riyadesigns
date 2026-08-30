@@ -2,6 +2,7 @@ import { aksharPacksCaseStudy } from "@/lib/case-studies/akshar-packs";
 import { appleTvPlusCaseStudy } from "@/lib/case-studies/apple-tv-plus";
 import { googlePayAiCaseStudy } from "@/lib/case-studies/google-pay-ai";
 import { shopifyAnalyticsCaseStudy } from "@/lib/case-studies/shopify-analytics";
+import { therapixCaseStudy } from "@/lib/case-studies/therapix";
 import { zappWalletCaseStudy } from "@/lib/case-studies/zapp-wallet";
 import type { CaseStudyData } from "@/lib/case-studies/types";
 import type { WorkProjectSlug } from "@/lib/work-projects";
@@ -11,6 +12,7 @@ const CASE_STUDIES: Record<WorkProjectSlug, CaseStudyData> = {
   "apple-tv-plus": appleTvPlusCaseStudy,
   "google-pay-ai": googlePayAiCaseStudy,
   "shopify-analytics": shopifyAnalyticsCaseStudy,
+  therapix: therapixCaseStudy,
   "zapp-wallet": zappWalletCaseStudy,
 };
 

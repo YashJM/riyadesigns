@@ -197,10 +197,8 @@ export const zappWalletCaseStudy: CaseStudyData = {
     {
       title: "Financial Insights & Analytics",
       paragraphs: [
-        "Research revealed that many users struggled to understand their spending habits over time.",
-        "Transaction lists provided information, but they did not provide understanding.",
-        "To address this, I introduced visual summaries, spending categories, and activity trends that helped users identify patterns and make more informed financial decisions.",
-        "I intentionally kept the analytics lightweight and scannable to support quick understanding.",
+        "Research revealed that many users struggled to understand their spending habits over time. Transaction lists provided information, but they did not provide understanding.",
+        "To address this, I introduced visual summaries, spending categories, and activity trends that helped users identify patterns and make more informed financial decisions. I intentionally kept the analytics lightweight and scannable to support quick understanding.",
       ],
       images: [
         {
@@ -230,8 +228,7 @@ export const zappWalletCaseStudy: CaseStudyData = {
       title: "Profile, Settings & Security",
       paragraphs: [
         "Profile and settings were organized around account management, security preferences, notifications, language settings, and support.",
-        "Rather than treating settings as secondary screens, I approached them as part of the trust experience.",
-        "Users should always know where to manage their account and security preferences.",
+        "Rather than treating settings as secondary screens, I approached them as part of the trust experience. Users should always know where to manage their account and security preferences.",
       ],
       images: [
         {

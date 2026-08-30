@@ -1,10 +1,10 @@
 /** Home page copy and featured project data (synced with Figma home design). */
 
 export const HOME_HERO = {
-  eyebrow: "Product Designer · SaaS · Onboarding · UX Strategy",
+  eyebrow: "Product Designer • SaaS • Onboarding • UX Strategy",
   headline: "I design products that simplify complex workflows.",
   subtitle:
-    "I help SaaS teams create smoother onboarding, clearer product discovery, and simpler customer workflows through thoughtful product design.",
+    "I blend research, product thinking, and craft to turn complex problems into simple, intuitive experiences people actually enjoy using.",
 } as const;
 
 export const SELECTED_IMPACT = [
@@ -27,8 +27,21 @@ export type HomeFeaturedProject = {
 export const HOME_FEATURED = {
   title: "Featured Product Work",
   description:
-    "Client and product work where I used research, UX strategy, and thoughtful design to simplify workflows and improve product outcomes.",
+    "Selected projects where I used research, UX strategy, and thoughtful design to simplify workflows and improve product outcomes.",
   projects: [
+    {
+      slug: "therapix",
+      title: "Therapix",
+      subtitle: "Designing a AI-powered clinical documentation experience",
+      metrics: [
+        "30% Faster Documentation",
+        "35% Less Manual Documentation",
+        "25% Improved Workflow Efficiency",
+      ],
+      tags: ["AI", "Healthcare", "Clinical SaaS", "UX", "Product Thinking", "Web Application"],
+      image: "/figma/card-therapix-hero.png",
+      fallback: "linear-gradient(135deg,#0f2847,#1e3a5f)",
+    },
     {
       slug: "akshar-packs",
       title: "Akshar Packs",

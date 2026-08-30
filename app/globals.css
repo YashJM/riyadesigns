@@ -38,7 +38,7 @@
   --tracking-body: -0.013em;
   --tracking-display: -0.024em;
   --tracking-eyebrow: 0.04em;
-  --text-celestial-eyebrow: clamp(0.75rem, 1.6vw, 0.8125rem);
+  --text-celestial-eyebrow: clamp(0.8125rem, 1.8vw, 0.9375rem);
   --text-celestial-tag: 0.75rem;
 
   /* —— Celestial (dark) theme: home / work / about shell —— */
@@ -138,14 +138,17 @@ h3 {
   font-weight: 400;
 }
 
-/* Long-form paragraph copy — celestial dark theme */
+/* Long-form paragraph copy — celestial dark theme.
+   No max-width here on purpose: this class sits in the unlayered cascade, so
+   a hardcoded width here would silently beat every per-usage max-w-* utility
+   (Tailwind utilities live in @layer and lose to unlayered rules regardless
+   of specificity/order). Each call site sets its own width instead. */
 .celestial-prose {
   font-family: var(--font-akatab), ui-sans-serif, system-ui, sans-serif;
   font-size: var(--text-body);
   line-height: var(--leading-body);
   letter-spacing: var(--tracking-body);
   color: var(--celestial-muted);
-  max-width: 68ch;
 }
 
 .celestial-prose-lead {
@@ -438,13 +441,20 @@ h3 {
   will-change: transform;
 }
 
-/* Section eyebrows & meta labels — Akshar, readable size, amber accent */
+/* Section eyebrows & meta labels — Akshar, readable size, amber accent.
+   The "/" prefix echoes the wordmark's slash accent for a consistent mark. */
 .celestial-eyebrow {
   font-family: var(--font-akshar), ui-sans-serif, system-ui, sans-serif;
   font-size: var(--text-celestial-eyebrow);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
   color: var(--amber);
+}
+.celestial-eyebrow::before {
+  content: "/ ";
+  color: var(--amber-hi);
+  font-weight: 700;
 }
 
 /* Pill tags on project cards */
@@ -635,8 +645,24 @@ h3 {
     animation: celestial-spin-rev 220s linear infinite;
     transform-origin: center;
   }
+  .celestial-spin-fast {
+    animation: celestial-spin-rev 60s linear infinite;
+    transform-origin: center;
+  }
+  .celestial-orbit-dot {
+    animation: celestial-spin 42s linear infinite;
+    transform-origin: center;
+  }
+  .celestial-orbit-dot-rev {
+    animation: celestial-spin-rev 65s linear infinite;
+    transform-origin: center;
+  }
   .celestial-scroll-dot {
     animation: celestial-scroll-cue 1.8s var(--ease-premium) infinite;
+  }
+  .celestial-chevron-cue {
+    animation: celestial-scroll-cue 1.6s var(--ease-premium) infinite;
+    animation-delay: var(--chevron-delay, 0ms);
   }
 }
 

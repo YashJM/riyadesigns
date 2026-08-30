@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { CelestialSky } from "@/components/celestial/celestial-sky";
+import { NavHistoryTracker } from "@/components/celestial/nav-history-tracker";
 import { Nebula } from "@/components/celestial/nebula";
 import { ScrollProgress } from "@/components/celestial/scroll-progress";
 
@@ -14,6 +15,7 @@ export function CelestialShell({ children }: { children: ReactNode }) {
       <CelestialSky />
       <Nebula />
       <ScrollProgress />
+      <NavHistoryTracker />
       {children}
     </div>
   );

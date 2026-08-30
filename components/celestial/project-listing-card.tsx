@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Tilt } from "@/components/celestial/tilt";
 import { MotionReveal } from "@/components/motion/reveal";
 import type { Project } from "@/lib/projects";
+import { isCaseStudySlug } from "@/lib/work-projects";
 
 function ArrowIcon() {
   return (
@@ -38,7 +39,7 @@ export function ProjectListingCard({
     <MotionReveal delay={index * 80}>
       <Tilt className="h-full">
         <Link
-          href={`/work/${project.slug}`}
+          href={`${isCaseStudySlug(project.slug) ? "/case-studies" : "/work"}/${project.slug}`}
           className="celestial-card group flex h-full flex-col overflow-hidden rounded-[26px] p-3"
         >
           <div
