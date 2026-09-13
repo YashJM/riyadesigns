@@ -3,7 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { DownloadIcon } from "@/components/celestial/download-icon";
+import { ResumeNavButton } from "@/components/celestial/resume-nav-button";
 import { isNavRouteActive } from "@/lib/nav-active";
+import { RESUME } from "@/lib/resume";
 
 const navLinks: { href: string; label: string; external?: boolean }[] = [
   { href: "/work", label: "Work" },
@@ -70,39 +73,47 @@ export function CelestialHeader() {
         <div className="mx-auto flex w-full max-w-[var(--content-max)] items-center justify-between px-[max(1.25rem,env(safe-area-inset-left))] py-4">
           <Logo active={pathname === "/"} />
 
-          <nav
-            className="hidden items-center text-[15px] font-medium text-celestial-muted md:flex"
-            aria-label="Primary"
-          >
-            {navLinks.map((item, index) => {
-              const active = !item.external && isNavRouteActive(pathname, item.href);
-              const cls =
-                "celestial-nav-link rounded-full px-3 py-2 transition-colors hover:text-celestial-fg";
-              return (
-                <span key={item.href} className="flex items-center">
-                  {index > 0 ? (
-                    <span className="celestial-mono select-none text-[13px] text-amber-hi/45" aria-hidden>
-                      /
-                    </span>
-                  ) : null}
-                  {item.external ? (
-                    <a href={item.href} className={cls}>
-                      {item.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      data-active={active}
-                      aria-current={active ? "page" : undefined}
-                      className={`${cls} ${active ? "text-celestial-fg" : ""}`}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </span>
-              );
-            })}
-          </nav>
+          <div className="hidden items-center gap-3 md:flex">
+            <nav
+              className="flex items-center text-[15px] font-medium text-celestial-muted"
+              aria-label="Primary"
+            >
+              {navLinks.map((item, index) => {
+                const active =
+                  !item.external && isNavRouteActive(pathname, item.href);
+                const cls =
+                  "celestial-nav-link rounded-full px-3 py-2 transition-colors hover:text-celestial-fg";
+                return (
+                  <span key={item.href} className="flex items-center">
+                    {index > 0 ? (
+                      <span
+                        className="celestial-mono select-none text-[13px] text-amber-hi/45"
+                        aria-hidden
+                      >
+                        /
+                      </span>
+                    ) : null}
+                    {item.external ? (
+                      <a href={item.href} className={cls}>
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        data-active={active}
+                        aria-current={active ? "page" : undefined}
+                        className={`${cls} ${active ? "text-celestial-fg" : ""}`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </span>
+                );
+              })}
+            </nav>
+
+            <ResumeNavButton />
+          </div>
 
           <button
             type="button"
@@ -158,6 +169,17 @@ export function CelestialHeader() {
                 </Link>
               );
             })}
+
+            <a
+              href={RESUME.href}
+              download={RESUME.downloadName}
+              aria-label={RESUME.ariaLabel}
+              className="celestial-cta mt-2 flex items-center justify-center gap-2 rounded-xl px-4 py-3.5 text-base font-semibold"
+              onClick={() => setOpen(false)}
+            >
+              {RESUME.label}
+              <DownloadIcon size={16} />
+            </a>
           </nav>
         </div>
       ) : null}

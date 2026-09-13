@@ -1,6 +1,8 @@
+import { DownloadIcon } from "@/components/celestial/download-icon";
 import { Magnetic } from "@/components/celestial/magnetic";
 import { MotionReveal } from "@/components/motion/reveal";
 import { HOME_FOOTER } from "@/lib/home-content";
+import { RESUME } from "@/lib/resume";
 
 function ArrowUpRight() {
   return (
@@ -55,6 +57,17 @@ export function CelestialFooter() {
             >
               LinkedIn
               <ArrowUpRight />
+            </a>
+          </Magnetic>
+          <Magnetic as="span" strength={0.4}>
+            <a
+              href={RESUME.href}
+              download={RESUME.downloadName}
+              aria-label={RESUME.ariaLabel}
+              className="celestial-glass group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-semibold text-celestial-fg transition-colors hover:text-amber-hi"
+            >
+              {RESUME.label}
+              <DownloadIcon size={16} />
             </a>
           </Magnetic>
         </div>

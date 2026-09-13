@@ -37,20 +37,61 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
     },
     {
       title: "The Problem",
-      paragraphs: [
-        "It started with something I had experienced myself.",
-        "After opening Apple TV+, I expected to quickly find something to watch. Instead, I spent nearly twenty minutes scrolling through recommendations, opening different titles, and eventually switching between streaming platforms without making a decision.",
-        "Rather than assuming this was only my experience, I wanted to understand whether others felt the same way.",
-        "As I spoke with people who regularly used streaming services, a clear pattern began to emerge. Most users didn't struggle because there wasn't enough content—they struggled because there was too much of it. Endless rows of recommendations, repeated suggestions, and a lack of context made choosing something to watch feel surprisingly difficult.",
-        "The research also uncovered another challenge. Users who relied on accessibility features such as Audio Descriptions, Closed Captions, or VoiceOver often had to open multiple titles before knowing whether a movie or show met their needs. Accessibility wasn't difficult to use—it was difficult to find.",
-        "That changed how I framed the problem. This wasn't about helping people discover more content. It was about helping them make confident decisions, while ensuring everyone could discover content in a way that worked for them. That insight became the foundation for every product decision that followed.",
-      ],
-      images: [
+      content: [
+        { kind: "text", text: "It started with something I had experienced myself." },
         {
-          src: "/figma/case-studies/apple-tv/screens.png",
-          alt: "Apple TV+ problem analysis — endless scrolling, decision fatigue, and the typical discovery journey",
-          width: 856,
-          height: 571,
+          kind: "text",
+          text: "After opening Apple TV+, I expected to quickly find something to watch. Instead, I spent nearly twenty minutes scrolling through recommendations, opening different titles, and eventually switching between streaming platforms without making a decision.",
+        },
+        {
+          kind: "text",
+          text: "Rather than assuming this was only my experience, I wanted to understand whether others felt the same way.",
+        },
+        {
+          kind: "text",
+          text: "As I spoke with people who regularly used streaming services, a clear pattern began to emerge. Most users didn't struggle because there wasn't enough content—they struggled because there was too much of it. Endless rows of recommendations, repeated suggestions, and a lack of context made choosing something to watch feel surprisingly difficult.",
+        },
+        {
+          kind: "text",
+          text: "The research also uncovered another challenge. Users who relied on accessibility features such as Audio Descriptions, Closed Captions, or VoiceOver often had to open multiple titles before knowing whether a movie or show met their needs. Accessibility wasn't difficult to use—it was difficult to find.",
+        },
+        { kind: "text", text: "That changed how I framed the problem." },
+        {
+          kind: "list",
+          items: [
+            "This wasn't about helping people discover more content.",
+            "It was about helping them make confident decisions, while ensuring everyone could discover content in a way that worked for them.",
+            "That insight became the foundation for every product decision that followed.",
+          ],
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/problem-home.png",
+              alt: "Apple TV+ home screen annotated with four problems — endless scrolling, repeated recommendations, no context or guidance, and accessibility hard to find",
+              width: 1078,
+              height: 716,
+            },
+          ],
+        },
+        {
+          kind: "images",
+          layout: "grid",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/typical-journey.png",
+              alt: "The typical journey — open Apple TV+, scroll and browse, open multiple titles, can't decide, switch platform",
+              width: 1042,
+              height: 182,
+            },
+            {
+              src: "/figma/case-studies/apple-tv/research-revealed.png",
+              alt: "What the research revealed — 7/10 felt overwhelmed, 65% spend more time browsing than watching, 48% check multiple titles for accessibility features, 42% switch platforms",
+              width: 446,
+              height: 194,
+            },
+          ],
         },
       ],
     },
@@ -81,22 +122,168 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
     },
     {
       title: "Discovery & Research",
-      paragraphs: [
-        "Before opening Figma, I wanted to understand why finding something to watch had become so frustrating.",
-        "I spoke with people who regularly use streaming platforms, observed how they browsed for content, explored competitor experiences, and reviewed Apple's Human Interface Guidelines alongside WCAG accessibility standards. My goal wasn't to validate assumptions—it was to understand what was really getting in the way.",
-        "Going into the research, I expected people to talk about poor recommendations.",
-        "They didn't. Instead, they talked about the experience of browsing itself.",
-        "Scrolling through endless rows of content felt overwhelming, and the longer people searched, the less confident they became about choosing anything at all.",
-        "One participant told me, \"Sometimes I spend longer choosing a movie than actually watching one.\"",
-        "The most eye-opening conversation came from a participant who regularly uses Audio Descriptions. \"I often have to open multiple titles before I know whether they're actually accessible.\"",
-        "That insight completely changed my perspective. I realized the challenge wasn't simply helping people discover more content—it was helping them make confident decisions. Accessibility wasn't a feature to be added later; it needed to be part of the discovery experience from the very beginning.",
-      ],
-      images: [
+      content: [
         {
-          src: "/figma/case-studies/apple-tv/research.png",
-          alt: "Apple TV+ discovery and research — research plan, participant quotes, affinity mapping, and accessibility findings",
-          width: 620,
-          height: 1306,
+          kind: "text",
+          text: "Before opening Figma, I wanted to understand why finding something to watch had become so frustrating.",
+        },
+        {
+          kind: "text",
+          text: "I spoke with people who regularly use streaming platforms, observed how they browsed for content, explored competitor experiences, and reviewed Apple's Human Interface Guidelines alongside WCAG accessibility standards. My goal wasn't to validate assumptions—it was to understand what was really getting in the way.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/research-plan.png",
+              alt: "Research plan — research questions, methods, 12 participants aged 18–65, and a two-week timeline",
+              width: 515,
+              height: 261,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "Going into the research, I expected people to talk about poor recommendations.",
+        },
+        { kind: "text", text: "They didn't." },
+        {
+          kind: "text",
+          text: "Instead, they talked about the experience of browsing itself.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/viewer-photo.png",
+              alt: "A viewer browsing Apple TV+ on a living room television",
+              width: 515,
+              height: 188,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "Scrolling through endless rows of content felt overwhelming, and the longer people searched, the less confident they became about choosing anything at all.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/decision-fatigue.png",
+              alt: "Decision fatigue — 20 minutes or more spent browsing to decide, with too many choices and not enough clarity",
+              width: 515,
+              height: 204,
+            },
+          ],
+        },
+        { kind: "text", text: "One participant told me," },
+        {
+          kind: "text",
+          text: "\"Sometimes I spend longer choosing a movie than actually watching one.\"",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/quote-time.png",
+              alt: "Participant quote — \"Sometimes I spend longer choosing a movie than actually watching one.\"",
+              width: 515,
+              height: 160,
+            },
+          ],
+        },
+        { kind: "text", text: "Another said," },
+        {
+          kind: "text",
+          text: "\"I usually check two or three streaming apps before deciding what to watch.\"",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/app-hopping.png",
+              alt: "Cross-platform behaviour — users move from Apple TV+ to Netflix, Disney+, and Prime Video before returning to Apple TV+",
+              width: 515,
+              height: 135,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "The most eye-opening conversation came from a participant who regularly uses Audio Descriptions.",
+        },
+        {
+          kind: "text",
+          text: "\"I often have to open multiple titles before I know whether they're actually accessible.\"",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/accessibility-loop.png",
+              alt: "The accessibility loop — browse, open a title, no Audio Description, go back, open another title, still not available, repeat",
+              width: 515,
+              height: 158,
+            },
+          ],
+        },
+        { kind: "text", text: "That insight completely changed my perspective." },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/affinity-map.png",
+              alt: "Affinity map — overwhelm and decision fatigue, accessibility challenges, trust and confidence, cross-platform behaviour, and what users really want",
+              width: 515,
+              height: 205,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "I realized the challenge wasn't simply helping people discover more content—it was helping them make confident decisions.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/problem-opportunity.png",
+              alt: "Reframing the problem as an opportunity — from too many choices and low confidence to better guidance, high confidence, and a better experience",
+              width: 515,
+              height: 139,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "Accessibility wasn't a feature to be added later; it needed to be part of the discovery experience from the very beginning.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/coda-accessibility.png",
+              alt: "CODA title card surfacing Audio Description, Closed Captions, VoiceOver support, and multiple languages up front",
+              width: 515,
+              height: 154,
+            },
+          ],
+        },
+        {
+          kind: "text",
+          text: "That shift became the foundation for every product decision that followed.",
+        },
+        {
+          kind: "images",
+          images: [
+            {
+              src: "/figma/case-studies/apple-tv/process-flow.png",
+              alt: "Process flow — research, insights, opportunity, product strategy, design, prototype, and testing, anchored by confidence, accessibility, and trust",
+              width: 515,
+              height: 121,
+            },
+          ],
         },
       ],
     },
@@ -105,6 +292,7 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       paragraphs: [
         "After synthesizing the research, one thing became clear: people didn't need more content—they needed more confidence when choosing what to watch.",
       ],
+      cardLayout: "stack",
       cards: [
         {
           title: "Decision Fatigue",
@@ -130,27 +318,27 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
     },
     {
       title: "Defining the Opportunity",
-      paragraphs: [
-        "The research changed how I approached the problem. I thought this project was about improving recommendations, but I quickly realized it was really about helping people make confident decisions.",
-        "That shift led me to four product principles that guided every design decision.",
-        "Rather than designing for endless browsing, I focused on creating an experience that helps people confidently press Play.",
-      ],
-      principles: [
+      content: [
         {
-          title: "Reduce cognitive load",
-          body: "through simplified content discovery.",
+          kind: "text",
+          text: "The research changed how I approached the problem. I thought this project was about improving recommendations, but I quickly realized it was really about helping people make confident decisions.",
         },
         {
-          title: "Increase trust",
-          body: "with transparent and relevant recommendations.",
+          kind: "text",
+          text: "That shift led me to four product principles that guided every design decision.",
         },
         {
-          title: "Integrate accessibility",
-          body: "throughout the discovery experience.",
+          kind: "list",
+          items: [
+            "Reduce cognitive load through simplified content discovery.",
+            "Increase trust with transparent and relevant recommendations.",
+            "Integrate accessibility throughout the discovery experience.",
+            "Support faster and more confident viewing decisions.",
+          ],
         },
         {
-          title: "Support faster and more confident",
-          body: "viewing decisions.",
+          kind: "text",
+          text: "Rather than designing for endless browsing, I focused on creating an experience that helps people confidently press Play.",
         },
       ],
     },
@@ -209,7 +397,6 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
       title: "Impact",
       paragraphs: [
         "The outcomes below are based on prototype usability testing and concept validation, not live production data.",
-        "These results suggest that a simpler, more transparent, and accessible discovery experience can help users spend less time searching and more time enjoying content.",
       ],
       metrics: [
         {
@@ -225,18 +412,20 @@ export const appleTvPlusCaseStudy: CaseStudyData = {
             "Clearer recommendations helped users make decisions with greater trust.",
         },
         {
-          value: "30%",
-          label: "Improved Task Completion",
-          description:
-            "Participants completed common browsing tasks more efficiently and with fewer errors.",
-        },
-        {
           value: "65%",
           label: "Faster Accessibility Discovery",
           description:
             "Users located accessibility features such as Audio Descriptions and Closed Captions more easily.",
         },
+        {
+          value: "30%",
+          label: "Improved Task Completion",
+          description:
+            "Participants completed common browsing tasks more efficiently and with fewer errors.",
+        },
       ],
+      metricsFootnote:
+        "These results suggest that a simpler, more transparent, and accessible discovery experience can help users spend less time searching and more time enjoying content.",
     },
     {
       title: "Reflection",
