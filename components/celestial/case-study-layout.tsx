@@ -222,6 +222,35 @@ function ItemImages({
 }
 
 function MetricsGrid({ metrics }: { metrics: NonNullable<CaseStudyData["metrics"]> }) {
+  // Metrics that carry a description need room to read, so they get wider,
+  // left-aligned cards that wrap two-up. Bare stat tiles stay compact and centered.
+  const detailed = metrics.some((metric) => metric.description);
+
+  if (detailed) {
+    return (
+      <div className="mt-6 flex flex-wrap justify-center gap-4">
+        {metrics.map((metric) => (
+          <div
+            key={metric.label}
+            className="celestial-glass flex min-w-[260px] max-w-[480px] flex-[1_1_calc(50%-0.5rem)] flex-col rounded-[18px] px-5 py-6"
+          >
+            <p className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-[1.1] text-celestial-fg">
+              {metric.value}
+            </p>
+            <p className="mt-2 text-[15px] font-semibold leading-[1.4] text-celestial-fg">
+              {metric.label}
+            </p>
+            {metric.description ? (
+              <p className="mt-2 text-[13px] leading-[1.5] text-celestial-faint">
+                {metric.description}
+              </p>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="mt-6 flex flex-wrap justify-center gap-4">
       {metrics.map((metric) => (
@@ -235,11 +264,6 @@ function MetricsGrid({ metrics }: { metrics: NonNullable<CaseStudyData["metrics"
           <p className="mt-2 text-[14px] font-medium text-celestial-muted">
             {metric.label}
           </p>
-          {metric.description ? (
-            <p className="mt-2 text-[12px] leading-[1.45] text-celestial-faint">
-              {metric.description}
-            </p>
-          ) : null}
         </div>
       ))}
     </div>
@@ -248,9 +272,26 @@ function MetricsGrid({ metrics }: { metrics: NonNullable<CaseStudyData["metrics"
 
 function SectionCards({
   cards,
+  layout = "grid",
 }: {
   cards: { title: string; body: string }[];
+  layout?: "grid" | "stack";
 }) {
+  if (layout === "stack") {
+    return (
+      <div className="flex flex-col gap-3">
+        {cards.map((card) => (
+          <div key={card.title} className="celestial-glass rounded-[14px] px-5 py-4">
+            <p className="text-[var(--text-body)] leading-[1.55] text-celestial-muted">
+              <span className="font-semibold text-celestial-fg">{card.title} – </span>
+              {card.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {cards.map((card) => (
@@ -511,18 +552,8 @@ export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
               ) : null}
 
               {section.cards?.length ? (
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {section.cards.map((card) => (
-                    <div
-                      key={card.title}
-                      className="celestial-glass rounded-[18px] p-5"
-                    >
-                      <p className="font-semibold text-celestial-fg">{card.title}</p>
-                      <p className="mt-2 text-[var(--text-body)] leading-[1.55] text-celestial-muted">
-                        {card.body}
-                      </p>
-                    </div>
-                  ))}
+                <div className="mt-6">
+                  <SectionCards cards={section.cards} layout={section.cardLayout} />
                 </div>
               ) : null}
 
@@ -568,6 +599,12 @@ export function CelestialCaseStudyLayout({ data }: { data: CaseStudyData }) {
 
               {section.metrics?.length ? (
                 <MetricsGrid metrics={section.metrics} />
+              ) : null}
+
+              {section.metricsFootnote ? (
+                <CelestialProse className="mt-6">
+                  <ProseLine>{section.metricsFootnote}</ProseLine>
+                </CelestialProse>
               ) : null}
             </article>
           ))}

@@ -54,11 +54,19 @@ export type CaseStudySection = {
   flow?: string[][];
   principles?: { title: string; body: string }[];
   cards?: { title: string; body: string }[];
+  /**
+   * "grid" (default) puts cards in two columns with the title on its own line.
+   * "stack" puts them full width, one per row, with the title running inline
+   * with the body — used where the design reads as a list of insights.
+   */
+  cardLayout?: "grid" | "stack";
   images?: CaseStudyImage[];
   imageLayout?: "stack" | "grid";
   /** Side-by-side text and image layout (e.g. wireframes). */
   layout?: "split";
   metrics?: CaseStudyMetric[];
+  /** Closing line rendered *after* the metrics grid, not before it. */
+  metricsFootnote?: string;
 };
 
 export type CaseStudyMetric = {
